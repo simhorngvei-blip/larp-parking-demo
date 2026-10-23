@@ -73,6 +73,16 @@
       "sha256": "945a70512f1895d08d2ddae4226dae97cf51e15ea59dd2656e89c4f64147d1e4"
     },
     {
+      "path": "docs/images/larp-3d-building.png",
+      "bytes": 185177,
+      "sha256": "77e72c60a4ad94c22e9543ec0c69278c9421ffa8da02537b5bd7e4efe733e8ce"
+    },
+    {
+      "path": "docs/images/larp-parking-layout.png",
+      "bytes": 27630,
+      "sha256": "5f0891f4998d2e04062ffe51707408a0d3522616cd6dfde8760a28229d5af247"
+    },
+    {
       "path": "docs/implementation/28_LARP_APPS_AND_ANDROID.md",
       "bytes": 12969,
       "sha256": "43377efab94d12b3fae153933323d2b2e9c8867f6e48eea6b10090a3de2a6864"
@@ -1174,6 +1184,11 @@
     },
     {
       "path": "README.md",
+      "bytes": 7889,
+      "sha256": "f0cf711c1bd4b564ec5730064764568502a346ab223dc6b13a88904398fcdbd0"
+    },
+    {
+      "path": "RUN_LOCALLY.md",
       "bytes": 7128,
       "sha256": "5af3041c5185ce92208eace0a1e11e67a6c9d97628fd2a07149b362a9d5731ff"
     },
