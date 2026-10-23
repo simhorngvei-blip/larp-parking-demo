@@ -3,6 +3,10 @@
 License-plate Automated Recognition Parking — Team AC/DC hackathon prototype.
 This repository contains the code needed to run and inspect the local software demo, not the full private workspace.
 
+## Try the hosted demo
+
+Open **https://larp-demo-rain-s-projects2.vercel.app/demo-login**. See [hosted views and testing instructions](HOSTED_DEMO.md) for the user app, Guard app, server room, website and 3D journeys. Vercel access approval and a privately supplied LARP demo code are required. The hosted service depends on the team's laptop runtime being online; it is not an anonymous or guaranteed always-on demo. Use the Docker option below for independent local evaluation.
+
 ## Start with Docker
 
 Install Docker Desktop with Linux containers (or Docker Engine + Compose on Linux). Keep internet available for the initial image/dependency downloads. No team cloud credentials or hosted database are required.

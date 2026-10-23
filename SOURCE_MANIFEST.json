@@ -88,6 +88,11 @@
       "sha256": "8546686e87806927da8812569ed0c69a8fe46121a33a8605bf23b8ac8d639902"
     },
     {
+      "path": "HOSTED_DEMO.md",
+      "bytes": 3333,
+      "sha256": "330415bcd198626785f538ad3432c9ba6467e2ff1808d5038c3a8cebb56b9d5a"
+    },
+    {
       "path": "parking-prototype/.gitignore",
       "bytes": 108,
       "sha256": "90d5ebfcec5a9d07a58bdb6cc8e825938478b27eecd90e44d0af4046a21e7449"
@@ -1169,8 +1174,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6726,
-      "sha256": "553061b86bf7490548b49221e21f691b84336fc30369fcd9f7e7a8883a5dd63d"
+      "bytes": 7128,
+      "sha256": "5af3041c5185ce92208eace0a1e11e67a6c9d97628fd2a07149b362a9d5731ff"
     },
     {
       "path": "tools/mcp-node/package-lock.json",
