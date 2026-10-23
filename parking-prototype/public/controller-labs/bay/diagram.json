@@ -1,0 +1,573 @@
+{
+  "version": 1,
+  "author": "LARP",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp32",
+      "left": 0,
+      "top": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "title",
+      "left": 0,
+      "top": -115,
+      "attrs": {
+        "text": "LARP BAY CONTROLLER | ESP32 CPU + SIX CEILING-SENSOR BENCH CHANNELS"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "scope",
+      "left": 0,
+      "top": -75,
+      "attrs": {
+        "text": "ISOLATED BENCH: not connected to parking API. No physical RF / RS-485 / power certification."
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensor1",
+      "left": 340,
+      "top": 0,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label0",
+      "left": 340,
+      "top": -30,
+      "attrs": {
+        "text": "CEILING SENSOR 1 (short-wire bench alternative)"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "series0",
+      "left": 410,
+      "top": 100,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "shunt0",
+      "left": 490,
+      "top": 140,
+      "attrs": {
+        "value": "15000"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensor2",
+      "left": 610,
+      "top": 0,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label1",
+      "left": 610,
+      "top": -30,
+      "attrs": {
+        "text": "CEILING SENSOR 2 (short-wire bench alternative)"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "series1",
+      "left": 680,
+      "top": 100,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "shunt1",
+      "left": 760,
+      "top": 140,
+      "attrs": {
+        "value": "15000"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensor3",
+      "left": 880,
+      "top": 0,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label2",
+      "left": 880,
+      "top": -30,
+      "attrs": {
+        "text": "CEILING SENSOR 3 (short-wire bench alternative)"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "series2",
+      "left": 950,
+      "top": 100,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "shunt2",
+      "left": 1030,
+      "top": 140,
+      "attrs": {
+        "value": "15000"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensor4",
+      "left": 340,
+      "top": 240,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label3",
+      "left": 340,
+      "top": 210,
+      "attrs": {
+        "text": "CEILING SENSOR 4 (short-wire bench alternative)"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "series3",
+      "left": 410,
+      "top": 340,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "shunt3",
+      "left": 490,
+      "top": 380,
+      "attrs": {
+        "value": "15000"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensor5",
+      "left": 610,
+      "top": 240,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label4",
+      "left": 610,
+      "top": 210,
+      "attrs": {
+        "text": "CEILING SENSOR 5 (short-wire bench alternative)"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "series4",
+      "left": 680,
+      "top": 340,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "shunt4",
+      "left": 760,
+      "top": 380,
+      "attrs": {
+        "value": "15000"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensor6",
+      "left": 880,
+      "top": 240,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label5",
+      "left": 880,
+      "top": 210,
+      "attrs": {
+        "text": "CEILING SENSOR 6 (short-wire bench alternative)"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "series5",
+      "left": 950,
+      "top": 340,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "shunt5",
+      "left": 1030,
+      "top": 380,
+      "attrs": {
+        "value": "15000"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "health",
+      "left": 200,
+      "top": 30,
+      "attrs": {
+        "color": "green",
+        "label": "6 sensors healthy"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "statusR",
+      "left": 200,
+      "top": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "instructions",
+      "left": 330,
+      "top": 500,
+      "attrs": {
+        "text": "Serial: SENSOR_OFF 2 / SENSOR_ON 2. Select each HC-SR04 to change distance. No bollard motion."
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "limits",
+      "left": 330,
+      "top": 540,
+      "attrs": {
+        "text": "Echo dividers shown. Trigger buffer / production addressed RS-485 sensors remain reference-only."
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp32:TX",
+      "$serialMonitor:RX",
+      "purple",
+      []
+    ],
+    [
+      "$serialMonitor:TX",
+      "esp32:RX",
+      "purple",
+      []
+    ],
+    [
+      "esp32:13",
+      "sensor1:TRIG",
+      "green",
+      []
+    ],
+    [
+      "sensor1:ECHO",
+      "series0:1",
+      "blue",
+      []
+    ],
+    [
+      "series0:2",
+      "esp32:32",
+      "blue",
+      []
+    ],
+    [
+      "series0:2",
+      "shunt0:1",
+      "blue",
+      []
+    ],
+    [
+      "shunt0:2",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "sensor1:VCC",
+      "esp32:5V",
+      "red",
+      []
+    ],
+    [
+      "sensor1:GND",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp32:14",
+      "sensor2:TRIG",
+      "green",
+      []
+    ],
+    [
+      "sensor2:ECHO",
+      "series1:1",
+      "blue",
+      []
+    ],
+    [
+      "series1:2",
+      "esp32:33",
+      "blue",
+      []
+    ],
+    [
+      "series1:2",
+      "shunt1:1",
+      "blue",
+      []
+    ],
+    [
+      "shunt1:2",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "sensor2:VCC",
+      "esp32:5V",
+      "red",
+      []
+    ],
+    [
+      "sensor2:GND",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp32:18",
+      "sensor3:TRIG",
+      "green",
+      []
+    ],
+    [
+      "sensor3:ECHO",
+      "series2:1",
+      "blue",
+      []
+    ],
+    [
+      "series2:2",
+      "esp32:34",
+      "blue",
+      []
+    ],
+    [
+      "series2:2",
+      "shunt2:1",
+      "blue",
+      []
+    ],
+    [
+      "shunt2:2",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "sensor3:VCC",
+      "esp32:5V",
+      "red",
+      []
+    ],
+    [
+      "sensor3:GND",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp32:19",
+      "sensor4:TRIG",
+      "green",
+      []
+    ],
+    [
+      "sensor4:ECHO",
+      "series3:1",
+      "blue",
+      []
+    ],
+    [
+      "series3:2",
+      "esp32:35",
+      "blue",
+      []
+    ],
+    [
+      "series3:2",
+      "shunt3:1",
+      "blue",
+      []
+    ],
+    [
+      "shunt3:2",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "sensor4:VCC",
+      "esp32:5V",
+      "red",
+      []
+    ],
+    [
+      "sensor4:GND",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp32:21",
+      "sensor5:TRIG",
+      "green",
+      []
+    ],
+    [
+      "sensor5:ECHO",
+      "series4:1",
+      "blue",
+      []
+    ],
+    [
+      "series4:2",
+      "esp32:VP",
+      "blue",
+      []
+    ],
+    [
+      "series4:2",
+      "shunt4:1",
+      "blue",
+      []
+    ],
+    [
+      "shunt4:2",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "sensor5:VCC",
+      "esp32:5V",
+      "red",
+      []
+    ],
+    [
+      "sensor5:GND",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp32:22",
+      "sensor6:TRIG",
+      "green",
+      []
+    ],
+    [
+      "sensor6:ECHO",
+      "series5:1",
+      "blue",
+      []
+    ],
+    [
+      "series5:2",
+      "esp32:VN",
+      "blue",
+      []
+    ],
+    [
+      "series5:2",
+      "shunt5:1",
+      "blue",
+      []
+    ],
+    [
+      "shunt5:2",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "sensor6:VCC",
+      "esp32:5V",
+      "red",
+      []
+    ],
+    [
+      "sensor6:GND",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp32:2",
+      "statusR:1",
+      "green",
+      []
+    ],
+    [
+      "statusR:2",
+      "health:A",
+      "green",
+      []
+    ],
+    [
+      "health:C",
+      "esp32:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  }
+}

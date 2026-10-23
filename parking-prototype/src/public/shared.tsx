@@ -1,0 +1,7 @@
+import type {ReactNode} from 'react'
+import {BatteryCharging,Check,Clock3,MapPin,Zap} from 'lucide-react'
+import type {EVBay} from './types'
+export function Status({value}:{value:string}){return <span className={`p-status p-status-${value.toLowerCase()}`}>{value.replaceAll('_',' ')}</span>}
+export function Panel({title,eyebrow,children,className=''}:{title:string;eyebrow?:string;children:ReactNode;className?:string}){return <section className={`p-panel ${className}`}>{eyebrow&&<span className="p-eyebrow">{eyebrow}</span>}<h2>{title}</h2>{children}</section>}
+export function Empty({children}:{children:ReactNode}){return <div className="p-empty"><Check size={22}/><p>{children}</p></div>}
+export function BayCard({bay,children}:{bay:EVBay;children?:ReactNode}){return <article className="p-bay"><div className="p-row"><div className="p-electric"><Zap size={23}/></div><Status value={bay.availability}/></div><div className="p-bay-drawing" aria-hidden="true"><span>EV</span><BatteryCharging size={40}/><i/><i/></div><div className="p-row"><h3>{bay.label}</h3><small>{bay.id}</small></div><p>{bay.connector} <span>·</span> {bay.powerKw} kW <span>·</span> Model</p><div className="p-bay-detail"><MapPin size={15}/>{bay.occupied?'Vehicle observed in bay':bay.fresh?'Bay observed vacant':'Availability unconfirmed'}</div><div className="p-bay-detail"><Clock3 size={15}/>{bay.connected?'Connector attached':'Connector not attached'}</div>{children}</article>}

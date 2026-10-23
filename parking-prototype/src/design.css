@@ -1,0 +1,25 @@
+/* No Tailwind preflight: existing parking, Android and 3D styles retain their base rules. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@theme inline {
+ --color-background:var(--background);--color-foreground:var(--foreground);
+ --color-card:var(--card);--color-card-foreground:var(--card-foreground);
+ --color-primary:var(--primary);--color-primary-foreground:var(--primary-foreground);
+ --color-secondary:var(--secondary);--color-secondary-foreground:var(--secondary-foreground);
+ --color-muted:var(--muted);--color-muted-foreground:var(--muted-foreground);
+ --color-accent:var(--accent);--color-accent-foreground:var(--accent-foreground);
+ --color-border:var(--border);--color-input:var(--border);--color-ring:var(--ring);--color-destructive:#a73629;
+}
+.larp-design {
+ --background:#fbfcf8;--foreground:#173b31;--card:#fff;--card-foreground:#173b31;
+ --primary:#245640;--primary-foreground:#fff;--secondary:#e8efdf;--secondary-foreground:#173b31;
+ --muted:#f2f5ec;--muted-foreground:#52675c;--accent:#e8efdf;--accent-foreground:#173b31;
+ --border:#dce4d9;--ring:#537b61;
+ font-family:'Manrope Variable',Manrope,'Segoe UI',sans-serif;color:var(--foreground);
+}
+.larp-design [data-slot="button"] {font:inherit;font-size:13px;font-weight:650;cursor:pointer;border:1px solid transparent;text-decoration:none;box-sizing:border-box}
+.larp-design [data-slot="button"][data-variant="outline"]{border-color:var(--border)}
+.larp-design [data-slot="button"][data-variant="default"]{color:var(--primary-foreground)}
+.larp-design [data-slot="card"],.larp-design [data-slot="badge"]{border-color:var(--border)}
+.larp-design [data-slot="badge"]{font-size:11px;font-weight:650;line-height:1.5}

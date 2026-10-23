@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img">
+<title>Complete logical hierarchy</title><defs>
+<marker id="power" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ce4554"/></marker>
+<marker id="ground" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#394453"/></marker>
+<marker id="bus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2368c4"/></marker>
+<marker id="logic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7b4ac6"/></marker>
+<marker id="rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#138780"/></marker>
+</defs><rect width="1600" height="1000" fill="#f5f7fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#243248}.title{font-size:33px;font-weight:700}.small{font-size:14px}.body{font-size:16px}.head{font-size:19px;font-weight:700}</style>
+<text x="48" y="45" font-size="14" fill="#54728b">LARP / TEAM CIRCUIT COMPLETION / 01</text>
+<text x="48" y="88" font-size="33" fill="#243248">Complete logical hierarchy</text>
+<text x="48" y="119" font-size="16" fill="#243248">1 flow controller / 8 six-bay controllers / 48 planned endpoints. Nine current endpoints are mapped in the central demo.</text>
+<rect x="580" y="160" width="440" height="125" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="595" y="190" font-size="19" fill="#2368c4" font-weight="700">Central application + SQLite</text>
+<text x="595" y="218" font-size="15" fill="#243248">Accounts, vehicles, entitlements, routes</text>
+<text x="595" y="239" font-size="15" fill="#243248">Request journal and observed outcomes</text>
+<rect x="60" y="160" width="330" height="125" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="75" y="190" font-size="19" fill="#2368c4" font-weight="700">LPR IN / LPR OUT</text>
+<text x="75" y="218" font-size="15" fill="#243248">Synthetic plate observations in demo</text>
+<text x="75" y="239" font-size="15" fill="#243248">Real camera integration not</text>
+<text x="75" y="260" font-size="15" fill="#243248">implemented</text>
+<rect x="1190" y="160" width="350" height="125" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1205" y="190" font-size="19" fill="#2368c4" font-weight="700">Boom-gate controllers</text>
+<text x="1205" y="218" font-size="15" fill="#243248">Local lane presence + limit interlocks</text>
+<text x="1205" y="239" font-size="15" fill="#243248">Entrance and exit remain separate</text>
+<polyline points="390,220 580,220" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<polyline points="1020,220 1190,220" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<rect x="580" y="350" width="440" height="110" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="595" y="380" font-size="19" fill="#2368c4" font-weight="700">FC-001 / flow controller</text>
+<text x="595" y="408" font-size="15" fill="#243248">Ethernet uplink; polled RS-485 bus</text>
+<text x="595" y="429" font-size="15" fill="#243248">Transport never bypasses local interlocks</text>
+<polyline points="800,285 800,350" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<text x="820" y="325" font-size="14" fill="#2368c4">Ethernet / bidirectional</text>
+<line x1="125" y1="510" x2="1475" y2="510" stroke="#2368c4" stroke-width="3"/>
+<polyline points="800,460 800,510" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<text x="55" y="493" font-size="15" fill="#243248">RS-485 multidrop backbone (physical daisy chain, not a star)</text>
+<polyline points="123,510 123,550" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="35" y="550" width="177" height="330" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="50" y="580" font-size="19" fill="#2368c4" font-weight="700">BC-001</text>
+<text x="50" y="608" font-size="15" fill="#243248">6 ceiling sensors</text>
+<text x="50" y="629" font-size="15" fill="#243248">Separate sensor</text>
+<text x="50" y="650" font-size="15" fill="#243248">bus</text>
+<text x="50" y="671" font-size="15" fill="#243248">Two-way RF to</text>
+<text x="50" y="692" font-size="15" fill="#243248">locks</text>
+<rect x="47" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="53" y="740" font-size="13" fill="#243248">Bay 01</text>
+<rect x="127" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="133" y="740" font-size="13" fill="#243248">Bay 02</text>
+<rect x="47" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="53" y="793" font-size="13" fill="#243248">Bay 03</text>
+<rect x="127" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="133" y="793" font-size="13" fill="#243248">Bay 04</text>
+<rect x="47" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="53" y="846" font-size="13" fill="#243248">Bay 05</text>
+<rect x="127" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="133" y="846" font-size="13" fill="#243248">Bay 06</text>
+<polyline points="317,510 317,550" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="229" y="550" width="177" height="330" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="244" y="580" font-size="19" fill="#2368c4" font-weight="700">BC-002</text>
+<text x="244" y="608" font-size="15" fill="#243248">6 ceiling sensors</text>
+<text x="244" y="629" font-size="15" fill="#243248">Separate sensor</text>
+<text x="244" y="650" font-size="15" fill="#243248">bus</text>
+<text x="244" y="671" font-size="15" fill="#243248">Two-way RF to</text>
+<text x="244" y="692" font-size="15" fill="#243248">locks</text>
+<rect x="241" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="247" y="740" font-size="13" fill="#243248">Bay 07</text>
+<rect x="321" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="327" y="740" font-size="13" fill="#243248">Bay 08</text>
+<rect x="241" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="247" y="793" font-size="13" fill="#243248">Bay 09</text>
+<rect x="321" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="327" y="793" font-size="13" fill="#243248">Bay 10</text>
+<rect x="241" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="247" y="846" font-size="13" fill="#243248">Bay 11</text>
+<rect x="321" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="327" y="846" font-size="13" fill="#243248">Bay 12</text>
+<polyline points="511,510 511,550" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="423" y="550" width="177" height="330" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="438" y="580" font-size="19" fill="#2368c4" font-weight="700">BC-003</text>
+<text x="438" y="608" font-size="15" fill="#243248">6 ceiling sensors</text>
+<text x="438" y="629" font-size="15" fill="#243248">Separate sensor</text>
+<text x="438" y="650" font-size="15" fill="#243248">bus</text>
+<text x="438" y="671" font-size="15" fill="#243248">Two-way RF to</text>
+<text x="438" y="692" font-size="15" fill="#243248">locks</text>
+<rect x="435" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="441" y="740" font-size="13" fill="#243248">Bay 13</text>
+<rect x="515" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="521" y="740" font-size="13" fill="#243248">Bay 14</text>
+<rect x="435" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="441" y="793" font-size="13" fill="#243248">Bay 15</text>
+<rect x="515" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="521" y="793" font-size="13" fill="#243248">Bay 16</text>
+<rect x="435" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="441" y="846" font-size="13" fill="#243248">Bay 17</text>
+<rect x="515" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="521" y="846" font-size="13" fill="#243248">Bay 18</text>
+<polyline points="705,510 705,550" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="617" y="550" width="177" height="330" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="632" y="580" font-size="19" fill="#2368c4" font-weight="700">BC-004</text>
+<text x="632" y="608" font-size="15" fill="#243248">6 ceiling sensors</text>
+<text x="632" y="629" font-size="15" fill="#243248">Separate sensor</text>
+<text x="632" y="650" font-size="15" fill="#243248">bus</text>
+<text x="632" y="671" font-size="15" fill="#243248">Two-way RF to</text>
+<text x="632" y="692" font-size="15" fill="#243248">locks</text>
+<rect x="629" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="635" y="740" font-size="13" fill="#243248">Bay 19</text>
+<rect x="709" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="715" y="740" font-size="13" fill="#243248">Bay 20</text>
+<rect x="629" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="635" y="793" font-size="13" fill="#243248">Bay 21</text>
+<rect x="709" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="715" y="793" font-size="13" fill="#243248">Bay 22</text>
+<rect x="629" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="635" y="846" font-size="13" fill="#243248">Bay 23</text>
+<rect x="709" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="715" y="846" font-size="13" fill="#243248">Bay 24</text>
+<polyline points="899,510 899,550" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="811" y="550" width="177" height="330" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="826" y="580" font-size="19" fill="#2368c4" font-weight="700">BC-005</text>
+<text x="826" y="608" font-size="15" fill="#243248">6 ceiling sensors</text>
+<text x="826" y="629" font-size="15" fill="#243248">Separate sensor</text>
+<text x="826" y="650" font-size="15" fill="#243248">bus</text>
+<text x="826" y="671" font-size="15" fill="#243248">Two-way RF to</text>
+<text x="826" y="692" font-size="15" fill="#243248">locks</text>
+<rect x="823" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="829" y="740" font-size="13" fill="#243248">Bay 25</text>
+<rect x="903" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="909" y="740" font-size="13" fill="#243248">Bay 26</text>
+<rect x="823" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="829" y="793" font-size="13" fill="#243248">Bay 27</text>
+<rect x="903" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="909" y="793" font-size="13" fill="#243248">Bay 28</text>
+<rect x="823" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="829" y="846" font-size="13" fill="#243248">Bay 29</text>
+<rect x="903" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="909" y="846" font-size="13" fill="#243248">Bay 30</text>
+<polyline points="1093,510 1093,550" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="1005" y="550" width="177" height="330" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1020" y="580" font-size="19" fill="#2368c4" font-weight="700">BC-006</text>
+<text x="1020" y="608" font-size="15" fill="#243248">6 ceiling sensors</text>
+<text x="1020" y="629" font-size="15" fill="#243248">Separate sensor</text>
+<text x="1020" y="650" font-size="15" fill="#243248">bus</text>
+<text x="1020" y="671" font-size="15" fill="#243248">Two-way RF to</text>
+<text x="1020" y="692" font-size="15" fill="#243248">locks</text>
+<rect x="1017" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1023" y="740" font-size="13" fill="#243248">Bay 31</text>
+<rect x="1097" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1103" y="740" font-size="13" fill="#243248">Bay 32</text>
+<rect x="1017" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1023" y="793" font-size="13" fill="#243248">Bay 33</text>
+<rect x="1097" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1103" y="793" font-size="13" fill="#243248">Bay 34</text>
+<rect x="1017" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1023" y="846" font-size="13" fill="#243248">Bay 35</text>
+<rect x="1097" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1103" y="846" font-size="13" fill="#243248">Bay 36</text>
+<polyline points="1287,510 1287,550" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="1199" y="550" width="177" height="330" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1214" y="580" font-size="19" fill="#2368c4" font-weight="700">BC-007</text>
+<text x="1214" y="608" font-size="15" fill="#243248">6 ceiling sensors</text>
+<text x="1214" y="629" font-size="15" fill="#243248">Separate sensor</text>
+<text x="1214" y="650" font-size="15" fill="#243248">bus</text>
+<text x="1214" y="671" font-size="15" fill="#243248">Two-way RF to</text>
+<text x="1214" y="692" font-size="15" fill="#243248">locks</text>
+<rect x="1211" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1217" y="740" font-size="13" fill="#243248">Bay 37</text>
+<rect x="1291" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1297" y="740" font-size="13" fill="#243248">Bay 38</text>
+<rect x="1211" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1217" y="793" font-size="13" fill="#243248">Bay 39</text>
+<rect x="1291" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1297" y="793" font-size="13" fill="#243248">Bay 40</text>
+<rect x="1211" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1217" y="846" font-size="13" fill="#243248">Bay 41</text>
+<rect x="1291" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1297" y="846" font-size="13" fill="#243248">Bay 42</text>
+<polyline points="1481,510 1481,550" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="1393" y="550" width="177" height="330" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1408" y="580" font-size="19" fill="#2368c4" font-weight="700">BC-008</text>
+<text x="1408" y="608" font-size="15" fill="#243248">6 ceiling sensors</text>
+<text x="1408" y="629" font-size="15" fill="#243248">Separate sensor</text>
+<text x="1408" y="650" font-size="15" fill="#243248">bus</text>
+<text x="1408" y="671" font-size="15" fill="#243248">Two-way RF to</text>
+<text x="1408" y="692" font-size="15" fill="#243248">locks</text>
+<rect x="1405" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1411" y="740" font-size="13" fill="#243248">Bay 43</text>
+<rect x="1485" y="715" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1491" y="740" font-size="13" fill="#243248">Bay 44</text>
+<rect x="1405" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1411" y="793" font-size="13" fill="#243248">Bay 45</text>
+<rect x="1485" y="768" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1491" y="793" font-size="13" fill="#243248">Bay 46</text>
+<rect x="1405" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1411" y="846" font-size="13" fill="#243248">Bay 47</text>
+<rect x="1485" y="821" width="73" height="42" rx="5" fill="#e7f3f1" stroke="#138780"/>
+<text x="1491" y="846" font-size="13" fill="#243248">Bay 48</text>
+<line x1="45" y1="942" x2="1550" y2="942" stroke="#394453" stroke-width="3"/>
+<text x="48" y="969" font-size="14" fill="#243248">BENCH / MODULE REFERENCE - not a certified safety circuit or fabrication-ready PCB. See wiring schedule and design notes.</text>
+<text x="48" y="991" font-size="13" fill="#243248">GPIO maps: ESP32-WROOM-32E DevKitC. The team WT32-ETH01 requires its own pin-map review. Motor current and field safety remain unverified.</text></svg>

@@ -1,0 +1,7 @@
+export type Visit={id:string;name:string;plate:string;unit:string;kind:string;status:string;bayId:string|null;approved:number;version:number;created:string;config:Policy}
+export type Policy={version:number;requireHost:boolean;eligible:string[];arrivalMinutes:number;visitMinutes:number}
+export type Bay={id:string;category:string;position:string;occupancy:string;state:string;health:string;mode:string;distance:number|null;now:number;clearanceMs:number;holdRemainingMs:number;visit:Visit|null;isolated:boolean;identity:string}
+export type Event={id:number;time:string;title:string;detail:string;bayId:string|null}
+export type Incident={id:string;bayId:string;reason:string;status:string;created:string;outcome:string}
+export type WokwiState={instance?:string|null;entryPassed?:boolean;configuration?:{plate:string;bayId:string;journeyId?:string;actorName?:string;unit?:string;kind?:string};enabled:boolean;connected:boolean;phase:string;telemetry:null|{bay:string;entry:string;exit:string;occupancy:string;distance:number;health:string;emergency:number;clearanceMs:number;ms:number;seq:number;entryBeam:number;exitBeam:number;bays?:{id:string;bay:string;occupancy:string;health:string;distance:number;clearanceMs:number}[]};pending:number;error:string;identity:string;projectUrl:string|null}
+export type Snapshot={bays:Bay[];visits:Visit[];policy:Policy;events:Event[];incidents:Incident[];connected:boolean;simulatedMs:number;wokwi:WokwiState;stages:{app:string;devices:string;circuit:string;threeD:string}}

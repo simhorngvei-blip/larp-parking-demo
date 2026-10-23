@@ -1,0 +1,10 @@
+import {createRequire} from 'node:module';import {readFileSync,writeFileSync} from 'node:fs';import {fileURLToPath} from 'node:url';
+const {chromium}=createRequire(new URL('../tools/mcp-node/package.json',import.meta.url))('playwright'),browser=await chromium.connectOverCDP('http://127.0.0.1:9226'),page=await browser.contexts()[0].newPage();
+try{
+ await page.goto('https://wokwi.com/projects/new/esp32');await page.waitForFunction(()=>window.monaco?.editor.getModels().some(m=>m.uri.toString()==='vfs:sketch.ino'));
+ await page.getByRole('button',{name:'diagram.json',exact:true}).click();await page.waitForFunction(()=>window.monaco.editor.getModels().some(m=>m.uri.toString()==='vfs:diagram.json'));
+ const files=['sketch.ino','diagram.json'].map(name=>({name,content:readFileSync(new URL(name,import.meta.url),'utf8')}));await page.evaluate(files=>{for(const f of files)monaco.editor.getModels().find(m=>m.uri.toString()==='vfs:'+f.name).setValue(f.content)},files);
+ await page.locator('button[class*=tabs_dropdown]').click();const chooser=page.waitForEvent('filechooser');await page.getByText('Upload file(s)...',{exact:true}).click();await(await chooser).setFiles(['control.h','bollard.chip.c','bollard.chip.json'].map(n=>fileURLToPath(new URL(n,import.meta.url))));await page.getByRole('button',{name:'control.h',exact:true}).waitFor();
+ await page.getByRole('button',{name:'Save',exact:true}).click();const dialog=page.getByRole('dialog');await dialog.getByLabel('Project Name',{exact:true}).fill('LARP Single Bay Bollard - ESP32 Motor Limits and Safety Bench');await dialog.getByText('Public',{exact:true}).click();await dialog.getByRole('button',{name:'Save',exact:true}).click();await page.waitForURL(/wokwi.com\/projects\/\d+/,{timeout:30000});
+ const project={role:'bollard',url:page.url(),scope:'ISOLATED_SINGLE_BAY_BENCH',cpu:'ESP32',sharedApi:false,runsIn:'VIEWER_BROWSER'};writeFileSync(new URL('project.json',import.meta.url),JSON.stringify(project,null,2));writeFileSync(new URL('../parking-prototype/public/controller-labs/bollard/project.json',import.meta.url),JSON.stringify(project,null,2));console.log(project)
+}finally{await browser.close()}

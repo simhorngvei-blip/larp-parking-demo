@@ -1,0 +1,78 @@
+{
+  "transport": "IDEAL_PACKET_MEDIUM_NOT_NATIVE_ESP_NOW",
+  "hiddenConnections": "Only gateway AIR pins to node RX/TX; no master-to-bay GPIO",
+  "nodes": [
+    {
+      "bayId": "R-101",
+      "nodeId": 0,
+      "zone": "A",
+      "gateway": "gateway0",
+      "receiver": "receiverR101",
+      "slot": 0
+    },
+    {
+      "bayId": "R-102",
+      "nodeId": 1,
+      "zone": "A",
+      "gateway": "gateway0",
+      "receiver": "receiverR102",
+      "slot": 1
+    },
+    {
+      "bayId": "R-103",
+      "nodeId": 2,
+      "zone": "A",
+      "gateway": "gateway0",
+      "receiver": "receiverR103",
+      "slot": 2
+    },
+    {
+      "bayId": "R-104",
+      "nodeId": 3,
+      "zone": "A",
+      "gateway": "gateway0",
+      "receiver": "receiverR104",
+      "slot": 3
+    },
+    {
+      "bayId": "V-01",
+      "nodeId": 4,
+      "zone": "A",
+      "gateway": "gateway0",
+      "receiver": "receiverV01",
+      "slot": 4
+    },
+    {
+      "bayId": "V-02",
+      "nodeId": 5,
+      "zone": "B",
+      "gateway": "gateway1",
+      "receiver": "receiverV02",
+      "slot": 0
+    },
+    {
+      "bayId": "V-03",
+      "nodeId": 6,
+      "zone": "B",
+      "gateway": "gateway1",
+      "receiver": "receiverV03",
+      "slot": 1
+    },
+    {
+      "bayId": "V-04",
+      "nodeId": 7,
+      "zone": "B",
+      "gateway": "gateway1",
+      "receiver": "receiverV04",
+      "slot": 2
+    },
+    {
+      "bayId": "T-01",
+      "nodeId": 8,
+      "zone": "B",
+      "gateway": "gateway1",
+      "receiver": "receiverT01",
+      "slot": 3
+    }
+  ]
+}

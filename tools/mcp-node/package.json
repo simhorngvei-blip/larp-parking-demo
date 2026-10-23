@@ -1,0 +1,13 @@
+{
+  "name": "smart-parking-mcp-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@playwright/mcp": "0.0.83",
+    "@upstash/context7-mcp": "4.4.1",
+    "pnpm": "12.11.2",
+    "shadcn": "4.21.5"
+  }
+}

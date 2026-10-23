@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img">
+<title>Six-bay controller - separate upstream and sensor buses</title><defs>
+<marker id="power" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ce4554"/></marker>
+<marker id="ground" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#394453"/></marker>
+<marker id="bus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2368c4"/></marker>
+<marker id="logic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7b4ac6"/></marker>
+<marker id="rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#138780"/></marker>
+</defs><rect width="1600" height="1000" fill="#f5f7fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#243248}.title{font-size:33px;font-weight:700}.small{font-size:14px}.body{font-size:16px}.head{font-size:19px;font-weight:700}</style>
+<text x="48" y="45" font-size="14" fill="#54728b">LARP / TEAM CIRCUIT COMPLETION / 03</text>
+<text x="48" y="88" font-size="33" fill="#243248">Six-bay controller - separate upstream and sensor buses</text>
+<text x="48" y="119" font-size="16" fill="#243248">The controller aggregates six ceiling sensors and six addressed bollard nodes. Two independent RS-485 ports require two interfaces.</text>
+<rect x="45" y="165" width="360" height="215" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="195" font-size="19" fill="#2368c4" font-weight="700">U2 / upstream RS-485</text>
+<text x="60" y="223" font-size="15" fill="#243248">3.3 V THVD1410-class interface</text>
+<text x="60" y="244" font-size="15" fill="#243248">DI &lt;- TX17; RO -&gt; RX16</text>
+<text x="60" y="265" font-size="15" fill="#243248">DE + /RE &lt;- GPIO4; 10k to 0V</text>
+<text x="60" y="286" font-size="15" fill="#243248">A/B/reference -&gt; FC backbone</text>
+<text x="60" y="307" font-size="15" fill="#243248">Unique controller address 1..8</text>
+<rect x="640" y="165" width="330" height="320" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="655" y="195" font-size="19" fill="#2368c4" font-weight="700">ESP32-WROOM-32E</text>
+<text x="655" y="223" font-size="15" fill="#243248">VIN = regulated +5V</text>
+<text x="655" y="244" font-size="15" fill="#243248">GPIO4 defaults to RECEIVE</text>
+<text x="655" y="265" font-size="15" fill="#243248">GPIO27 defaults to RECEIVE</text>
+<text x="655" y="286" font-size="15" fill="#243248">Wi-Fi/RF: six enrolled lock peers</text>
+<text x="655" y="307" font-size="15" fill="#243248">Node IDs 1..6; authenticated frames</text>
+<text x="655" y="328" font-size="15" fill="#243248">No raw motor PWM over radio</text>
+<rect x="1170" y="165" width="375" height="240" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1185" y="195" font-size="19" fill="#2368c4" font-weight="700">U3 / ceiling sensor RS-485</text>
+<text x="1185" y="223" font-size="15" fill="#243248">Separate 3.3 V interface</text>
+<text x="1185" y="244" font-size="15" fill="#243248">DI &lt;- TX26; RO -&gt; RX25</text>
+<text x="1185" y="265" font-size="15" fill="#243248">DE + /RE &lt;- GPIO27; 10k to 0V</text>
+<text x="1185" y="286" font-size="15" fill="#243248">A/B/reference -&gt; six sensors</text>
+<text x="1185" y="307" font-size="15" fill="#243248">Sensors use their rated 12V supply</text>
+<text x="1185" y="328" font-size="15" fill="#243248">Backbone and sensor A/B not joined</text>
+<polyline points="405,240 640,240" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)" marker-start="url(#logic)"/>
+<text x="435" y="218" font-size="14" fill="#7b4ac6">UART2 + direction</text>
+<polyline points="970,240 1170,240" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)" marker-start="url(#logic)"/>
+<text x="984" y="218" font-size="14" fill="#7b4ac6">UART1 + direction</text>
+<rect x="45" y="425" width="420" height="150" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="455" font-size="19" fill="#2368c4" font-weight="700">Protected 12 V controller branch</text>
+<text x="60" y="483" font-size="15" fill="#243248">Fuse -&gt; DTJ1524S05 -&gt; regulated 5V</text>
+<text x="60" y="504" font-size="15" fill="#243248">TRIM open; output return -&gt; logic 0V</text>
+<text x="60" y="525" font-size="15" fill="#243248">Signal reference reviewed for installation</text>
+<polyline points="465,475 640,475" fill="none" stroke="#ce4554" stroke-width="2.5" marker-end="url(#power)"/>
+<text x="493" y="454" font-size="14" fill="#ce4554">5V + return</text>
+<rect x="1040" y="435" width="505" height="120" rx="10" fill="white" stroke="#138780" stroke-width="2"/>
+<text x="1055" y="465" font-size="19" fill="#138780" font-weight="700">Two-way radio to local bollard electronics</text>
+<text x="1055" y="493" font-size="15" fill="#243248">Commands + acknowledgments + end-position/fault feedback</text>
+<text x="1055" y="514" font-size="15" fill="#243248">Ceiling sensors are not wired through each parking lock</text>
+<polyline points="970,390 1040,390 1040,435" fill="none" stroke="#138780" stroke-width="2.5" marker-end="url(#rf)" marker-start="url(#rf)"/>
+<text x="994" y="374" font-size="14" fill="#138780">RF</text>
+<line x1="140" y1="630" x2="1440" y2="630" stroke="#2368c4" stroke-width="3"/>
+<text x="55" y="610" font-size="15" fill="#243248">Separate ceiling sensor trunk: A/B pair + rated supply and reference. Terminate only its two ends.</text>
+<polyline points="160,630 160,675" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="45" y="675" width="230" height="140" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="705" font-size="19" fill="#2368c4" font-weight="700">Ceiling sensor 1</text>
+<text x="60" y="733" font-size="15" fill="#243248">Address 1</text>
+<text x="60" y="754" font-size="15" fill="#243248">Occupied / clear /</text>
+<text x="60" y="775" font-size="15" fill="#243248">invalid</text>
+<text x="60" y="796" font-size="15" fill="#243248">12V / 0V / A / B</text>
+<polyline points="415,630 415,675" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="300" y="675" width="230" height="140" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="315" y="705" font-size="19" fill="#2368c4" font-weight="700">Ceiling sensor 2</text>
+<text x="315" y="733" font-size="15" fill="#243248">Address 2</text>
+<text x="315" y="754" font-size="15" fill="#243248">Occupied / clear /</text>
+<text x="315" y="775" font-size="15" fill="#243248">invalid</text>
+<text x="315" y="796" font-size="15" fill="#243248">12V / 0V / A / B</text>
+<polyline points="670,630 670,675" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="555" y="675" width="230" height="140" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="570" y="705" font-size="19" fill="#2368c4" font-weight="700">Ceiling sensor 3</text>
+<text x="570" y="733" font-size="15" fill="#243248">Address 3</text>
+<text x="570" y="754" font-size="15" fill="#243248">Occupied / clear /</text>
+<text x="570" y="775" font-size="15" fill="#243248">invalid</text>
+<text x="570" y="796" font-size="15" fill="#243248">12V / 0V / A / B</text>
+<polyline points="925,630 925,675" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="810" y="675" width="230" height="140" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="825" y="705" font-size="19" fill="#2368c4" font-weight="700">Ceiling sensor 4</text>
+<text x="825" y="733" font-size="15" fill="#243248">Address 4</text>
+<text x="825" y="754" font-size="15" fill="#243248">Occupied / clear /</text>
+<text x="825" y="775" font-size="15" fill="#243248">invalid</text>
+<text x="825" y="796" font-size="15" fill="#243248">12V / 0V / A / B</text>
+<polyline points="1180,630 1180,675" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="1065" y="675" width="230" height="140" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1080" y="705" font-size="19" fill="#2368c4" font-weight="700">Ceiling sensor 5</text>
+<text x="1080" y="733" font-size="15" fill="#243248">Address 5</text>
+<text x="1080" y="754" font-size="15" fill="#243248">Occupied / clear /</text>
+<text x="1080" y="775" font-size="15" fill="#243248">invalid</text>
+<text x="1080" y="796" font-size="15" fill="#243248">12V / 0V / A / B</text>
+<polyline points="1435,630 1435,675" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<rect x="1320" y="675" width="230" height="140" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1335" y="705" font-size="19" fill="#2368c4" font-weight="700">Ceiling sensor 6</text>
+<text x="1335" y="733" font-size="15" fill="#243248">Address 6</text>
+<text x="1335" y="754" font-size="15" fill="#243248">Occupied / clear /</text>
+<text x="1335" y="775" font-size="15" fill="#243248">invalid</text>
+<text x="1335" y="796" font-size="15" fill="#243248">12V / 0V / A / B</text>
+<polyline points="1350,405 1560,405 1560,630 1350,630" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<text x="48" y="865" font-size="15" fill="#243248">Short-wire HC-SR04 bench alternative uses the GPIO schedule on Sheet 04, not the industrial sensor bus. Choose one sensor interface mode.</text>
+<text x="48" y="899" font-size="15" fill="#243248">A missing sensor sample or radio heartbeat invalidates a raise permit. Local obstruction and movement limits remain at each bollard.</text>
+<line x1="45" y1="942" x2="1550" y2="942" stroke="#394453" stroke-width="3"/>
+<text x="48" y="969" font-size="14" fill="#243248">BENCH / MODULE REFERENCE - not a certified safety circuit or fabrication-ready PCB. See wiring schedule and design notes.</text>
+<text x="48" y="991" font-size="13" fill="#243248">GPIO maps: ESP32-WROOM-32E DevKitC. The team WT32-ETH01 requires its own pin-map review. Motor current and field safety remain unverified.</text></svg>

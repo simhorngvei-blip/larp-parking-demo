@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img">
+<title>Entrance / exit gate controller and LPR interface</title><defs>
+<marker id="power" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ce4554"/></marker>
+<marker id="ground" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#394453"/></marker>
+<marker id="bus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2368c4"/></marker>
+<marker id="logic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7b4ac6"/></marker>
+<marker id="rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#138780"/></marker>
+</defs><rect width="1600" height="1000" fill="#f5f7fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#243248}.title{font-size:33px;font-weight:700}.small{font-size:14px}.body{font-size:16px}.head{font-size:19px;font-weight:700}</style>
+<text x="48" y="45" font-size="14" fill="#54728b">LARP / TEAM CIRCUIT COMPLETION / 08</text>
+<text x="48" y="88" font-size="33" fill="#243248">Entrance / exit gate controller and LPR interface</text>
+<text x="48" y="119" font-size="16" fill="#243248">One reference controller per lane. Use the gate manufacturer&#x27;s local safety controller; do not power a barrier motor from ESP32 pins.</text>
+<rect x="45" y="160" width="420" height="165" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="190" font-size="19" fill="#2368c4" font-weight="700">LPR camera / simulated plate source</text>
+<text x="60" y="218" font-size="15" fill="#243248">PoE CAT6 -&gt; managed switch -&gt; central API</text>
+<text x="60" y="239" font-size="15" fill="#243248">Central resolves owner / approved visitor</text>
+<text x="60" y="260" font-size="15" fill="#243248">Demo: plate entry form, not camera OCR</text>
+<text x="60" y="281" font-size="15" fill="#243248">Real camera event API and credentials pending</text>
+<rect x="600" y="160" width="380" height="235" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="615" y="190" font-size="19" fill="#2368c4" font-weight="700">Lane ESP32 + Ethernet</text>
+<text x="615" y="218" font-size="15" fill="#243248">Same DevKit / W5500 reference as Sheet 02</text>
+<text x="615" y="239" font-size="15" fill="#243248">SPI18/23/19; CS27; RESET21; INT22</text>
+<text x="615" y="260" font-size="15" fill="#243248">OPEN request -&gt; GPIO25</text>
+<text x="615" y="281" font-size="15" fill="#243248">CLOSE request -&gt; GPIO26</text>
+<text x="615" y="302" font-size="15" fill="#243248">Commands require short expiry + replay</text>
+<text x="615" y="323" font-size="15" fill="#243248">checks</text>
+<text x="615" y="344" font-size="15" fill="#243248">Watchdog must not replay motion on boot</text>
+<polyline points="465,230 600,230" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<text x="475" y="212" font-size="14" fill="#2368c4">Central network</text>
+<rect x="1135" y="160" width="410" height="245" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1150" y="190" font-size="19" fill="#2368c4" font-weight="700">Two normally-open dry contacts</text>
+<text x="1150" y="218" font-size="15" fill="#243248">GPIO25/26 -&gt; 3.3V-compatible relay drivers</text>
+<text x="1150" y="239" font-size="15" fill="#243248">Active-HIGH drivers; inputs 10k to 0V</text>
+<text x="1150" y="260" font-size="15" fill="#243248">Driver supply and flyback per module</text>
+<text x="1150" y="281" font-size="15" fill="#243248">NO1 -&gt; vendor OPEN input; COM1 -&gt; input COM</text>
+<text x="1150" y="302" font-size="15" fill="#243248">NO2 -&gt; vendor CLOSE input; COM2 -&gt; input COM</text>
+<text x="1150" y="323" font-size="15" fill="#243248">Contacts rated for vendor control circuit</text>
+<text x="1150" y="344" font-size="15" fill="#243248">No mains or motor power on relay contact plan</text>
+<polyline points="980,250 1135,250" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)"/>
+<text x="996" y="232" font-size="14" fill="#7b4ac6">Logic only</text>
+<rect x="1135" y="525" width="410" height="225" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1150" y="555" font-size="19" fill="#2368c4" font-weight="700">Vendor barrier safety controller</text>
+<text x="1150" y="583" font-size="15" fill="#243248">OPEN / CLOSE pulses per vendor manual</text>
+<text x="1150" y="604" font-size="15" fill="#243248">Controls motor, brakes and travel limits</text>
+<text x="1150" y="625" font-size="15" fill="#243248">Safety beam / vehicle loops wired locally</text>
+<text x="1150" y="646" font-size="15" fill="#243248">Hardwired STOP per vendor safety design</text>
+<text x="1150" y="667" font-size="15" fill="#243248">Controller decides movement / hold-open</text>
+<text x="1150" y="688" font-size="15" fill="#243248">No automatic close from stale central data</text>
+<polyline points="1340,405 1340,525" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)"/>
+<text x="1360" y="470" font-size="14" fill="#7b4ac6">Isolated contact requests</text>
+<rect x="45" y="440" width="420" height="310" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="470" font-size="19" fill="#2368c4" font-weight="700">Isolated / conditioned status inputs</text>
+<text x="60" y="498" font-size="15" fill="#243248">UP limit -&gt; GPIO32; DOWN limit -&gt; GPIO33</text>
+<text x="60" y="519" font-size="15" fill="#243248">Beam healthy / clear -&gt; GPIO34</text>
+<text x="60" y="540" font-size="15" fill="#243248">Vehicle loop clear -&gt; GPIO35</text>
+<text x="60" y="561" font-size="15" fill="#243248">Local stop healthy -&gt; GPIO36</text>
+<text x="60" y="582" font-size="15" fill="#243248">External 10k pull-ups at 3V3 where applicable</text>
+<text x="60" y="603" font-size="15" fill="#243248">24V vendor outputs need isolated interfaces</text>
+<text x="60" y="624" font-size="15" fill="#243248">Input-only pins have no internal pull-ups</text>
+<text x="60" y="645" font-size="15" fill="#243248">Broken or stale status blocks unsafe requests</text>
+<polyline points="465,530 540,530 540,350 600,350" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)"/>
+<text x="475" y="510" font-size="14" fill="#7b4ac6">Observed feedback</text>
+<polyline points="1135,700 1040,700 1040,725 480,725 465,725" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)"/>
+<text x="650" y="710" font-size="14" fill="#7b4ac6">Vendor status -&gt; conditioned inputs -&gt; GPIO</text>
+<rect x="600" y="760" width="945" height="125" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="615" y="790" font-size="19" fill="#2368c4" font-weight="700">Lane-specific interlocks and acceptance</text>
+<text x="615" y="818" font-size="15" fill="#243248">Ceiling bay occupancy is NOT a gate safety beam. Validate lane sensors, passage, limits and stop independently.</text>
+<text x="615" y="839" font-size="15" fill="#243248">Duplicate IDs, power loss, reboot, occupied beam and expired requests must not produce unexpected closure.</text>
+<text x="615" y="860" font-size="15" fill="#243248">Existing Wokwi entry/exit servos visualize motion; they do not validate this real gate relay interface.</text>
+<text x="48" y="910" font-size="15" fill="#243248">Gate power and emergency release follow the vendor installation manual. Confirm dry-contact voltage, pulse timing and status availability before wiring.</text>
+<line x1="45" y1="942" x2="1550" y2="942" stroke="#394453" stroke-width="3"/>
+<text x="48" y="969" font-size="14" fill="#243248">BENCH / MODULE REFERENCE - not a certified safety circuit or fabrication-ready PCB. See wiring schedule and design notes.</text>
+<text x="48" y="991" font-size="13" fill="#243248">GPIO maps: ESP32-WROOM-32E DevKitC. The team WT32-ETH01 requires its own pin-map review. Motor current and field safety remain unverified.</text></svg>

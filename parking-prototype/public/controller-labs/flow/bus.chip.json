@@ -1,0 +1,1 @@
+{"name":"Eight addressed peers - ideal UART bus MODEL","author":"LARP","pins":["RX","TX","DE","VCC","GND"],"controls":[{"id":"offlineAddress","label":"Drop address (0 = none)","type":"range","min":0,"max":8,"step":1}]}

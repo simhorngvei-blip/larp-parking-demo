@@ -1,0 +1,26 @@
+{
+  "name": "ESP32 bay receiver/controller BEHAVIOURAL MODEL",
+  "author": "BayPilot",
+  "pins": [
+    "RX",
+    "TX",
+    "STEP",
+    "DIR",
+    "DOWN",
+    "UP",
+    "TRIG",
+    "ECHO",
+    "VCC",
+    "GND"
+  ],
+  "controls": [
+    {
+      "id": "offline",
+      "label": "Radio offline",
+      "type": "range",
+      "min": 0,
+      "max": 1,
+      "step": 1
+    }
+  ]
+}

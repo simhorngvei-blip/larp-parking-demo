@@ -1,0 +1,11 @@
+# Apply after compose.yaml; use a fresh API + circuit session when switching.
+services:
+  bridge:
+    environment:
+      WOKWI_PROJECT_URL: https://wokwi.com/projects/478492669342702593
+  wireless-tests:
+    profiles: [test]
+    build: {context: ., target: wireless-tests}
+  esp32-tests:
+    profiles: [test]
+    build: {context: ., target: esp32-tests}

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img">
+<title>Ceiling sensing - installation interface and bench alternative</title><defs>
+<marker id="power" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ce4554"/></marker>
+<marker id="ground" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#394453"/></marker>
+<marker id="bus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2368c4"/></marker>
+<marker id="logic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7b4ac6"/></marker>
+<marker id="rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#138780"/></marker>
+</defs><rect width="1600" height="1000" fill="#f5f7fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#243248}.title{font-size:33px;font-weight:700}.small{font-size:14px}.body{font-size:16px}.head{font-size:19px;font-weight:700}</style>
+<text x="48" y="45" font-size="14" fill="#54728b">LARP / TEAM CIRCUIT COMPLETION / 04</text>
+<text x="48" y="88" font-size="33" fill="#243248">Ceiling sensing - installation interface and bench alternative</text>
+<text x="48" y="119" font-size="16" fill="#243248">Occupancy is independent from lock position. Commission ceiling-height baselines; do not copy the floor-mounted demo distance thresholds.</text>
+<rect x="45" y="165" width="700" height="725" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="195" font-size="19" fill="#2368c4" font-weight="700">A / installation reference: addressed RS-485 sensors</text>
+<text x="60" y="223" font-size="15" fill="#243248">Select sensor model rated for the chosen supply, ceiling height and environment.</text>
+<text x="60" y="244" font-size="15" fill="#243248">Four-wire connectors: +VS, 0V/reference, A, B.</text>
+<text x="60" y="265" font-size="15" fill="#243248">Use a bus trunk with short drops; reserve terminations for its ends.</text>
+<line x1="115" y1="315" x2="115" y2="835" stroke="#2368c4" stroke-width="3"/>
+<text x="82" y="297" font-size="14" fill="#243248">A/B</text>
+<polyline points="115,350 185,350" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<rect x="185" y="330" width="520" height="62" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="200" y="360" font-size="19" fill="#2368c4" font-weight="700">Sensor 1 / address 1</text>
+<text x="405" y="368" font-size="14" fill="#243248">+VS / 0V / A / B</text>
+<polyline points="115,430 185,430" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<rect x="185" y="410" width="520" height="62" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="200" y="440" font-size="19" fill="#2368c4" font-weight="700">Sensor 2 / address 2</text>
+<text x="405" y="448" font-size="14" fill="#243248">+VS / 0V / A / B</text>
+<polyline points="115,510 185,510" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<rect x="185" y="490" width="520" height="62" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="200" y="520" font-size="19" fill="#2368c4" font-weight="700">Sensor 3 / address 3</text>
+<text x="405" y="528" font-size="14" fill="#243248">+VS / 0V / A / B</text>
+<polyline points="115,590 185,590" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<rect x="185" y="570" width="520" height="62" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="200" y="600" font-size="19" fill="#2368c4" font-weight="700">Sensor 4 / address 4</text>
+<text x="405" y="608" font-size="14" fill="#243248">+VS / 0V / A / B</text>
+<polyline points="115,670 185,670" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<rect x="185" y="650" width="520" height="62" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="200" y="680" font-size="19" fill="#2368c4" font-weight="700">Sensor 5 / address 5</text>
+<text x="405" y="688" font-size="14" fill="#243248">+VS / 0V / A / B</text>
+<polyline points="115,750 185,750" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<rect x="185" y="730" width="520" height="62" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="200" y="760" font-size="19" fill="#2368c4" font-weight="700">Sensor 6 / address 6</text>
+<text x="405" y="768" font-size="14" fill="#243248">+VS / 0V / A / B</text>
+<rect x="800" y="165" width="750" height="725" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="815" y="195" font-size="19" fill="#2368c4" font-weight="700">B / bench only: six HC-SR04 units</text>
+<text x="815" y="223" font-size="15" fill="#243248">Short local wires only; not a parking-row cable specification.</text>
+<text x="815" y="244" font-size="15" fill="#243248">VCC=5V; every GND returns to controller logic 0V.</text>
+<text x="815" y="265" font-size="15" fill="#243248">Each trigger uses a 74AHCT125 gate at 5V (2 ICs for 6 gates).</text>
+<text x="815" y="286" font-size="15" fill="#243248">Each 5V echo uses its own 10k/15k divider before ESP32 input.</text>
+<rect x="825" y="335" width="690" height="39" fill="#e5edf6" stroke="#d5dfe9"/>
+<text x="835" y="357" font-size="14" fill="#243248" font-weight="700">Sensor</text>
+<text x="975" y="357" font-size="14" fill="#243248" font-weight="700">Trigger GPIO (buffered)</text>
+<text x="1220" y="357" font-size="14" fill="#243248" font-weight="700">Echo GPIO (divided)</text>
+<rect x="825" y="374" width="690" height="39" fill="white" stroke="#d5dfe9"/>
+<text x="835" y="396" font-size="14" fill="#243248">1</text>
+<text x="975" y="396" font-size="14" fill="#243248">13</text>
+<text x="1220" y="396" font-size="14" fill="#243248">32</text>
+<rect x="825" y="413" width="690" height="39" fill="white" stroke="#d5dfe9"/>
+<text x="835" y="435" font-size="14" fill="#243248">2</text>
+<text x="975" y="435" font-size="14" fill="#243248">14</text>
+<text x="1220" y="435" font-size="14" fill="#243248">33</text>
+<rect x="825" y="452" width="690" height="39" fill="white" stroke="#d5dfe9"/>
+<text x="835" y="474" font-size="14" fill="#243248">3</text>
+<text x="975" y="474" font-size="14" fill="#243248">18</text>
+<text x="1220" y="474" font-size="14" fill="#243248">34</text>
+<rect x="825" y="491" width="690" height="39" fill="white" stroke="#d5dfe9"/>
+<text x="835" y="513" font-size="14" fill="#243248">4</text>
+<text x="975" y="513" font-size="14" fill="#243248">19</text>
+<text x="1220" y="513" font-size="14" fill="#243248">35</text>
+<rect x="825" y="530" width="690" height="39" fill="white" stroke="#d5dfe9"/>
+<text x="835" y="552" font-size="14" fill="#243248">5</text>
+<text x="975" y="552" font-size="14" fill="#243248">21</text>
+<text x="1220" y="552" font-size="14" fill="#243248">36</text>
+<rect x="825" y="569" width="690" height="39" fill="white" stroke="#d5dfe9"/>
+<text x="835" y="591" font-size="14" fill="#243248">6</text>
+<text x="975" y="591" font-size="14" fill="#243248">22</text>
+<text x="1220" y="591" font-size="14" fill="#243248">39</text>
+<text x="830" y="655" font-size="16" fill="#243248" font-weight="700">Echo network, repeated once per sensor:</text>
+<polyline points="840,715 980,715" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)"/>
+<text x="835" y="697" font-size="14" fill="#7b4ac6">HC ECHO 5V</text>
+<rect x="980" y="685" width="150" height="62" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="995" y="715" font-size="19" fill="#2368c4" font-weight="700">10k series</text>
+<polyline points="1130,715 1455,715" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)"/>
+<text x="1170" y="695" font-size="14" fill="#7b4ac6">ESP32 ECHO input (~3.0V)</text>
+<line x1="1180" y1="715" x2="1180" y2="760" stroke="#394453" stroke-width="3"/>
+<rect x="1100" y="760" width="165" height="60" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1115" y="790" font-size="19" fill="#2368c4" font-weight="700">15k to 0V</text>
+<text x="1290" y="799" font-size="14" fill="#243248">10k + 15k = 0.6 ratio</text>
+<text x="830" y="857" font-size="14" fill="#243248">Trigger sensors sequentially to limit acoustic cross-talk; timeout and stale readings mean UNKNOWN.</text>
+<line x1="45" y1="942" x2="1550" y2="942" stroke="#394453" stroke-width="3"/>
+<text x="48" y="969" font-size="14" fill="#243248">BENCH / MODULE REFERENCE - not a certified safety circuit or fabrication-ready PCB. See wiring schedule and design notes.</text>
+<text x="48" y="991" font-size="13" fill="#243248">GPIO maps: ESP32-WROOM-32E DevKitC. The team WT32-ETH01 requires its own pin-map review. Motor current and field safety remain unverified.</text></svg>

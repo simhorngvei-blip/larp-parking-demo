@@ -1,0 +1,549 @@
+{
+  "version": 1,
+  "author": "LARP",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-text",
+      "id": "title",
+      "left": 0,
+      "top": -145,
+      "attrs": {
+        "text": "LARP | SINGLE PARKING BAY / BOLLARD NODE | REAL ESP32 CPU"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "scope",
+      "left": 0,
+      "top": -105,
+      "attrs": {
+        "text": "INDEPENDENT BENCH. Buttons emulate authorised requests. No parking API or real RF connection."
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "actuatorScope",
+      "left": 0,
+      "top": -65,
+      "attrs": {
+        "text": "A4988 + stepper = actuator surrogate. Animated mechanical plant supplies independent limit feedback."
+      }
+    },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp32",
+      "left": 0,
+      "top": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driver",
+      "left": 340,
+      "top": 40,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motor",
+      "left": 535,
+      "top": 225,
+      "attrs": {
+        "size": "17",
+        "display": "steps",
+        "arrow": "orange"
+      }
+    },
+    {
+      "type": "chip-bollard",
+      "id": "bollard",
+      "left": 675,
+      "top": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "supply",
+      "left": 305,
+      "top": 195,
+      "attrs": {
+        "text": "VMOT: external protected motor rail (not electrically simulated)."
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "plantHelp",
+      "left": 670,
+      "top": 245,
+      "attrs": {
+        "text": "Click plant: Jam=1 for timeout. Service position only works while disabled."
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "lower",
+      "left": 0,
+      "top": 330,
+      "attrs": {
+        "color": "green",
+        "label": "LOWER",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "raise",
+      "left": 145,
+      "top": 330,
+      "attrs": {
+        "color": "blue",
+        "label": "RAISE",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "reset",
+      "left": 290,
+      "top": 330,
+      "attrs": {
+        "color": "yellow",
+        "label": "RESET after inspection",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "estop",
+      "left": 465,
+      "top": 330,
+      "attrs": {
+        "color": "red",
+        "label": "HOLD E-STOP",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "occupancy",
+      "left": 0,
+      "top": 450,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "occupancyLabel",
+      "left": -20,
+      "top": 495,
+      "attrs": {
+        "text": "BC occupancy: left CLEAR / right OCCUPIED"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "obstruction",
+      "left": 275,
+      "top": 450,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "obstructionLabel",
+      "left": 255,
+      "top": 495,
+      "attrs": {
+        "text": "Safety loop: left CLEAR / right BLOCKED"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "power",
+      "left": 550,
+      "top": 450,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerLabel",
+      "left": 530,
+      "top": 495,
+      "attrs": {
+        "text": "Power-status fixture: left OK / right FAIL"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "link",
+      "left": 825,
+      "top": 450,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "linkLabel",
+      "left": 805,
+      "top": 495,
+      "attrs": {
+        "text": "RF-link fixture: left ONLINE / right OFFLINE"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "up",
+      "left": 20,
+      "top": 230,
+      "attrs": {
+        "color": "green",
+        "label": "UP limit confirmed"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "upR",
+      "left": 20,
+      "top": 285,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "down",
+      "left": 195,
+      "top": 230,
+      "attrs": {
+        "color": "blue",
+        "label": "DOWN limit confirmed"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "downR",
+      "left": 195,
+      "top": 285,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "fault",
+      "left": 370,
+      "top": 230,
+      "attrs": {
+        "color": "red",
+        "label": "FAULT / inspect"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "faultR",
+      "left": 370,
+      "top": 285,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "architecture",
+      "left": 0,
+      "top": 565,
+      "attrs": {
+        "text": "Production ceiling sensor stays wired to the bay controller. This node receives only an occupancy-status fixture."
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "help",
+      "left": 0,
+      "top": 605,
+      "attrs": {
+        "text": "Serial commands: LOWER / RAISE / RESET. Raising requires 2 seconds CLEAR. No movement from counters alone."
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp32:TX",
+      "$serialMonitor:RX",
+      "purple",
+      []
+    ],
+    [
+      "$serialMonitor:TX",
+      "esp32:RX",
+      "purple",
+      []
+    ],
+    [
+      "esp32:18",
+      "driver:STEP",
+      "orange",
+      []
+    ],
+    [
+      "esp32:18",
+      "bollard:STEP",
+      "orange",
+      []
+    ],
+    [
+      "esp32:19",
+      "driver:DIR",
+      "blue",
+      []
+    ],
+    [
+      "esp32:19",
+      "bollard:DIR",
+      "blue",
+      []
+    ],
+    [
+      "esp32:23",
+      "bollard:REQUEST_ENABLE",
+      "yellow",
+      []
+    ],
+    [
+      "bollard:DRIVER_ENABLE",
+      "driver:ENABLE",
+      "yellow",
+      []
+    ],
+    [
+      "esp32:3V3",
+      "driver:VDD",
+      "red",
+      []
+    ],
+    [
+      "esp32:3V3",
+      "driver:RESET",
+      "red",
+      []
+    ],
+    [
+      "esp32:3V3",
+      "driver:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "esp32:GND.1",
+      "driver:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp32:GND.1",
+      "driver:GND.2",
+      "black",
+      []
+    ],
+    [
+      "esp32:GND.1",
+      "bollard:GND",
+      "black",
+      []
+    ],
+    [
+      "driver:1B",
+      "motor:B-",
+      "green",
+      []
+    ],
+    [
+      "driver:1A",
+      "motor:B+",
+      "green",
+      []
+    ],
+    [
+      "driver:2A",
+      "motor:A+",
+      "blue",
+      []
+    ],
+    [
+      "driver:2B",
+      "motor:A-",
+      "blue",
+      []
+    ],
+    [
+      "bollard:UP",
+      "esp32:32",
+      "green",
+      []
+    ],
+    [
+      "bollard:DOWN",
+      "esp32:33",
+      "green",
+      []
+    ],
+    [
+      "lower:1.l",
+      "esp32:13",
+      "green",
+      []
+    ],
+    [
+      "lower:2.l",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "raise:1.l",
+      "esp32:14",
+      "green",
+      []
+    ],
+    [
+      "raise:2.l",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "reset:1.l",
+      "esp32:21",
+      "green",
+      []
+    ],
+    [
+      "reset:2.l",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "estop:1.l",
+      "esp32:25",
+      "green",
+      []
+    ],
+    [
+      "estop:2.l",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "occupancy:2",
+      "esp32:26",
+      "green",
+      []
+    ],
+    [
+      "occupancy:1",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "obstruction:2",
+      "esp32:27",
+      "green",
+      []
+    ],
+    [
+      "obstruction:1",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "power:2",
+      "esp32:4",
+      "green",
+      []
+    ],
+    [
+      "power:1",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "link:2",
+      "esp32:16",
+      "green",
+      []
+    ],
+    [
+      "link:1",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "occupancy:2",
+      "bollard:OCCUPIED",
+      "green",
+      []
+    ],
+    [
+      "esp32:2",
+      "upR:1",
+      "green",
+      []
+    ],
+    [
+      "upR:2",
+      "up:A",
+      "green",
+      []
+    ],
+    [
+      "up:C",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp32:17",
+      "downR:1",
+      "green",
+      []
+    ],
+    [
+      "downR:2",
+      "down:A",
+      "green",
+      []
+    ],
+    [
+      "down:C",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp32:22",
+      "faultR:1",
+      "green",
+      []
+    ],
+    [
+      "faultR:2",
+      "fault:A",
+      "green",
+      []
+    ],
+    [
+      "fault:C",
+      "esp32:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  }
+}

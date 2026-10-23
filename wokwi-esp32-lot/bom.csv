@@ -1,0 +1,13 @@
+item,one_five_bay_zone,current_nine_bay_demo,notes
+Building master controller,1,1,ESP32-WROOM DevKitC v4; actual compiled ESP32 CPU
+Five-peer gateway transceiver model,1,2,Custom-chip packet switch; second gateway serves four nodes
+Local receiver-controller model,5,9,One independent custom-chip controller per bay; ESP32 target; behavioural model in combined Wokwi scene
+Motor driver,5,9,A4988 digital model; real current and protection design unverified
+Barrier motor and mechanism,5,9,Stepper plus custom plant; physical assembly not selected
+Presence sensor,5,9,HC-SR04 digital model; physical site sensing requires validation
+Bay end-position feedback channels,10,18,Two per bay; modeled by mechanical plant
+Local protected power assembly,5,9,Logical model only; battery versus local supply undecided
+Entrance boom model,1,1,Separate lane mechanism shared by the building
+Exit boom model,1,1,Separate lane mechanism shared by the building
+Lane presence inputs,2,2,Slide-switch beam models
+Emergency input,1,1,Model only; offline radio nodes cannot be assumed to receive emergency requests

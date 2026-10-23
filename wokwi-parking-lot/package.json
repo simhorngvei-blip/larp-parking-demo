@@ -1,0 +1,1 @@
+{"name":"larp-full-parking-lot","private":true,"type":"module","scripts":{"compile":"node compile.mjs","pretest":"npm run compile","test":"node --test tests/*.test.mjs","test:live":"node tests/live.mjs","bridge":"node bridge.mjs"},"dependencies":{"avr8js":"0.21.1"}}

@@ -1,0 +1,1905 @@
+{
+  "version": 1,
+  "author": "LARP",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-mega",
+      "id": "mega",
+      "left": 0,
+      "top": -350,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "entryGate",
+      "left": 440,
+      "top": -290,
+      "attrs": {
+        "hornColor": "#3fbd97"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "exitGate",
+      "left": 850,
+      "top": -290,
+      "attrs": {
+        "hornColor": "#e3a352"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "emergency",
+      "left": 300,
+      "top": -140,
+      "attrs": {
+        "value": "0",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "entryBeam",
+      "left": 460,
+      "top": -140,
+      "attrs": {
+        "value": "1",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "exitBeam",
+      "left": 870,
+      "top": -140,
+      "attrs": {
+        "value": "1",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "title",
+      "left": 0,
+      "top": -460,
+      "attrs": {
+        "text": "LARP | FULL PARKING LOT | 9 INDEPENDENT PARKING BARRIERS"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "entryLabel",
+      "left": 440,
+      "top": -340,
+      "attrs": {
+        "text": "ENTRANCE BOOM"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "exitLabel",
+      "left": 850,
+      "top": -340,
+      "attrs": {
+        "text": "EXIT BOOM"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "emergencyLabel",
+      "left": 260,
+      "top": -195,
+      "attrs": {
+        "text": "NC EMERGENCY"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "labelR101",
+      "left": 0,
+      "top": -35,
+      "attrs": {
+        "text": "R-101 | RESIDENT"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantR101",
+      "left": 0,
+      "top": 0,
+      "attrs": {
+        "jam": "0",
+        "initial": "100"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorR101",
+      "left": 230,
+      "top": 20,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverR101",
+      "left": 240,
+      "top": 175,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorR101",
+      "left": 10,
+      "top": 300,
+      "attrs": {
+        "distance": "30"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "labelR102",
+      "left": 420,
+      "top": -35,
+      "attrs": {
+        "text": "R-102 | RESIDENT"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantR102",
+      "left": 420,
+      "top": 0,
+      "attrs": {
+        "jam": "0",
+        "initial": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "bayMotor",
+      "left": 650,
+      "top": 20,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverR102",
+      "left": 660,
+      "top": 175,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "baySensor",
+      "left": 430,
+      "top": 300,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "labelR103",
+      "left": 840,
+      "top": -35,
+      "attrs": {
+        "text": "R-103 | RESIDENT"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantR103",
+      "left": 840,
+      "top": 0,
+      "attrs": {
+        "jam": "0",
+        "initial": "100"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorR103",
+      "left": 1070,
+      "top": 20,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverR103",
+      "left": 1080,
+      "top": 175,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorR103",
+      "left": 850,
+      "top": 300,
+      "attrs": {
+        "distance": "30"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "labelR104",
+      "left": 0,
+      "top": 395,
+      "attrs": {
+        "text": "R-104 | RESIDENT"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantR104",
+      "left": 0,
+      "top": 430,
+      "attrs": {
+        "jam": "0",
+        "initial": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorR104",
+      "left": 230,
+      "top": 450,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverR104",
+      "left": 240,
+      "top": 605,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorR104",
+      "left": 10,
+      "top": 730,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "labelV01",
+      "left": 420,
+      "top": 395,
+      "attrs": {
+        "text": "V-01 | VISITOR"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantV01",
+      "left": 420,
+      "top": 430,
+      "attrs": {
+        "jam": "0",
+        "initial": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorV01",
+      "left": 650,
+      "top": 450,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverV01",
+      "left": 660,
+      "top": 605,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorV01",
+      "left": 430,
+      "top": 730,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "labelV02",
+      "left": 840,
+      "top": 395,
+      "attrs": {
+        "text": "V-02 | VISITOR"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantV02",
+      "left": 840,
+      "top": 430,
+      "attrs": {
+        "jam": "0",
+        "initial": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorV02",
+      "left": 1070,
+      "top": 450,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverV02",
+      "left": 1080,
+      "top": 605,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorV02",
+      "left": 850,
+      "top": 730,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "labelV03",
+      "left": 0,
+      "top": 825,
+      "attrs": {
+        "text": "V-03 | VISITOR"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantV03",
+      "left": 0,
+      "top": 860,
+      "attrs": {
+        "jam": "0",
+        "initial": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorV03",
+      "left": 230,
+      "top": 880,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverV03",
+      "left": 240,
+      "top": 1035,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorV03",
+      "left": 10,
+      "top": 1160,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "labelV04",
+      "left": 420,
+      "top": 825,
+      "attrs": {
+        "text": "V-04 | VISITOR"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantV04",
+      "left": 420,
+      "top": 860,
+      "attrs": {
+        "jam": "0",
+        "initial": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorV04",
+      "left": 650,
+      "top": 880,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverV04",
+      "left": 660,
+      "top": 1035,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorV04",
+      "left": 430,
+      "top": 1160,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "labelT01",
+      "left": 840,
+      "top": 825,
+      "attrs": {
+        "text": "T-01 | TEMPORARY"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantT01",
+      "left": 840,
+      "top": 860,
+      "attrs": {
+        "jam": "0",
+        "initial": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorT01",
+      "left": 1070,
+      "top": 880,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverT01",
+      "left": 1080,
+      "top": 1035,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorT01",
+      "left": 850,
+      "top": 1160,
+      "attrs": {
+        "distance": "250"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "mega:2",
+      "emergency:2",
+      "green",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "emergency:1",
+      "black",
+      []
+    ],
+    [
+      "mega:3",
+      "entryBeam:2",
+      "green",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "entryBeam:1",
+      "black",
+      []
+    ],
+    [
+      "mega:4",
+      "exitBeam:2",
+      "green",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "exitBeam:1",
+      "black",
+      []
+    ],
+    [
+      "mega:14",
+      "driverR101:STEP",
+      "green",
+      []
+    ],
+    [
+      "mega:15",
+      "driverR101:DIR",
+      "green",
+      []
+    ],
+    [
+      "mega:16",
+      "plantR101:DOWN",
+      "green",
+      []
+    ],
+    [
+      "mega:17",
+      "plantR101:UP",
+      "green",
+      []
+    ],
+    [
+      "mega:18",
+      "sensorR101:TRIG",
+      "green",
+      []
+    ],
+    [
+      "mega:19",
+      "sensorR101:ECHO",
+      "green",
+      []
+    ],
+    [
+      "mega:14",
+      "plantR101:STEP",
+      "orange",
+      []
+    ],
+    [
+      "mega:15",
+      "plantR101:DIR",
+      "orange",
+      []
+    ],
+    [
+      "sensorR101:ECHO",
+      "plantR101:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantR101:ENABLE",
+      "driverR101:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverR101:1B",
+      "motorR101:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverR101:1A",
+      "motorR101:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverR101:2A",
+      "motorR101:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverR101:2B",
+      "motorR101:A-",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR101:VDD",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR101:RESET",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR101:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "sensorR101:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR101:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR101:MS1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR101:MS2",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR101:MS3",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "sensorR101:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "plantR101:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:20",
+      "driverR102:STEP",
+      "green",
+      []
+    ],
+    [
+      "mega:21",
+      "driverR102:DIR",
+      "green",
+      []
+    ],
+    [
+      "mega:22",
+      "plantR102:DOWN",
+      "green",
+      []
+    ],
+    [
+      "mega:23",
+      "plantR102:UP",
+      "green",
+      []
+    ],
+    [
+      "mega:24",
+      "baySensor:TRIG",
+      "green",
+      []
+    ],
+    [
+      "mega:25",
+      "baySensor:ECHO",
+      "green",
+      []
+    ],
+    [
+      "mega:20",
+      "plantR102:STEP",
+      "orange",
+      []
+    ],
+    [
+      "mega:21",
+      "plantR102:DIR",
+      "orange",
+      []
+    ],
+    [
+      "baySensor:ECHO",
+      "plantR102:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantR102:ENABLE",
+      "driverR102:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverR102:1B",
+      "bayMotor:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverR102:1A",
+      "bayMotor:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverR102:2A",
+      "bayMotor:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverR102:2B",
+      "bayMotor:A-",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR102:VDD",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR102:RESET",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR102:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "baySensor:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR102:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR102:MS1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR102:MS2",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR102:MS3",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "baySensor:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "plantR102:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:26",
+      "driverR103:STEP",
+      "green",
+      []
+    ],
+    [
+      "mega:27",
+      "driverR103:DIR",
+      "green",
+      []
+    ],
+    [
+      "mega:28",
+      "plantR103:DOWN",
+      "green",
+      []
+    ],
+    [
+      "mega:29",
+      "plantR103:UP",
+      "green",
+      []
+    ],
+    [
+      "mega:30",
+      "sensorR103:TRIG",
+      "green",
+      []
+    ],
+    [
+      "mega:31",
+      "sensorR103:ECHO",
+      "green",
+      []
+    ],
+    [
+      "mega:26",
+      "plantR103:STEP",
+      "orange",
+      []
+    ],
+    [
+      "mega:27",
+      "plantR103:DIR",
+      "orange",
+      []
+    ],
+    [
+      "sensorR103:ECHO",
+      "plantR103:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantR103:ENABLE",
+      "driverR103:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverR103:1B",
+      "motorR103:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverR103:1A",
+      "motorR103:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverR103:2A",
+      "motorR103:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverR103:2B",
+      "motorR103:A-",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR103:VDD",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR103:RESET",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR103:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "sensorR103:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR103:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR103:MS1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR103:MS2",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR103:MS3",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "sensorR103:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "plantR103:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:32",
+      "driverR104:STEP",
+      "green",
+      []
+    ],
+    [
+      "mega:33",
+      "driverR104:DIR",
+      "green",
+      []
+    ],
+    [
+      "mega:34",
+      "plantR104:DOWN",
+      "green",
+      []
+    ],
+    [
+      "mega:35",
+      "plantR104:UP",
+      "green",
+      []
+    ],
+    [
+      "mega:36",
+      "sensorR104:TRIG",
+      "green",
+      []
+    ],
+    [
+      "mega:37",
+      "sensorR104:ECHO",
+      "green",
+      []
+    ],
+    [
+      "mega:32",
+      "plantR104:STEP",
+      "orange",
+      []
+    ],
+    [
+      "mega:33",
+      "plantR104:DIR",
+      "orange",
+      []
+    ],
+    [
+      "sensorR104:ECHO",
+      "plantR104:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantR104:ENABLE",
+      "driverR104:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverR104:1B",
+      "motorR104:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverR104:1A",
+      "motorR104:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverR104:2A",
+      "motorR104:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverR104:2B",
+      "motorR104:A-",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR104:VDD",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR104:RESET",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverR104:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "sensorR104:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR104:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR104:MS1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR104:MS2",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverR104:MS3",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "sensorR104:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "plantR104:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:38",
+      "driverV01:STEP",
+      "green",
+      []
+    ],
+    [
+      "mega:39",
+      "driverV01:DIR",
+      "green",
+      []
+    ],
+    [
+      "mega:40",
+      "plantV01:DOWN",
+      "green",
+      []
+    ],
+    [
+      "mega:41",
+      "plantV01:UP",
+      "green",
+      []
+    ],
+    [
+      "mega:42",
+      "sensorV01:TRIG",
+      "green",
+      []
+    ],
+    [
+      "mega:43",
+      "sensorV01:ECHO",
+      "green",
+      []
+    ],
+    [
+      "mega:38",
+      "plantV01:STEP",
+      "orange",
+      []
+    ],
+    [
+      "mega:39",
+      "plantV01:DIR",
+      "orange",
+      []
+    ],
+    [
+      "sensorV01:ECHO",
+      "plantV01:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantV01:ENABLE",
+      "driverV01:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverV01:1B",
+      "motorV01:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverV01:1A",
+      "motorV01:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverV01:2A",
+      "motorV01:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverV01:2B",
+      "motorV01:A-",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV01:VDD",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV01:RESET",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV01:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "sensorV01:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV01:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV01:MS1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV01:MS2",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV01:MS3",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "sensorV01:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "plantV01:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:44",
+      "driverV02:STEP",
+      "green",
+      []
+    ],
+    [
+      "mega:45",
+      "driverV02:DIR",
+      "green",
+      []
+    ],
+    [
+      "mega:46",
+      "plantV02:DOWN",
+      "green",
+      []
+    ],
+    [
+      "mega:47",
+      "plantV02:UP",
+      "green",
+      []
+    ],
+    [
+      "mega:48",
+      "sensorV02:TRIG",
+      "green",
+      []
+    ],
+    [
+      "mega:49",
+      "sensorV02:ECHO",
+      "green",
+      []
+    ],
+    [
+      "mega:44",
+      "plantV02:STEP",
+      "orange",
+      []
+    ],
+    [
+      "mega:45",
+      "plantV02:DIR",
+      "orange",
+      []
+    ],
+    [
+      "sensorV02:ECHO",
+      "plantV02:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantV02:ENABLE",
+      "driverV02:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverV02:1B",
+      "motorV02:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverV02:1A",
+      "motorV02:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverV02:2A",
+      "motorV02:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverV02:2B",
+      "motorV02:A-",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV02:VDD",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV02:RESET",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV02:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "sensorV02:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV02:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV02:MS1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV02:MS2",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV02:MS3",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "sensorV02:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "plantV02:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:50",
+      "driverV03:STEP",
+      "green",
+      []
+    ],
+    [
+      "mega:51",
+      "driverV03:DIR",
+      "green",
+      []
+    ],
+    [
+      "mega:52",
+      "plantV03:DOWN",
+      "green",
+      []
+    ],
+    [
+      "mega:53",
+      "plantV03:UP",
+      "green",
+      []
+    ],
+    [
+      "mega:A0",
+      "sensorV03:TRIG",
+      "green",
+      []
+    ],
+    [
+      "mega:A1",
+      "sensorV03:ECHO",
+      "green",
+      []
+    ],
+    [
+      "mega:50",
+      "plantV03:STEP",
+      "orange",
+      []
+    ],
+    [
+      "mega:51",
+      "plantV03:DIR",
+      "orange",
+      []
+    ],
+    [
+      "sensorV03:ECHO",
+      "plantV03:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantV03:ENABLE",
+      "driverV03:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverV03:1B",
+      "motorV03:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverV03:1A",
+      "motorV03:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverV03:2A",
+      "motorV03:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverV03:2B",
+      "motorV03:A-",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV03:VDD",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV03:RESET",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV03:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "sensorV03:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV03:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV03:MS1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV03:MS2",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV03:MS3",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "sensorV03:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "plantV03:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:A2",
+      "driverV04:STEP",
+      "green",
+      []
+    ],
+    [
+      "mega:A3",
+      "driverV04:DIR",
+      "green",
+      []
+    ],
+    [
+      "mega:A4",
+      "plantV04:DOWN",
+      "green",
+      []
+    ],
+    [
+      "mega:A5",
+      "plantV04:UP",
+      "green",
+      []
+    ],
+    [
+      "mega:A6",
+      "sensorV04:TRIG",
+      "green",
+      []
+    ],
+    [
+      "mega:A7",
+      "sensorV04:ECHO",
+      "green",
+      []
+    ],
+    [
+      "mega:A2",
+      "plantV04:STEP",
+      "orange",
+      []
+    ],
+    [
+      "mega:A3",
+      "plantV04:DIR",
+      "orange",
+      []
+    ],
+    [
+      "sensorV04:ECHO",
+      "plantV04:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantV04:ENABLE",
+      "driverV04:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverV04:1B",
+      "motorV04:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverV04:1A",
+      "motorV04:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverV04:2A",
+      "motorV04:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverV04:2B",
+      "motorV04:A-",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV04:VDD",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV04:RESET",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverV04:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "sensorV04:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV04:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV04:MS1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV04:MS2",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverV04:MS3",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "sensorV04:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "plantV04:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:A8",
+      "driverT01:STEP",
+      "green",
+      []
+    ],
+    [
+      "mega:A9",
+      "driverT01:DIR",
+      "green",
+      []
+    ],
+    [
+      "mega:A10",
+      "plantT01:DOWN",
+      "green",
+      []
+    ],
+    [
+      "mega:A11",
+      "plantT01:UP",
+      "green",
+      []
+    ],
+    [
+      "mega:A12",
+      "sensorT01:TRIG",
+      "green",
+      []
+    ],
+    [
+      "mega:A13",
+      "sensorT01:ECHO",
+      "green",
+      []
+    ],
+    [
+      "mega:A8",
+      "plantT01:STEP",
+      "orange",
+      []
+    ],
+    [
+      "mega:A9",
+      "plantT01:DIR",
+      "orange",
+      []
+    ],
+    [
+      "sensorT01:ECHO",
+      "plantT01:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantT01:ENABLE",
+      "driverT01:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverT01:1B",
+      "motorT01:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverT01:1A",
+      "motorT01:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverT01:2A",
+      "motorT01:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverT01:2B",
+      "motorT01:A-",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverT01:VDD",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverT01:RESET",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "driverT01:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "mega:5V",
+      "sensorT01:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverT01:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverT01:MS1",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverT01:MS2",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "driverT01:MS3",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "sensorT01:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "plantT01:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:11",
+      "entryGate:PWM",
+      "green",
+      []
+    ],
+    [
+      "mega:5V",
+      "entryGate:V+",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "entryGate:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:11",
+      "plantR102:ENTRY_PWM",
+      "orange",
+      []
+    ],
+    [
+      "mega:5",
+      "plantR102:ENTRY_OPEN",
+      "green",
+      []
+    ],
+    [
+      "mega:6",
+      "plantR102:ENTRY_CLOSED",
+      "green",
+      []
+    ],
+    [
+      "mega:12",
+      "exitGate:PWM",
+      "green",
+      []
+    ],
+    [
+      "mega:5V",
+      "exitGate:V+",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "exitGate:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:12",
+      "plantR102:EXIT_PWM",
+      "orange",
+      []
+    ],
+    [
+      "mega:7",
+      "plantR102:EXIT_OPEN",
+      "green",
+      []
+    ],
+    [
+      "mega:8",
+      "plantR102:EXIT_CLOSED",
+      "green",
+      []
+    ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  },
+  "dependencies": {}
+}

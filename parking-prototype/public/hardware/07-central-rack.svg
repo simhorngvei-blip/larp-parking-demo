@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img">
+<title>Central rack, network and power boundaries</title><defs>
+<marker id="power" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ce4554"/></marker>
+<marker id="ground" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#394453"/></marker>
+<marker id="bus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2368c4"/></marker>
+<marker id="logic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7b4ac6"/></marker>
+<marker id="rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#138780"/></marker>
+</defs><rect width="1600" height="1000" fill="#f5f7fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#243248}.title{font-size:33px;font-weight:700}.small{font-size:14px}.body{font-size:16px}.head{font-size:19px;font-weight:700}</style>
+<text x="48" y="45" font-size="14" fill="#54728b">LARP / TEAM CIRCUIT COMPLETION / 07</text>
+<text x="48" y="88" font-size="33" fill="#243248">Central rack, network and power boundaries</text>
+<text x="48" y="119" font-size="16" fill="#243248">Your 8U layout can fit the following allocation only after enclosure depth, equipment height, airflow and mounting are checked. The team BOM lists a 9U cabinet.</text>
+<rect x="50" y="165" width="820" height="72" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="65" y="195" font-size="19" fill="#2368c4" font-weight="700">U8 / Exhaust / ventilation panel</text>
+<rect x="50" y="242" width="820" height="72" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="65" y="272" font-size="19" fill="#2368c4" font-weight="700">U7 / CAT6 patch panel</text>
+<rect x="50" y="319" width="820" height="72" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="65" y="349" font-size="19" fill="#2368c4" font-weight="700">U6 / Managed PoE switch - PoE-capable SKU required</text>
+<rect x="50" y="396" width="820" height="72" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="65" y="426" font-size="19" fill="#2368c4" font-weight="700">U5 / Router / firewall - restricted control network</text>
+<rect x="50" y="473" width="820" height="149" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="65" y="503" font-size="19" fill="#2368c4" font-weight="700">U4-U3 / Vented 2U shelf: mini PC / central application / database</text>
+<rect x="50" y="627" width="820" height="72" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="65" y="657" font-size="19" fill="#2368c4" font-weight="700">U2 / 230V-compatible rack UPS for network / server load</text>
+<rect x="50" y="704" width="820" height="72" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="65" y="734" font-size="19" fill="#2368c4" font-weight="700">U1 / PDU / socket distribution - matching site voltage</text>
+<rect x="965" y="165" width="580" height="190" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="980" y="195" font-size="19" fill="#2368c4" font-weight="700">Data path</text>
+<text x="980" y="223" font-size="15" fill="#243248">LPR cameras + gate controllers -&gt; managed switch</text>
+<text x="980" y="244" font-size="15" fill="#243248">Mini PC serves API, apps and SQLite over Ethernet</text>
+<text x="980" y="265" font-size="15" fill="#243248">PoE/data -&gt; compliant splitter -&gt; flow controller</text>
+<text x="980" y="286" font-size="15" fill="#243248">Flow controller -&gt; RS-485 -&gt; eight bay controllers</text>
+<text x="980" y="307" font-size="15" fill="#243248">Bay controllers -&gt; ceiling sensors and RF lock nodes</text>
+<rect x="965" y="395" width="580" height="210" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="980" y="425" font-size="19" fill="#2368c4" font-weight="700">Database / demo boundary</text>
+<text x="980" y="453" font-size="15" fill="#243248">public.sqlite: identities, entitlements, controller registry</text>
+<text x="980" y="474" font-size="15" fill="#243248">Core circuit session: runtime memory; reconnect after restart</text>
+<text x="980" y="495" font-size="15" fill="#243248">scaled.sqlite: separate capacity-model demo</text>
+<text x="980" y="516" font-size="15" fill="#243248">Docker named volume retains files across normal restart</text>
+<text x="980" y="537" font-size="15" fill="#243248">SQLite is sufficient for this single-host demo</text>
+<text x="980" y="558" font-size="15" fill="#243248">Hardware access goes through the API, not direct DB writes</text>
+<rect x="965" y="645" width="580" height="205" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="980" y="675" font-size="19" fill="#2368c4" font-weight="700">Power corrections / pending checks</text>
+<text x="980" y="703" font-size="15" fill="#243248">WS-C2960S-24TS-S in BOM does not provide PoE</text>
+<text x="980" y="724" font-size="15" fill="#243248">SMART500RT1U in BOM is a 120V UPS</text>
+<text x="980" y="745" font-size="15" fill="#243248">Do not connect a 120V unit to a 230V supply</text>
+<text x="980" y="766" font-size="15" fill="#243248">Parking motors require separately sized protected power</text>
+<text x="980" y="787" font-size="15" fill="#243248">Rack UPS runtime does not establish motor backup runtime</text>
+<text x="980" y="808" font-size="15" fill="#243248">Mains protection / bonding are installation design work</text>
+<text x="50" y="855" font-size="16" fill="#243248">8U allocation: 1 + 1 + 1 + 1 + 2 + 1 + 1 = 8U; no spare space. A 9U cabinet provides one additional rack unit.</text>
+<text x="50" y="900" font-size="16" fill="#243248">Central application: /central | User: /app | Security: /security | Connected circuit: /circuit/ | Native 3D: /?view=three</text>
+<line x1="45" y1="942" x2="1550" y2="942" stroke="#394453" stroke-width="3"/>
+<text x="48" y="969" font-size="14" fill="#243248">BENCH / MODULE REFERENCE - not a certified safety circuit or fabrication-ready PCB. See wiring schedule and design notes.</text>
+<text x="48" y="991" font-size="13" fill="#243248">GPIO maps: ESP32-WROOM-32E DevKitC. The team WT32-ETH01 requires its own pin-map review. Motor current and field safety remain unverified.</text></svg>

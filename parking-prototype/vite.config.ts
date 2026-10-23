@@ -1,0 +1,5 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+import {fileURLToPath} from 'node:url'
+export default defineConfig({resolve:{alias:{'@':fileURLToPath(new URL('./src',import.meta.url))}},build:{rolldownOptions:{input:{main:'index.html',developer:'developer.html',website:'website/index.html'}}},plugins:[react(),tailwindcss(),{name:'hardware-directory-index',configureServer(server){server.middlewares.use((req,res,next)=>{if(req.url==='/hardware/'||req.url==='/hardware'){res.writeHead(302,{Location:'/hardware/index.html'});res.end();return}next()})}}],server:{proxy:{'/circuit.jpg':{target:process.env.CIRCUIT_RUNTIME_URL||'http://127.0.0.1:4177'},'/circuit/':{target:process.env.CIRCUIT_RUNTIME_URL||'http://127.0.0.1:4177',rewrite:path=>path.replace(/^\/circuit/,'')},'/controller-runtime':{target:process.env.CONTROLLER_RUNTIME_URL||'http://127.0.0.1:4178',rewrite:path=>path.replace(/^\/controller-runtime/,'')},'/api':process.env.PARKING_API_URL||'http://127.0.0.1:4176'}}})

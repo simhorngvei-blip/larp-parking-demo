@@ -1,0 +1,30 @@
+{
+  "name": "Five-bay radio gateway + ideal medium MODEL",
+  "author": "BayPilot",
+  "pins": [
+    "RX",
+    "TX",
+    "VCC",
+    "GND",
+    "AIR_RX0",
+    "AIR_TX0",
+    "AIR_RX1",
+    "AIR_TX1",
+    "AIR_RX2",
+    "AIR_TX2",
+    "AIR_RX3",
+    "AIR_TX3",
+    "AIR_RX4",
+    "AIR_TX4"
+  ],
+  "controls": [
+    {
+      "id": "offline",
+      "label": "Zone radio offline",
+      "type": "range",
+      "min": 0,
+      "max": 1,
+      "step": 1
+    }
+  ]
+}

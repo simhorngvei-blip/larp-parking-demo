@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img">
+<title>Flow controller - power, Ethernet and RS-485</title><defs>
+<marker id="power" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ce4554"/></marker>
+<marker id="ground" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#394453"/></marker>
+<marker id="bus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2368c4"/></marker>
+<marker id="logic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7b4ac6"/></marker>
+<marker id="rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#138780"/></marker>
+</defs><rect width="1600" height="1000" fill="#f5f7fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#243248}.title{font-size:33px;font-weight:700}.small{font-size:14px}.body{font-size:16px}.head{font-size:19px;font-weight:700}</style>
+<text x="48" y="45" font-size="14" fill="#54728b">LARP / TEAM CIRCUIT COMPLETION / 02</text>
+<text x="48" y="88" font-size="33" fill="#243248">Flow controller - power, Ethernet and RS-485</text>
+<text x="48" y="119" font-size="16" fill="#243248">Pin-complete reference uses an ESP32 DevKitC plus WIZ850io/W5500 module; this is an explicit alternative to the BOM WT32-ETH01.</text>
+<rect x="45" y="160" width="300" height="140" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="190" font-size="19" fill="#2368c4" font-weight="700">PoE splitter / protected PD</text>
+<text x="60" y="218" font-size="15" fill="#243248">IEEE 802.3-compatible selected</text>
+<text x="60" y="239" font-size="15" fill="#243248">unit</text>
+<text x="60" y="260" font-size="15" fill="#243248">RJ45 DATA -&gt; Ethernet module</text>
+<text x="60" y="281" font-size="15" fill="#243248">12 VDC output -&gt; converter</text>
+<rect x="435" y="160" width="310" height="165" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="450" y="190" font-size="19" fill="#2368c4" font-weight="700">WIZ850io / W5500</text>
+<text x="450" y="218" font-size="15" fill="#243248">3.3 V supply (separate regulator)</text>
+<text x="450" y="239" font-size="15" fill="#243248">SPI interface at 3.3 V logic</text>
+<text x="450" y="260" font-size="15" fill="#243248">Magnetics + RJ45 module</text>
+<rect x="825" y="160" width="295" height="290" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="840" y="190" font-size="19" fill="#2368c4" font-weight="700">ESP32-WROOM-32E</text>
+<text x="840" y="218" font-size="15" fill="#243248">VIN = regulated +5 V</text>
+<text x="840" y="239" font-size="15" fill="#243248">Local 3V3 regulator on dev board</text>
+<text x="840" y="260" font-size="15" fill="#243248">UART0 kept for programming</text>
+<text x="840" y="281" font-size="15" fill="#243248">SPI pins and UART below</text>
+<text x="840" y="302" font-size="15" fill="#243248">USB/external-power isolation</text>
+<text x="840" y="323" font-size="15" fill="#243248">needed</text>
+<rect x="1190" y="160" width="350" height="245" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1205" y="190" font-size="19" fill="#2368c4" font-weight="700">U2 / 3.3 V RS-485</text>
+<text x="1205" y="218" font-size="15" fill="#243248">THVD1410-class interface</text>
+<text x="1205" y="239" font-size="15" fill="#243248">DI &lt;- TX17; RO -&gt; RX16</text>
+<text x="1205" y="260" font-size="15" fill="#243248">DE + /RE &lt;- GPIO4</text>
+<text x="1205" y="281" font-size="15" fill="#243248">10k pull-down on DE+/RE</text>
+<text x="1205" y="302" font-size="15" fill="#243248">VCC=3V3; GND=logic 0V</text>
+<text x="1205" y="323" font-size="15" fill="#243248">A/B/ref -&gt; backbone connector</text>
+<polyline points="345,215 435,215" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)"/>
+<polyline points="745,230 825,230" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)" marker-start="url(#logic)"/>
+<text x="758" y="214" font-size="14" fill="#7b4ac6">SPI</text>
+<polyline points="1120,235 1190,235" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)" marker-start="url(#logic)"/>
+<rect x="45" y="370" width="315" height="180" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="400" font-size="19" fill="#2368c4" font-weight="700">DTJ1524S05 / 12 V -&gt; 5 V</text>
+<text x="60" y="428" font-size="15" fill="#243248">1 CTRL open (enabled)</text>
+<text x="60" y="449" font-size="15" fill="#243248">2 -VIN = input 0V; 3 +VIN = 12V</text>
+<text x="60" y="470" font-size="15" fill="#243248">4 -VOUT = output return</text>
+<text x="60" y="491" font-size="15" fill="#243248">5 TRIM open; 6 +VOUT = +5V</text>
+<polyline points="190,300 190,370" fill="none" stroke="#ce4554" stroke-width="2.5" marker-end="url(#power)"/>
+<text x="205" y="340" font-size="14" fill="#ce4554">Fused +12V / 0V</text>
+<rect x="435" y="390" width="310" height="145" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="450" y="420" font-size="19" fill="#2368c4" font-weight="700">3.3 V peripheral regulator</text>
+<text x="450" y="448" font-size="15" fill="#243248">From regulated 5 V</text>
+<text x="450" y="469" font-size="15" fill="#243248">Powers W5500 peripheral domain</text>
+<text x="450" y="490" font-size="15" fill="#243248">Do not parallel regulator outputs</text>
+<polyline points="360,435 435,435" fill="none" stroke="#ce4554" stroke-width="2.5" marker-end="url(#power)"/>
+<polyline points="360,525 385,525 385,560 780,560 780,420 825,420" fill="none" stroke="#ce4554" stroke-width="2.5" marker-end="url(#power)"/>
+<text x="590" y="549" font-size="14" fill="#ce4554">5 V to dev-board VIN</text>
+<polyline points="590,390 590,325" fill="none" stroke="#ce4554" stroke-width="2.5" marker-end="url(#power)"/>
+<text x="605" y="360" font-size="14" fill="#ce4554">3V3</text>
+<polyline points="1120,380 1190,380" fill="none" stroke="#ce4554" stroke-width="2.5" marker-end="url(#power)"/>
+<text x="1124" y="362" font-size="14" fill="#ce4554">3V3</text>
+<polyline points="1505,405 1505,510" fill="none" stroke="#2368c4" stroke-width="2.5" marker-end="url(#bus)" marker-start="url(#bus)"/>
+<text x="1300" y="487" font-size="14" fill="#2368c4">A / B / reference</text>
+<text x="48" y="588" font-size="15" fill="#243248">Converter output return is logic 0V. On an isolated installation, define the reference/isolation scheme explicitly; do not assume PE = signal GND.</text>
+<rect x="48" y="615" width="1030" height="34" fill="#e5edf6" stroke="#d5dfe9"/>
+<text x="58" y="637" font-size="14" fill="#243248" font-weight="700">Function</text>
+<text x="278" y="637" font-size="14" fill="#243248" font-weight="700">ESP32 GPIO</text>
+<text x="528" y="637" font-size="14" fill="#243248" font-weight="700">Module / destination</text>
+<rect x="48" y="649" width="1030" height="34" fill="white" stroke="#d5dfe9"/>
+<text x="58" y="671" font-size="14" fill="#243248">Ethernet SCLK</text>
+<text x="278" y="671" font-size="14" fill="#243248">18</text>
+<text x="528" y="671" font-size="14" fill="#243248">W5500 SCLK</text>
+<rect x="48" y="683" width="1030" height="34" fill="white" stroke="#d5dfe9"/>
+<text x="58" y="705" font-size="14" fill="#243248">Ethernet MOSI / MISO</text>
+<text x="278" y="705" font-size="14" fill="#243248">23 / 19</text>
+<text x="528" y="705" font-size="14" fill="#243248">W5500 MOSI / MISO</text>
+<rect x="48" y="717" width="1030" height="34" fill="white" stroke="#d5dfe9"/>
+<text x="58" y="739" font-size="14" fill="#243248">Ethernet CS / RESET</text>
+<text x="278" y="739" font-size="14" fill="#243248">27 / 21</text>
+<text x="528" y="739" font-size="14" fill="#243248">W5500 /SCS / /RESET (module reset per datasheet)</text>
+<rect x="48" y="751" width="1030" height="34" fill="white" stroke="#d5dfe9"/>
+<text x="58" y="773" font-size="14" fill="#243248">Ethernet interrupt (optional)</text>
+<text x="278" y="773" font-size="14" fill="#243248">22</text>
+<text x="528" y="773" font-size="14" fill="#243248">W5500 /INT</text>
+<rect x="48" y="785" width="1030" height="34" fill="white" stroke="#d5dfe9"/>
+<text x="58" y="807" font-size="14" fill="#243248">RS-485 UART TX</text>
+<text x="278" y="807" font-size="14" fill="#243248">17</text>
+<text x="528" y="807" font-size="14" fill="#243248">U2 DI</text>
+<rect x="48" y="819" width="1030" height="34" fill="white" stroke="#d5dfe9"/>
+<text x="58" y="841" font-size="14" fill="#243248">RS-485 UART RX</text>
+<text x="278" y="841" font-size="14" fill="#243248">16</text>
+<text x="528" y="841" font-size="14" fill="#243248">U2 RO</text>
+<rect x="48" y="853" width="1030" height="34" fill="white" stroke="#d5dfe9"/>
+<text x="58" y="875" font-size="14" fill="#243248">RS-485 direction</text>
+<text x="278" y="875" font-size="14" fill="#243248">4</text>
+<text x="528" y="875" font-size="14" fill="#243248">U2 DE tied to /RE; 10k to 0V</text>
+<rect x="48" y="887" width="1030" height="34" fill="white" stroke="#d5dfe9"/>
+<text x="58" y="909" font-size="14" fill="#243248">Bus reference / supply</text>
+<text x="278" y="909" font-size="14" fill="#243248">0V / 3V3</text>
+<text x="528" y="909" font-size="14" fill="#243248">U2 GND / VCC; no 5 V into ESP32 GPIO</text>
+<line x1="45" y1="942" x2="1550" y2="942" stroke="#394453" stroke-width="3"/>
+<text x="48" y="969" font-size="14" fill="#243248">BENCH / MODULE REFERENCE - not a certified safety circuit or fabrication-ready PCB. See wiring schedule and design notes.</text>
+<text x="48" y="991" font-size="13" fill="#243248">GPIO maps: ESP32-WROOM-32E DevKitC. The team WT32-ETH01 requires its own pin-map review. Motor current and field safety remain unverified.</text></svg>

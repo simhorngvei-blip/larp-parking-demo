@@ -1,0 +1,24 @@
+{
+  "board": "ESP32-WROOM DevKitC v4",
+  "fqbn": "esp32:esp32:esp32",
+  "logicVoltage": 3.3,
+  "emergency": 4,
+  "entryBeam": 32,
+  "exitBeam": 33,
+  "entryServo": 18,
+  "exitServo": 19,
+  "entryOpen": 21,
+  "entryClosed": 22,
+  "exitOpen": 23,
+  "exitClosed": 27,
+  "zoneA": {
+    "rx": 25,
+    "tx": 26
+  },
+  "zoneB": {
+    "rx": 16,
+    "tx": 17
+  },
+  "statusLed": 13,
+  "servoSupply": "5 V logical simulator supply; separate protected supply needed physically"
+}

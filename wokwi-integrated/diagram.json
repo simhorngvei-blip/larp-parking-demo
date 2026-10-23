@@ -1,0 +1,483 @@
+{
+  "version": 1,
+  "author": "LARP",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 130,
+      "left": 100,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "entryGate",
+      "top": -160,
+      "left": -260,
+      "attrs": {
+        "hornColor": "#3fbd97"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "exitGate",
+      "top": -160,
+      "left": 610,
+      "attrs": {
+        "hornColor": "#e3a352"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "bayMotor",
+      "top": 360,
+      "left": 650,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driver",
+      "top": 170,
+      "left": 650,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "baySensor",
+      "top": 430,
+      "left": 120,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plant",
+      "top": 110,
+      "left": -350,
+      "attrs": {
+        "jam": "0"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "entryBeam",
+      "top": -25,
+      "left": -240,
+      "attrs": {
+        "value": "1",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "exitBeam",
+      "top": -25,
+      "left": 630,
+      "attrs": {
+        "value": "1",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "emergency",
+      "top": 390,
+      "left": -270,
+      "attrs": {
+        "value": "",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "arrive",
+      "top": 490,
+      "left": -250,
+      "attrs": {
+        "color": "green",
+        "label": "ARRIVE"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "exitRequest",
+      "top": 490,
+      "left": -100,
+      "attrs": {
+        "color": "orange",
+        "label": "EXIT"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "title",
+      "top": -260,
+      "left": -250,
+      "attrs": {
+        "text": "LARP | ENTRANCE -> PARK -> DEPARTURE -> EXIT"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "entryLabel",
+      "top": -220,
+      "left": -260,
+      "attrs": {
+        "text": "ENTRANCE BARRIER"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "exitLabel",
+      "top": -220,
+      "left": 610,
+      "attrs": {
+        "text": "EXIT BARRIER"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "entryBeamLabel",
+      "top": -70,
+      "left": -260,
+      "attrs": {
+        "text": "ENTRY BEAM | LEFT = car"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "exitBeamLabel",
+      "top": -70,
+      "left": 610,
+      "attrs": {
+        "text": "EXIT BEAM | LEFT = car"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "bayLabel",
+      "top": 325,
+      "left": 590,
+      "attrs": {
+        "text": "R-102 | REVERSIBLE BAY ACTUATOR"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "sensorLabel",
+      "top": 400,
+      "left": 100,
+      "attrs": {
+        "text": "BAY PRESENCE | 30 cm parked / 250 cm clear"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "emergencyLabel",
+      "top": 350,
+      "left": -290,
+      "attrs": {
+        "text": "EMERGENCY | RIGHT = trip"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "modelLabel",
+      "top": 30,
+      "left": -390,
+      "attrs": {
+        "text": "AUTOMATIC MOVEMENT FEEDBACK\nIdeal simulation; not real mechanics"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "guide",
+      "top": 640,
+      "left": -250,
+      "attrs": {
+        "text": "Use the LARP app Live journey screen, or serial:\na1 ARRIVE 600000   /   x1 EXIT   /   r1 RESET\nThe bay raises automatically 10 seconds after a parked car leaves."
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:2",
+      "emergency:2",
+      "green",
+      []
+    ],
+    [
+      "uno:3",
+      "plant:DOWN",
+      "green",
+      []
+    ],
+    [
+      "uno:4",
+      "plant:UP",
+      "green",
+      []
+    ],
+    [
+      "uno:5",
+      "driver:STEP",
+      "green",
+      []
+    ],
+    [
+      "uno:6",
+      "driver:DIR",
+      "green",
+      []
+    ],
+    [
+      "uno:7",
+      "baySensor:TRIG",
+      "green",
+      []
+    ],
+    [
+      "uno:8",
+      "baySensor:ECHO",
+      "green",
+      []
+    ],
+    [
+      "uno:9",
+      "entryGate:PWM",
+      "green",
+      []
+    ],
+    [
+      "uno:10",
+      "exitGate:PWM",
+      "green",
+      []
+    ],
+    [
+      "uno:11",
+      "entryBeam:2",
+      "green",
+      []
+    ],
+    [
+      "uno:12",
+      "exitBeam:2",
+      "green",
+      []
+    ],
+    [
+      "uno:A0",
+      "plant:ENTRY_OPEN",
+      "green",
+      []
+    ],
+    [
+      "uno:A1",
+      "plant:ENTRY_CLOSED",
+      "green",
+      []
+    ],
+    [
+      "uno:A2",
+      "plant:EXIT_OPEN",
+      "green",
+      []
+    ],
+    [
+      "uno:A3",
+      "plant:EXIT_CLOSED",
+      "green",
+      []
+    ],
+    [
+      "uno:A4",
+      "arrive:1.l",
+      "green",
+      []
+    ],
+    [
+      "uno:A5",
+      "exitRequest:1.l",
+      "green",
+      []
+    ],
+    [
+      "uno:5",
+      "plant:STEP",
+      "orange",
+      []
+    ],
+    [
+      "uno:6",
+      "plant:DIR",
+      "orange",
+      []
+    ],
+    [
+      "uno:9",
+      "plant:ENTRY_PWM",
+      "orange",
+      []
+    ],
+    [
+      "uno:10",
+      "plant:EXIT_PWM",
+      "orange",
+      []
+    ],
+    [
+      "plant:ENABLE",
+      "driver:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driver:1B",
+      "bayMotor:B-",
+      "orange",
+      []
+    ],
+    [
+      "driver:1A",
+      "bayMotor:B+",
+      "orange",
+      []
+    ],
+    [
+      "driver:2A",
+      "bayMotor:A+",
+      "orange",
+      []
+    ],
+    [
+      "driver:2B",
+      "bayMotor:A-",
+      "orange",
+      []
+    ],
+    [
+      "uno:5V",
+      "entryGate:V+",
+      "red",
+      []
+    ],
+    [
+      "uno:5V",
+      "exitGate:V+",
+      "red",
+      []
+    ],
+    [
+      "uno:5V",
+      "baySensor:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:5V",
+      "driver:VDD",
+      "red",
+      []
+    ],
+    [
+      "uno:5V",
+      "driver:RESET",
+      "red",
+      []
+    ],
+    [
+      "uno:5V",
+      "driver:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "entryGate:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "exitGate:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "baySensor:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "plant:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "driver:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "driver:MS1",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "driver:MS2",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "driver:MS3",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "entryBeam:1",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "exitBeam:1",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "emergency:1",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "arrive:2.l",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "exitRequest:2.l",
+      "black",
+      []
+    ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  },
+  "dependencies": {}
+}

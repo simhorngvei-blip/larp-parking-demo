@@ -1,0 +1,1836 @@
+{
+  "prepared": "2026-10-23",
+  "scope": "Minimal local LARP demonstrator; no personal contacts or cloud deployment secrets",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 548,
+      "sha256": "0c6cdecc0988054af8366b74c7fb2731af37b6589f04f25885554e125f24bbe4"
+    },
+    {
+      "path": ".env.example",
+      "bytes": 280,
+      "sha256": "bffba7ab2f8effec7a46fa254cd10470d129ef823a0509223915e9e2d4b9ed1e"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 441,
+      "sha256": "7c0aa758fc240ea20babd241e2b4517baa11632d2e6589b6aa90c695b9ffd123"
+    },
+    {
+      "path": "compose.wireless.yaml",
+      "bytes": 365,
+      "sha256": "ca9a11a51b5dce504e3e3488505b9e96096abfc13c99d3f775af8f85c1ee04a3"
+    },
+    {
+      "path": "compose.yaml",
+      "bytes": 3066,
+      "sha256": "95df40cf11867c300b6052fdbc61e48555d402d87ff8e38c6e8b1f5ad86888bd"
+    },
+    {
+      "path": "docker/multilevel-smoke.mjs",
+      "bytes": 4734,
+      "sha256": "6985604a7e064f9f9edbad6760f95e394f6d868806963dfe230e973201cb4774"
+    },
+    {
+      "path": "docker/nginx-creator.conf",
+      "bytes": 560,
+      "sha256": "5479eb5fc89de6d78b9097a21cd03596f5e5ec5d5607be9068cdee319e29c16d"
+    },
+    {
+      "path": "docker/nginx.conf",
+      "bytes": 1208,
+      "sha256": "b17c6bbab46f46e5d34f670e83c13665fa6c86b3c0cb84714acfc15e5170acf5"
+    },
+    {
+      "path": "docker/package-lock.json",
+      "bytes": 1176,
+      "sha256": "d7438e6931cd54711f1dcffd508be4ce62a6a29b72d303726c9e59aa2528cf40"
+    },
+    {
+      "path": "docker/package.json",
+      "bytes": 126,
+      "sha256": "b832165364d79ad8470958320deef1090b7e7b32effec4ba6df50b7ccc7600f6"
+    },
+    {
+      "path": "docker/resolved-example.json",
+      "bytes": 5531,
+      "sha256": "c8274d2ce5a1d95a2f59c25fc0558a9629a395c93a93746b7ff2b21b25b687c7"
+    },
+    {
+      "path": "docker/smoke.mjs",
+      "bytes": 4036,
+      "sha256": "532d158005c78fdb6a293db754e275e0846fbcdef9a517e475ca85265b93da53"
+    },
+    {
+      "path": "docker/start-bridge.mjs",
+      "bytes": 936,
+      "sha256": "87c62e105e1dc230c82ab73f5a1c85fff584b8633ee3d3b95140851e74c033d3"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 4098,
+      "sha256": "945a70512f1895d08d2ddae4226dae97cf51e15ea59dd2656e89c4f64147d1e4"
+    },
+    {
+      "path": "docs/implementation/28_LARP_APPS_AND_ANDROID.md",
+      "bytes": 12969,
+      "sha256": "43377efab94d12b3fae153933323d2b2e9c8867f6e48eea6b10090a3de2a6864"
+    },
+    {
+      "path": "docs/implementation/38_SINGLE_BAY_WOKWI_WORKBENCH.md",
+      "bytes": 2696,
+      "sha256": "ddaceda00bc20b054286bbc05ea5a45f6be5de1e839ef96aadd3eab341d61ceb"
+    },
+    {
+      "path": "docs/implementation/39_PRODUCT_SHIPPING_AND_DEMO_BOUNDARIES.md",
+      "bytes": 12353,
+      "sha256": "8546686e87806927da8812569ed0c69a8fe46121a33a8605bf23b8ac8d639902"
+    },
+    {
+      "path": "parking-prototype/.gitignore",
+      "bytes": 108,
+      "sha256": "90d5ebfcec5a9d07a58bdb6cc8e825938478b27eecd90e44d0af4046a21e7449"
+    },
+    {
+      "path": "parking-prototype/android/.gitignore",
+      "bytes": 61,
+      "sha256": "8ff30cd2483d6785014430bf3547be9dca892f79e389215c20d35574f6d45cce"
+    },
+    {
+      "path": "parking-prototype/android/app/build.gradle",
+      "bytes": 1054,
+      "sha256": "4acd658622f95dd7b1ead36e1a9b6cda7334cc5c722123127564cb6f2be422fe"
+    },
+    {
+      "path": "parking-prototype/android/app/src/debug/AndroidManifest.xml",
+      "bytes": 162,
+      "sha256": "3fd782b268f618ef0c725797e88fb9ebccd30fd33685f4f263f535cdad53b520"
+    },
+    {
+      "path": "parking-prototype/android/app/src/debug/res/xml/debug_network_security.xml",
+      "bytes": 242,
+      "sha256": "9fa73b0651987288a63a5997d388394638c02487e941b3829f3897b99841998f"
+    },
+    {
+      "path": "parking-prototype/android/app/src/main/AndroidManifest.xml",
+      "bytes": 773,
+      "sha256": "9febd9a51f3bef63026ffca32cdab0d45b1e9ac6f2f548a4f51af4e3724f50bb"
+    },
+    {
+      "path": "parking-prototype/android/app/src/main/java/com/larp/parking/MainActivity.java",
+      "bytes": 4163,
+      "sha256": "3f7a1ce87443295d621ca7806f4646f24cb5773adc37dde923f8c7cbcb59b24d"
+    },
+    {
+      "path": "parking-prototype/android/app/src/main/java/com/larp/parking/NavigationPolicy.java",
+      "bytes": 1678,
+      "sha256": "2c06a5f48e88306e4cae20e5674485941b06e8c56f27320d226288cb5ec95cb1"
+    },
+    {
+      "path": "parking-prototype/android/app/src/main/res/drawable/larp_icon.xml",
+      "bytes": 397,
+      "sha256": "0ac58bfc7a103dc6a5f513c92195e5a81a52ac99badf39f4685a5a26bf660887"
+    },
+    {
+      "path": "parking-prototype/android/build.gradle",
+      "bytes": 70,
+      "sha256": "3c3fc43beca35fbf6d0ef33204bbfb8720624ae23219732c153a731c5351cb1d"
+    },
+    {
+      "path": "parking-prototype/android/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 43764,
+      "sha256": "7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172"
+    },
+    {
+      "path": "parking-prototype/android/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 253,
+      "sha256": "9a479a85aa879bb55284fc16d0de5b81a745c3854f4e2d88c42e7debaf007435"
+    },
+    {
+      "path": "parking-prototype/android/gradle.properties",
+      "bytes": 128,
+      "sha256": "2a65693bf6bc9de8c5b91cdcedb2cf60cbf7675398bc65a2909f511d351e1803"
+    },
+    {
+      "path": "parking-prototype/android/gradlew",
+      "bytes": 8733,
+      "sha256": "b187b4c52e749f5760afdd6fadc31b2a98ad35fb249bf0dff03b72650f320409"
+    },
+    {
+      "path": "parking-prototype/android/gradlew.bat",
+      "bytes": 2937,
+      "sha256": "1d297e00bd21de3ace22b4d7f2de1f9dfa858883d66bbf7c1ccbecccec8f4f3b"
+    },
+    {
+      "path": "parking-prototype/android/Run-AndroidDemo.ps1",
+      "bytes": 4811,
+      "sha256": "47a3c296d8441fe534207cb2aa193272ebb2812431437e47a77bf9d19267ac16"
+    },
+    {
+      "path": "parking-prototype/android/settings.gradle",
+      "bytes": 277,
+      "sha256": "5d8021376362391768d9f8170757da2848a51efb00d2c0d476b9a38807652764"
+    },
+    {
+      "path": "parking-prototype/android/tests/NavigationPolicyTest.java",
+      "bytes": 2164,
+      "sha256": "ecc521216d7656772c5628b8113d500267694722fbabf4962972e0f887cc9078"
+    },
+    {
+      "path": "parking-prototype/components.json",
+      "bytes": 435,
+      "sha256": "a1a538356a53386ce1751e335f5d86abe591caefceb5eb2d687ec8bb595277a0"
+    },
+    {
+      "path": "parking-prototype/developer.html",
+      "bytes": 322,
+      "sha256": "a3dd1d2c0839c53251bc31386ebcfd4f1b227fe4c11ba79f99baeade2d8ead0d"
+    },
+    {
+      "path": "parking-prototype/index.html",
+      "bytes": 378,
+      "sha256": "fbd3c180ad97d73a37e6215e3d201f0c37f811687a7a3681163894b1fba6597d"
+    },
+    {
+      "path": "parking-prototype/package-lock.json",
+      "bytes": 164634,
+      "sha256": "5e8594655b2137fefac271f262b53707a7dd2451b6ff5a1a159e676aa97c72a1"
+    },
+    {
+      "path": "parking-prototype/package.json",
+      "bytes": 1238,
+      "sha256": "a38d12644f93eeed4455e79cc6fa6a222e6ab93c082a36699d51070f92b1fa8a"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bay/diagram.json",
+      "bytes": 9050,
+      "sha256": "7bbf1adb61b96153c891739e761edc544164e89f5f77061ae87203d7308be7d1"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bay/preview.png",
+      "bytes": 83947,
+      "sha256": "9072f4e2e1939790fbaed58212c48f024db7dacde6b32d931900d0f096a0ac9d"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bay/sketch.ino",
+      "bytes": 2365,
+      "sha256": "eaaff68419476106c80936fce91f4e09490cbae3ac86eadb40994edf43f132de"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bay/source.zip",
+      "bytes": 2623,
+      "sha256": "b584d393a1d263bf8cd4934464b86a5431595acb7aef0128a8ba3d83c73bea18"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bollard/bollard.chip.c",
+      "bytes": 2692,
+      "sha256": "7e0de7649d805b382239049bdf5bb9815ccf0802d5016b94e129e71f0522dd70"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bollard/bollard.chip.json",
+      "bytes": 442,
+      "sha256": "6d90b122c85b07afd054031a89d1395db5bab92e5245246967d5a427f8857a0b"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bollard/control.h",
+      "bytes": 2662,
+      "sha256": "be26c0a51e7b893cf2aa1a89c52b1544279b3fd086f201f1e60600b2a10e0027"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bollard/diagram.json",
+      "bytes": 8973,
+      "sha256": "e21579011646ec6a01728e0ee09dd2d35c34d4ab8d797bd65ceca91a3ebf1ac9"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bollard/project.json",
+      "bytes": 204,
+      "sha256": "2911090ed3159b655669ad1a3e58125cc0390f5ce3cab9293d8fdb76673f9e5f"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bollard/sketch.ino",
+      "bytes": 3897,
+      "sha256": "167a606fc96ce670b078c1afc51c94b57fde8e47eab98a889faad37b15f97b94"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/bollard/source.zip",
+      "bytes": 8505,
+      "sha256": "926a13d8fe15ecec76f3e5f5adeeb2cea71cfdd4fb40af586612de23d6a1fc97"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/flow/bus.chip.c",
+      "bytes": 1357,
+      "sha256": "8ecca8edc66ba2e55019722a246ebe711659d2322905418c506d2f3b448aab84"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/flow/bus.chip.json",
+      "bytes": 219,
+      "sha256": "e922e7458bdfb1afd0eb4b967aa28f56380592bca56cedda306d3c2f54031781"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/flow/diagram.json",
+      "bytes": 6398,
+      "sha256": "78f4b7af0275a7b801dfd00147027e743b9d5954c0810b729a2085ec865a216c"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/flow/preview.png",
+      "bytes": 67711,
+      "sha256": "9d43f9b12da5cc4a76cddfbe8f92b8e4230b5d9b1129e45ce6366468e9a6e3c3"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/flow/sketch.ino",
+      "bytes": 2454,
+      "sha256": "31c24c60641280dda8039dba744781f83ba7d22bc8fe1674b3e786998210134c"
+    },
+    {
+      "path": "parking-prototype/public/controller-labs/flow/source.zip",
+      "bytes": 3592,
+      "sha256": "98ad669623740b98d6aa930efab22a1e089e09d7cda5ac8fa2c628a427c8d105"
+    },
+    {
+      "path": "parking-prototype/public/favicon.svg",
+      "bytes": 255,
+      "sha256": "c4c03ce24865a3a7509d1ef0da0f8fb9c86b84c76b726c802363c9da39f13bbd"
+    },
+    {
+      "path": "parking-prototype/public/fonts/dmsans-OFL.txt",
+      "bytes": 4482,
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1"
+    },
+    {
+      "path": "parking-prototype/public/fonts/font-0.ttf",
+      "bytes": 48280,
+      "sha256": "b0ae3e89a7d3ef2b1838bb4b1ceb0b17cc3435af061eee809d76aa623ff116e9"
+    },
+    {
+      "path": "parking-prototype/public/fonts/font-1.ttf",
+      "bytes": 48308,
+      "sha256": "376427b5322148d8de1e03f263bcca4935a2d60ba71d9f94f4947ab664c711ae"
+    },
+    {
+      "path": "parking-prototype/public/fonts/font-2.ttf",
+      "bytes": 48280,
+      "sha256": "b79a2ea7a38f33fd96a282fadb9ce97626bb0724a44d21075859f0e50239993a"
+    },
+    {
+      "path": "parking-prototype/public/fonts/font-3.ttf",
+      "bytes": 48200,
+      "sha256": "2a8e7f713ee79fbccdef3cef5c787aff47580299f7da60144961e7db2ec08211"
+    },
+    {
+      "path": "parking-prototype/public/fonts/font-4.ttf",
+      "bytes": 94972,
+      "sha256": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a"
+    },
+    {
+      "path": "parking-prototype/public/fonts/font-5.ttf",
+      "bytes": 95060,
+      "sha256": "f433e5d333be1128d8ec8a28b8aadd0314d10e14e4105406076666bc830fc15d"
+    },
+    {
+      "path": "parking-prototype/public/fonts/font-6.ttf",
+      "bytes": 95096,
+      "sha256": "6bad1a774228464cc88b8b0271555b266f7a3c64a7bedf15e165fdab4f6ac0ce"
+    },
+    {
+      "path": "parking-prototype/public/fonts/font-7.ttf",
+      "bytes": 94928,
+      "sha256": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
+    },
+    {
+      "path": "parking-prototype/public/fonts/font-8.ttf",
+      "bytes": 95688,
+      "sha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950"
+    },
+    {
+      "path": "parking-prototype/public/fonts/manrope-OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "parking-prototype/public/hardware/01-system.svg",
+      "bytes": 17261,
+      "sha256": "d24086abeec0b6eff717ba681ae7c9e23f42a918a89853cc1c54d5bc996fe2b1"
+    },
+    {
+      "path": "parking-prototype/public/hardware/02-flow-controller.svg",
+      "bytes": 10122,
+      "sha256": "3c699e1e0c2b3fe2edbbc877c6c2f31744664055b08a71f9cf48cac82b470a36"
+    },
+    {
+      "path": "parking-prototype/public/hardware/03-bay-controller.svg",
+      "bytes": 10521,
+      "sha256": "dad813c82182dbd06c7ba508798480a61903d8d6c837a8a45c6418d25b70d18d"
+    },
+    {
+      "path": "parking-prototype/public/hardware/04-ceiling-sensors.svg",
+      "bytes": 9297,
+      "sha256": "ba726669e4f1e845607963442f34df84a6c018a639475aeac420c962c328ef10"
+    },
+    {
+      "path": "parking-prototype/public/hardware/05-bollard-node.svg",
+      "bytes": 9063,
+      "sha256": "14a33c4d2a7bb78f35f7d82588a88824d455d033b2a13d0d1f79419d906c0d70"
+    },
+    {
+      "path": "parking-prototype/public/hardware/06-rs485-buses.svg",
+      "bytes": 10438,
+      "sha256": "c9fbb5967266fbdbe186866bb4469ea04386d53327a1bfe8927e5d42ad517de6"
+    },
+    {
+      "path": "parking-prototype/public/hardware/07-central-rack.svg",
+      "bytes": 6645,
+      "sha256": "95b7f05494a5e05a14c03e63e16186c5c1faee2e7a3dc6417483d93ef8f256d1"
+    },
+    {
+      "path": "parking-prototype/public/hardware/08-gate-controller.svg",
+      "bytes": 8405,
+      "sha256": "596ba2b759beab21022fb21ae2521bed9dd004545743adf43e22a577e62e6f90"
+    },
+    {
+      "path": "parking-prototype/public/hardware/BayPilot-Circuit-Pack.pdf",
+      "bytes": 170703,
+      "sha256": "3cc5203d57371570a855e68ce6a6766251bbc07d65f53276c3b38777f6936e3a"
+    },
+    {
+      "path": "parking-prototype/public/hardware/central-schema.sql",
+      "bytes": 2556,
+      "sha256": "469bfc2b5927bf26f8228848af0517038dbbfb1e094aaf5e170ab63b7e747f62"
+    },
+    {
+      "path": "parking-prototype/public/hardware/connections.csv",
+      "bytes": 5168,
+      "sha256": "df3b785ec4db3ebf78e5dfab07555298c87b0d7f0f79db38aa0a9d3995901431"
+    },
+    {
+      "path": "parking-prototype/public/hardware/index.html",
+      "bytes": 2753,
+      "sha256": "199cb4d94e58e1b89ef4f23639d56594de1e5f570568244a5d3e7ae16679b0dc"
+    },
+    {
+      "path": "parking-prototype/public/hardware/LARP-Circuit-Pack.pdf",
+      "bytes": 170703,
+      "sha256": "3cc5203d57371570a855e68ce6a6766251bbc07d65f53276c3b38777f6936e3a"
+    },
+    {
+      "path": "parking-prototype/public/hardware/pin-map.json",
+      "bytes": 1225,
+      "sha256": "d05c95435c40096fc23a0315ceb1639709fff0615fc3cff54efd4b775d79610f"
+    },
+    {
+      "path": "parking-prototype/public/licenses/magic-ui.txt",
+      "bytes": 1060,
+      "sha256": "0147b84235ed916b8b4e89c1f80655351c5afe7d211b629be61f553a227b34ba"
+    },
+    {
+      "path": "parking-prototype/public/licenses/manrope.txt",
+      "bytes": 4383,
+      "sha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30"
+    },
+    {
+      "path": "parking-prototype/public/licenses/react-flow.txt",
+      "bytes": 1073,
+      "sha256": "023119ac20fb1c8c9930abe0bcd196989a1960388529a96fc43cebf96f07c9ff"
+    },
+    {
+      "path": "parking-prototype/public/licenses/shadcn-ui.txt",
+      "bytes": 1063,
+      "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f"
+    },
+    {
+      "path": "parking-prototype/public/licenses/tailark.txt",
+      "bytes": 1061,
+      "sha256": "9ceb2565db4149b699df9fb53b16963f59675f5308de1143679639b2c561410c"
+    },
+    {
+      "path": "parking-prototype/README.md",
+      "bytes": 804,
+      "sha256": "f92d0c9fc0133f0497c37cbd55fe77fe2443912a4e149d62bcaafcaa8ffaa2b9"
+    },
+    {
+      "path": "parking-prototype/scripts/export-saas.mjs",
+      "bytes": 765,
+      "sha256": "d621f58a54cfa455e910ad81dd963ee16002a262a356b06796968f83f7b63c2c"
+    },
+    {
+      "path": "parking-prototype/server/central.mjs",
+      "bytes": 8578,
+      "sha256": "cabec69cecde3769250bb75a29b5ffcf06474bf2f4257312fe86ec63892fc0ef"
+    },
+    {
+      "path": "parking-prototype/server/controller.mjs",
+      "bytes": 4625,
+      "sha256": "592c4a6852d4601c052253c6c94a0968d67873a235af151e931021a000e50237"
+    },
+    {
+      "path": "parking-prototype/server/device-diagnostics.mjs",
+      "bytes": 7901,
+      "sha256": "9576557110b5465c5a78108705645dc7a175cc5bfd1548db768e81e8e4600cc2"
+    },
+    {
+      "path": "parking-prototype/server/device-worker.mjs",
+      "bytes": 1482,
+      "sha256": "9e8533250caa2dd3fffc6bd333ec7e616fba6b34d0270fe50c3be9100c90de9d"
+    },
+    {
+      "path": "parking-prototype/server/http.mjs",
+      "bytes": 24613,
+      "sha256": "dcc6293a3f60d147b73adc1b638df7ddde9cabf71d913e691c2cad31b6c78aa8"
+    },
+    {
+      "path": "parking-prototype/server/operations.mjs",
+      "bytes": 10881,
+      "sha256": "c1f1a07eb0bef379b209123e5fd5b9af8268be6e226a0f3c191c0561b49fec42"
+    },
+    {
+      "path": "parking-prototype/server/public-parking.mjs",
+      "bytes": 32383,
+      "sha256": "94f77eb2dd6193d77f1ec4e88fc4e30d5c2e14b1155ff95de90d2e9a9a58913b"
+    },
+    {
+      "path": "parking-prototype/server/residential.mjs",
+      "bytes": 21807,
+      "sha256": "43615d030c1c5faf45fcc73154e176a7c3d5179771d482765fd4a535c8882971"
+    },
+    {
+      "path": "parking-prototype/server/scale.mjs",
+      "bytes": 20079,
+      "sha256": "f315f9a028b918d54d281b858635aa34f3fc2bb8be96d36bd5349c75d7b6d05a"
+    },
+    {
+      "path": "parking-prototype/server/store.mjs",
+      "bytes": 5404,
+      "sha256": "eeaf6fa78863aa36d3d4b09e2ebd6fb9de86b079e3780e659e953fe4d381a08c"
+    },
+    {
+      "path": "parking-prototype/server/wokwi-session.mjs",
+      "bytes": 13743,
+      "sha256": "799ddc32b043e2f20eefba1c385f144ae159947d4d199a5ce97cabb402a29f28"
+    },
+    {
+      "path": "parking-prototype/src/App.tsx",
+      "bytes": 32284,
+      "sha256": "66c55e963d25314f3d954db0c8a21af31538f6dd46ed0f85e4e43ae31a2771bd"
+    },
+    {
+      "path": "parking-prototype/src/components/magicui/blur-fade.tsx",
+      "bytes": 2438,
+      "sha256": "475425b16b3d3a142ea4dc72820788f30b851fc9196bfd02ee10a00acb02dae5"
+    },
+    {
+      "path": "parking-prototype/src/components/ui/badge.tsx",
+      "bytes": 1843,
+      "sha256": "4730a5a9c20ec303dd2939962b500fb988370f640780eace66e3d37f191899fe"
+    },
+    {
+      "path": "parking-prototype/src/components/ui/button.tsx",
+      "bytes": 2459,
+      "sha256": "08437a9397294940837147d440f893d9329eb817c8b6f0a2d614fabdb604239c"
+    },
+    {
+      "path": "parking-prototype/src/components/ui/card.tsx",
+      "bytes": 2054,
+      "sha256": "a224fff61a62cc1515b2bbee86a387f8bf0c8bfb103a15946b36b2302b803a08"
+    },
+    {
+      "path": "parking-prototype/src/design.css",
+      "bytes": 1782,
+      "sha256": "f79772e39c2a73f6ada399f661c38fc0d2606523102c4fdbbbbc852780bee870"
+    },
+    {
+      "path": "parking-prototype/src/developer-main.tsx",
+      "bytes": 315,
+      "sha256": "84e97fd271e1073dd839f456da8f5110614f70457dc46a1af25ab7252ab0bcdf"
+    },
+    {
+      "path": "parking-prototype/src/fonts.css",
+      "bytes": 1458,
+      "sha256": "359f078b10907618a578cf5544037eccb60e270b0fce1061dc08471a51a00f8e"
+    },
+    {
+      "path": "parking-prototype/src/lib/utils.ts",
+      "bytes": 154,
+      "sha256": "4eafefbbcf3724989e7685e7c8136485613afec450c645cc65f4c319b1a97f76"
+    },
+    {
+      "path": "parking-prototype/src/LiveJourney.tsx",
+      "bytes": 6955,
+      "sha256": "c7ac7fde8624c013382fa2a6a03d13933c25cb46c11138809a959472e0666405"
+    },
+    {
+      "path": "parking-prototype/src/LotControls.tsx",
+      "bytes": 1778,
+      "sha256": "34484ae49b9081d62f0f2adc0ab742ed714d84de08a1ace6b6a2b283914b7416"
+    },
+    {
+      "path": "parking-prototype/src/main.tsx",
+      "bytes": 1333,
+      "sha256": "9e5cb84502f6e8263e16f650fdf72243b03f1fb6eaf67c19b5654f05fb1dfbb1"
+    },
+    {
+      "path": "parking-prototype/src/Parking3D.tsx",
+      "bytes": 16866,
+      "sha256": "4aef10b74b535f6e33bae6c72d8efdb101c7ff527e58340c830da0eec464ac97"
+    },
+    {
+      "path": "parking-prototype/src/public/BollardWorkbench.tsx",
+      "bytes": 2007,
+      "sha256": "4b58ce4e89ffa6f129e757b2c5c842c3922931f810f74cf6fe0d667e8df8b810"
+    },
+    {
+      "path": "parking-prototype/src/public/central.css",
+      "bytes": 1766,
+      "sha256": "975f179be09f688f4c1b28c8425ace6f0beab962b9d504d32e42bb9433fdc325"
+    },
+    {
+      "path": "parking-prototype/src/public/CentralConsole.tsx",
+      "bytes": 7595,
+      "sha256": "4cad95455ae4c6c326591821e35667b1e15e9df9df36ef38243198e13d2336e4"
+    },
+    {
+      "path": "parking-prototype/src/public/ControllerCircuit.tsx",
+      "bytes": 2980,
+      "sha256": "ea628d73f8570efb19f3f5652679f4916a33585bfa93730863fd24bccca470d4"
+    },
+    {
+      "path": "parking-prototype/src/public/CreatorRehearsal.tsx",
+      "bytes": 2803,
+      "sha256": "6075e0c4543cd88945cea7f0aef1bfe7502b2b7a0c06063b79a6b99055b9db51"
+    },
+    {
+      "path": "parking-prototype/src/public/design-polish.css",
+      "bytes": 3379,
+      "sha256": "29a91497e8974e2b5115038afbe7579096c109a824c13387ef302e3df26502d5"
+    },
+    {
+      "path": "parking-prototype/src/public/DeveloperConsole.tsx",
+      "bytes": 6108,
+      "sha256": "f85c0e24ae29f4ef1060d8c4726ff0453deda82688a2231a6a9dd5a1eb5cd5f7"
+    },
+    {
+      "path": "parking-prototype/src/public/device-graph.css",
+      "bytes": 2029,
+      "sha256": "ef1e141d5a2deaa6beab66ea7aca4d3961fc4b17bdf430dc332f33e94be36d67"
+    },
+    {
+      "path": "parking-prototype/src/public/device-layout.ts",
+      "bytes": 1248,
+      "sha256": "d85d8bb60ab0a230e18848a450b17275d035a383c3ef17ce16eb1cdff597caf3"
+    },
+    {
+      "path": "parking-prototype/src/public/DeviceGraph.tsx",
+      "bytes": 4474,
+      "sha256": "6927a09972819888665e5cd12101a467485dc7af47ba8344ec3032520e1e8bac"
+    },
+    {
+      "path": "parking-prototype/src/public/DeviceInspector.tsx",
+      "bytes": 4394,
+      "sha256": "f9e071dbc79d57874f102066c8d8342162c23299c0778ad59821f0b47583e1fb"
+    },
+    {
+      "path": "parking-prototype/src/public/endpoint-circuit.ts",
+      "bytes": 417,
+      "sha256": "7713161ee0fef61030f9912bfdedaf3a01cb1721acf6d711b09388951bbf60a5"
+    },
+    {
+      "path": "parking-prototype/src/public/EndpointCircuit.tsx",
+      "bytes": 3321,
+      "sha256": "823a1c5f359b693236ed239d33f3cf32478b8b89ff7761fc1cffbb9c318f03bb"
+    },
+    {
+      "path": "parking-prototype/src/public/GuardAlerts.tsx",
+      "bytes": 2437,
+      "sha256": "3401bc54953afc0f8dcf35127e85e694205e25c2ed7e985e61809e90f66640af"
+    },
+    {
+      "path": "parking-prototype/src/public/operations.css",
+      "bytes": 3909,
+      "sha256": "d924037eb37fb1a8f1e4e2fc3123dce8a534108807b5479eb8a77698d945ffda"
+    },
+    {
+      "path": "parking-prototype/src/public/OperationsOverview.tsx",
+      "bytes": 1986,
+      "sha256": "14da890c923fd38cc5b99079ffac980becf27c6a91538dafebe3928163e0ea2d"
+    },
+    {
+      "path": "parking-prototype/src/public/OperationsViews.tsx",
+      "bytes": 14332,
+      "sha256": "71ecaf878b8021b3df796920b1c5c65f190c0c33b1aa1ce35764966fc4241094"
+    },
+    {
+      "path": "parking-prototype/src/public/parking-layout-model.ts",
+      "bytes": 662,
+      "sha256": "9325684c181f217ced1eebf025be1f09483a2a6ca357251e007d11bafed6e509"
+    },
+    {
+      "path": "parking-prototype/src/public/parking-layout.css",
+      "bytes": 1838,
+      "sha256": "7c3a9fe6a55f47d412bd437429ef07c0af8394bee7ba598032c1d96156688bc4"
+    },
+    {
+      "path": "parking-prototype/src/public/ParkingLayout3D.tsx",
+      "bytes": 8247,
+      "sha256": "40557c03c5e3a739a55f2f8cdf6ae455e50ab7269d1f584b2b230c870da8a8bb"
+    },
+    {
+      "path": "parking-prototype/src/public/ParkingMap.tsx",
+      "bytes": 4771,
+      "sha256": "924cf3e33fa0dc109b6eeaff64ada01f20bde6490e50c3257a06031d737b2816"
+    },
+    {
+      "path": "parking-prototype/src/public/PersistentBench.tsx",
+      "bytes": 4527,
+      "sha256": "9c0c0e899d08d3e45f614e0472720069ba0cc7dc3b9955f930d50db741eda854"
+    },
+    {
+      "path": "parking-prototype/src/public/public.css",
+      "bytes": 21522,
+      "sha256": "2d776c60f102bf7a83e1d7b3f4e95d4adc99799d80945b44599088c3dfcc650b"
+    },
+    {
+      "path": "parking-prototype/src/public/PublicPortal.tsx",
+      "bytes": 8278,
+      "sha256": "b4c7052eece0fc784250fa93f81cefcbfb4cff5b5578bf7b192ead458b988ba3"
+    },
+    {
+      "path": "parking-prototype/src/public/ResidentialPanel.tsx",
+      "bytes": 13168,
+      "sha256": "dd0fea0d681256b9ac8d8225c1180b72a8f81dc98a2e5a07e7907838c15be7d9"
+    },
+    {
+      "path": "parking-prototype/src/public/SecurityApp.tsx",
+      "bytes": 4297,
+      "sha256": "1e43cbff835283c7e532ef3cad23f3dcd9f3372eece7ed2a00edce2f06fbe6ea"
+    },
+    {
+      "path": "parking-prototype/src/public/server-room.css",
+      "bytes": 8567,
+      "sha256": "f9f48f76c72b0bafc0e341fea0090a77585dfadab1e19a229b5ad56bc691e21d"
+    },
+    {
+      "path": "parking-prototype/src/public/shared.tsx",
+      "bytes": 1469,
+      "sha256": "4dc17dc76e3ed4e0ed8a06d14266f21e65627a804757bc782d82bb0176ad6890"
+    },
+    {
+      "path": "parking-prototype/src/public/types.ts",
+      "bytes": 6286,
+      "sha256": "c1037e9b34fa19562bcd87bfc688f3cab75eaa3e76babda39bd4ee5fa4227ee5"
+    },
+    {
+      "path": "parking-prototype/src/public/UserApp.tsx",
+      "bytes": 17783,
+      "sha256": "7b7b21c751ec463ecf53a2ee82e866c750d67c3d436f1f207338b33de9d97896"
+    },
+    {
+      "path": "parking-prototype/src/saas/main.tsx",
+      "bytes": 275,
+      "sha256": "b1274c1af2d585f71ab5f3d0243bdcf25b5a46bff4d653f67edd70319cf4e6e4"
+    },
+    {
+      "path": "parking-prototype/src/saas/saas.css",
+      "bytes": 14691,
+      "sha256": "cac74fbe6d2a20580667d019eab2ca80684610d91614048abafb960561007464"
+    },
+    {
+      "path": "parking-prototype/src/saas/SaaS.tsx",
+      "bytes": 14721,
+      "sha256": "02b286be5d54a66ec0d10ce4acf588e86787662c91a39f144b1e8899c1875f02"
+    },
+    {
+      "path": "parking-prototype/src/saas/TailarkHero.tsx",
+      "bytes": 1286,
+      "sha256": "eec7be4383638842e07bfe21c14e3599ec78f593b71241aa87079a1dc3238ec2"
+    },
+    {
+      "path": "parking-prototype/src/scale/building.ts",
+      "bytes": 6712,
+      "sha256": "59273a5b4ad2bcf66183001928487e6837723406610f6b51c68b96039be34356"
+    },
+    {
+      "path": "parking-prototype/src/scale/layout.ts",
+      "bytes": 660,
+      "sha256": "1877166d6814d216497ab64fee06538ef5897f074e1a8618bb5d797a0b9267e3"
+    },
+    {
+      "path": "parking-prototype/src/scale/live-scene.ts",
+      "bytes": 24490,
+      "sha256": "91a4c34bc96bf56e11a47b73891280de7e6e4a1cb6c9a85999dacf65601b8309"
+    },
+    {
+      "path": "parking-prototype/src/scale/live-style.css",
+      "bytes": 9893,
+      "sha256": "853f606e427b0b6f5b2a0140006cd9228c16dde76961ff8870b0afcfac00c614"
+    },
+    {
+      "path": "parking-prototype/src/scale/model-geometry.ts",
+      "bytes": 1982,
+      "sha256": "6057f1644ef45774aa3507d9d753758cbd0c2fb1e9fff2dc2e5fc33518dafacf"
+    },
+    {
+      "path": "parking-prototype/src/scale/route.ts",
+      "bytes": 15684,
+      "sha256": "3f66c91a36525ce3a79a8e04d8dc7dda7136a126ca3eca43617fb16936630b35"
+    },
+    {
+      "path": "parking-prototype/src/scale/style.css",
+      "bytes": 9483,
+      "sha256": "320750cfbe4839a5c1b423b48908f48449e6903d1f211fe6850028aac7439add"
+    },
+    {
+      "path": "parking-prototype/src/ScaleDemo.tsx",
+      "bytes": 14848,
+      "sha256": "5b3b7815682a10b7d42bd000eb3b795511b04453a911e344a4ba35458b9eca64"
+    },
+    {
+      "path": "parking-prototype/src/ScaleJourney3D.tsx",
+      "bytes": 14788,
+      "sha256": "5323912c40fb82f14e86474bfea0a6bb959b0e38ad16846709bcb71859d3a5fb"
+    },
+    {
+      "path": "parking-prototype/src/style.css",
+      "bytes": 28042,
+      "sha256": "6e99497a79ecc0ee91629e1411a5f3b78772178a36cf3580f40befc88d697b07"
+    },
+    {
+      "path": "parking-prototype/src/three/journey.ts",
+      "bytes": 11802,
+      "sha256": "390e9c6cad03515670eee65fd977c04906ad33af13b096d9b92534ca9a59de28"
+    },
+    {
+      "path": "parking-prototype/src/three/layout.ts",
+      "bytes": 895,
+      "sha256": "532244f04ae533944ed8ce2ab54917865006c93a66533cd976fc8061756674b4"
+    },
+    {
+      "path": "parking-prototype/src/three/scene.ts",
+      "bytes": 21166,
+      "sha256": "c003e92746ef295b0ece2e31b29fa54cfedfc23f773c20ef28e9749e65a2ab7d"
+    },
+    {
+      "path": "parking-prototype/src/three/style.css",
+      "bytes": 12296,
+      "sha256": "6e027d20a9782d15807af66ae76854e7efefe60cd0671efe720b414db407f707"
+    },
+    {
+      "path": "parking-prototype/src/types.ts",
+      "bytes": 1516,
+      "sha256": "55dc9138d6ddabe0c1b215576ba998408906c0fb2b0d8d0f106982be092a832a"
+    },
+    {
+      "path": "parking-prototype/supabase/config.toml",
+      "bytes": 15662,
+      "sha256": "33905dc3fa548db9018aac771e77d83564c21a4a542375cf02320351f46e4e6e"
+    },
+    {
+      "path": "parking-prototype/supabase/migrations/20261023041722_cloud_runtime_demo.sql",
+      "bytes": 5689,
+      "sha256": "3ab69bc0fbd91e395e7d020e117881ac788003b6cef32a80caa56ddd4847b65f"
+    },
+    {
+      "path": "parking-prototype/tests/android-browser.mjs",
+      "bytes": 2320,
+      "sha256": "1ebd488cc3a2a8bb241415416e97bdfce398f48c286158f1c5ec7567d2f01cdf"
+    },
+    {
+      "path": "parking-prototype/tests/android-emulator.mjs",
+      "bytes": 8401,
+      "sha256": "bc788f2076c4e3606ef0f065809d82d62b01e64a83e822fc1e4b35dd204c5289"
+    },
+    {
+      "path": "parking-prototype/tests/api.test.mjs",
+      "bytes": 5937,
+      "sha256": "eb091756afb4c84d56631ff1f9054337c2f4f012a45e7f2c2eb093171d204eef"
+    },
+    {
+      "path": "parking-prototype/tests/bollard-circuit-view.test.mjs",
+      "bytes": 669,
+      "sha256": "c3fe87a8562a4664b8552eb8ecb407c5ff82feb8200ad17cb5b5706ca59382cf"
+    },
+    {
+      "path": "parking-prototype/tests/branding-browser.mjs",
+      "bytes": 1684,
+      "sha256": "4455afdb01cbdf1ebc3056ceeff791cd9cd209986aaa0b88b3ef367ca3c05e77"
+    },
+    {
+      "path": "parking-prototype/tests/browser.mjs",
+      "bytes": 5653,
+      "sha256": "88a96f9faebe8806b2c0c0f1d8d0895dc035aab307908e137ccdbe3980bd86fc"
+    },
+    {
+      "path": "parking-prototype/tests/central-browser.mjs",
+      "bytes": 5240,
+      "sha256": "839b37a000e3e7182491ef870592f2d1ba9d5152f327dbcc7d981a044844c3ed"
+    },
+    {
+      "path": "parking-prototype/tests/central-live.mjs",
+      "bytes": 5745,
+      "sha256": "185c838a49bc9e771c416703d6f8855ea3a7f92d42dee13e57b017e185878f2a"
+    },
+    {
+      "path": "parking-prototype/tests/central.test.mjs",
+      "bytes": 8328,
+      "sha256": "8e3c00535a6e033758edf6ceb5d9cd0be3574dc77aac597478fca88512689fe5"
+    },
+    {
+      "path": "parking-prototype/tests/configurable-demo.test.mjs",
+      "bytes": 4666,
+      "sha256": "14c9086a98907f3e26ced9f3d40a3c4e8900badc8d5c244f00466a2eaa321006"
+    },
+    {
+      "path": "parking-prototype/tests/container.test.mjs",
+      "bytes": 2310,
+      "sha256": "3a8104d577cd61fe3817bd7ea8c54d6f8f7d6f16f289f213b7261fd330ff37d3"
+    },
+    {
+      "path": "parking-prototype/tests/controller-bench-deployed.mjs",
+      "bytes": 141,
+      "sha256": "75cca600640447419c60b37eae205aaf5be5c2acfb8a71186f62bc3f3c04d66e"
+    },
+    {
+      "path": "parking-prototype/tests/controller-runtime-deployed.mjs",
+      "bytes": 4107,
+      "sha256": "1f57cf0fcc95e7c533f955dfbb0c51640f6a221bbd97606e78827f6b618c924a"
+    },
+    {
+      "path": "parking-prototype/tests/controller.test.mjs",
+      "bytes": 3788,
+      "sha256": "4c327a95480cd5af925f8132d094b553546864470cba70e2b3e1cb49d2895a41"
+    },
+    {
+      "path": "parking-prototype/tests/design-browser.mjs",
+      "bytes": 4715,
+      "sha256": "90bf4fb03709ad3bf0937fcb091ff43d0e5e6f748fcf2d1e58eb8678ccbbcfcd"
+    },
+    {
+      "path": "parking-prototype/tests/design-deployed.mjs",
+      "bytes": 2941,
+      "sha256": "2a0e025ff4b2cf151459ed126e0b45e41df63c4524c23ea848f7baded5f04c28"
+    },
+    {
+      "path": "parking-prototype/tests/device-layout.test.mjs",
+      "bytes": 1390,
+      "sha256": "d59540aa1ef7a181043beaa4c0444a5f45d212585cb0a9e10b9cc027e4f6a6e4"
+    },
+    {
+      "path": "parking-prototype/tests/follow-camera.test.mjs",
+      "bytes": 1038,
+      "sha256": "45d6be60fe68c158ec5f8aa5bdad8eac7f0f3262656e53dd983bcd7ff61d74ef"
+    },
+    {
+      "path": "parking-prototype/tests/helpers/mesh-collision.mjs",
+      "bytes": 604,
+      "sha256": "335db583fdb81ebff4b60e5b84463852ea2802ce30df067fbb83b67fe49241c7"
+    },
+    {
+      "path": "parking-prototype/tests/inspection-recovery.test.mjs",
+      "bytes": 1943,
+      "sha256": "b02b88d2db1bf7789f6ab32af283df52d4d004a2d74fea452a9d4a618347d4c1"
+    },
+    {
+      "path": "parking-prototype/tests/journey-recovery.test.mjs",
+      "bytes": 2697,
+      "sha256": "69f49bcaf6465e6ecdeef6c37e936b2cdb7161a3568c438c2f918ac29173b65f"
+    },
+    {
+      "path": "parking-prototype/tests/larp-android.mjs",
+      "bytes": 5344,
+      "sha256": "72d5eb4d0a12f27c901bf2cf5da4591db4808084bf4322d0e058113072532a35"
+    },
+    {
+      "path": "parking-prototype/tests/larp-browser.mjs",
+      "bytes": 6164,
+      "sha256": "eae581c6b6616c841288afb77a640547d947af5b21d5d19e56c7a852fecb2dd5"
+    },
+    {
+      "path": "parking-prototype/tests/larp-live.mjs",
+      "bytes": 8753,
+      "sha256": "4277fdf69a378d868a4ade5ced46b38d24472ef44cfef3cc285fdac77a4eb8e0"
+    },
+    {
+      "path": "parking-prototype/tests/operations.test.mjs",
+      "bytes": 9993,
+      "sha256": "bd102b57bbfef1b8a00de44e5cd0e0a4020f6d0e58560b2ae170ce0b8af53a2b"
+    },
+    {
+      "path": "parking-prototype/tests/parking-layout-browser.mjs",
+      "bytes": 6581,
+      "sha256": "049444345f450f6c12ca9bba94d99030e60ad618a5a946ee90ad6f5f3725d250"
+    },
+    {
+      "path": "parking-prototype/tests/parking-layout-view.test.mjs",
+      "bytes": 1405,
+      "sha256": "5abd3d92b49d7bf9e9476d46f48f5d7abed0930d04571041111e4e137e999392"
+    },
+    {
+      "path": "parking-prototype/tests/parking-views-live.mjs",
+      "bytes": 2288,
+      "sha256": "87736278d6f6c0db6f3daa0f044c2ca330890f8e296dcd69c38742572f33dc7f"
+    },
+    {
+      "path": "parking-prototype/tests/public-browser.mjs",
+      "bytes": 6736,
+      "sha256": "5e5b9e97b0faff7097e90d67369dbdea820e991e54283bf8ed9ee7d495694e6c"
+    },
+    {
+      "path": "parking-prototype/tests/public-parking.test.mjs",
+      "bytes": 21907,
+      "sha256": "0b4f2ea1b5c642397b1ede222d9244c41ef0b6d6dc4171352f6774d45c5f93f3"
+    },
+    {
+      "path": "parking-prototype/tests/residential-acceptance-live.mjs",
+      "bytes": 6600,
+      "sha256": "ec6616456d471d2f458a63ff66b73c871356db41d9dde0e3814df9ba0238d405"
+    },
+    {
+      "path": "parking-prototype/tests/residential-browser.mjs",
+      "bytes": 4237,
+      "sha256": "f635332b8ac4f2e3b5a713e58ca03244b7c38c1f60894c0dfb8f3259405df210"
+    },
+    {
+      "path": "parking-prototype/tests/residential-exceptions-browser.mjs",
+      "bytes": 5977,
+      "sha256": "1a37e0b293326e30ed7c5ee00770bd157f1bed4bb623c7044302c8d46fe15e78"
+    },
+    {
+      "path": "parking-prototype/tests/residential-live.mjs",
+      "bytes": 5755,
+      "sha256": "02c6316e9f2a37df583dd077a45c6d1ece9208e8894d5e9f8ae37801311ffb95"
+    },
+    {
+      "path": "parking-prototype/tests/residential.test.mjs",
+      "bytes": 20828,
+      "sha256": "3063a330226695c4d9a54254451ab82865eb1b9d2bf1c0a06ec8f7134449e0d0"
+    },
+    {
+      "path": "parking-prototype/tests/scale-benchmark.mjs",
+      "bytes": 2830,
+      "sha256": "567bc72ea01ef37860734b2522ad58620adcdb45c59eb441943a58f9eb8bbc5b"
+    },
+    {
+      "path": "parking-prototype/tests/scale-browser.mjs",
+      "bytes": 5823,
+      "sha256": "24c3db0c5dca27878c2a6c80d67bca8aa895221d1fb4917268e9a53a0ac42580"
+    },
+    {
+      "path": "parking-prototype/tests/scale-building.test.mjs",
+      "bytes": 812,
+      "sha256": "97d05b32fde603ab6f3acfe8bf8fb8d5965949da12faa3c9e60a7cd2d247b2e0"
+    },
+    {
+      "path": "parking-prototype/tests/scale-docker-smoke.mjs",
+      "bytes": 4765,
+      "sha256": "7bd7515dc6c1c804cd0d2ab93804a3521782d5162b5be74044bb3389cb5a1e25"
+    },
+    {
+      "path": "parking-prototype/tests/scale-journey-browser.mjs",
+      "bytes": 7770,
+      "sha256": "2dabcbcb1dd1b006f152f469e92a8e95e5de24768edc9ffadadfa537f54667f0"
+    },
+    {
+      "path": "parking-prototype/tests/scale-journey.test.mjs",
+      "bytes": 6080,
+      "sha256": "330a34ac381e5f488c26d21375b3992c12253b467c96fff53e8757b36b3b1d56"
+    },
+    {
+      "path": "parking-prototype/tests/scale-live-docker.mjs",
+      "bytes": 2995,
+      "sha256": "9559d17dd2ff7941e00ce8ebe64b8ae73e467f01a527ad3bb7c75e0bae1f4c36"
+    },
+    {
+      "path": "parking-prototype/tests/scale-model-clearance.mjs",
+      "bytes": 5881,
+      "sha256": "2cc05651a0177aba2cc1218e2f9fcbf40eda06db008bdf859450ab9ddc83b11d"
+    },
+    {
+      "path": "parking-prototype/tests/scale-model.test.mjs",
+      "bytes": 1694,
+      "sha256": "167d9d154bb874c060f853ebd32fdf57bef8f6b892bb68cbc5a6bd073f10282a"
+    },
+    {
+      "path": "parking-prototype/tests/scale-ramp-collision.test.mjs",
+      "bytes": 1052,
+      "sha256": "8a58c0cd488992f79f76f9d8b38bbbe16995866b2140bff01096f3a4feb157d4"
+    },
+    {
+      "path": "parking-prototype/tests/scale-visual-inspection.mjs",
+      "bytes": 6393,
+      "sha256": "4a83e7ac580964cef1c37eed9f9bef184b319d6e28da0cb7ddb0c20616a301dc"
+    },
+    {
+      "path": "parking-prototype/tests/scale.test.mjs",
+      "bytes": 12034,
+      "sha256": "3b998ecd1173157bf3f861baa9f100c9d15b4bf4e7c6ac28c20401e26dcb01d3"
+    },
+    {
+      "path": "parking-prototype/tests/server-room-browser.mjs",
+      "bytes": 4563,
+      "sha256": "6fddd4a55f597b1374a14b53a6157fe1813f7b8a52bc90e3ca8c6216a8028545"
+    },
+    {
+      "path": "parking-prototype/tests/server-room-live.mjs",
+      "bytes": 7724,
+      "sha256": "0d6af22d0f0aa68f43318d5d21528affd6089a247e793d8b982b653bc6e5b888"
+    },
+    {
+      "path": "parking-prototype/tests/server-room.test.mjs",
+      "bytes": 5453,
+      "sha256": "22aa696351c06302a362cf93b342d2ea1f69aeda9e81ae74edef38b37190cd1b"
+    },
+    {
+      "path": "parking-prototype/tests/shutdown.test.mjs",
+      "bytes": 423,
+      "sha256": "413ae7d66debb3909345d22b1d31fb6cda0a18badffc987778c1123e2fd5b02f"
+    },
+    {
+      "path": "parking-prototype/tests/single-bay-workbench-browser.mjs",
+      "bytes": 3243,
+      "sha256": "99fd0b30498a608c7a2d4b4b2207fb5299679aed36e9bd033881e34c7de5057d"
+    },
+    {
+      "path": "parking-prototype/tests/store.test.mjs",
+      "bytes": 3202,
+      "sha256": "4ffcb411bc1a66a3be33601000033409c31e22b2b76cc93aa13f1d09af852544"
+    },
+    {
+      "path": "parking-prototype/tests/three-clearance.test.mjs",
+      "bytes": 2977,
+      "sha256": "c31403c0dc9cb3ad81235de41ef17c70a870e79d6d90d1d464120c25c1457acb"
+    },
+    {
+      "path": "parking-prototype/tests/three-export.mjs",
+      "bytes": 1994,
+      "sha256": "e09fd5bf62a95b50a9772e8a7b9e7ad89e381c9c830ca5bceaf142d7878802b6"
+    },
+    {
+      "path": "parking-prototype/tests/three-journey.test.mjs",
+      "bytes": 3655,
+      "sha256": "35d4c580851259bd203a5fb7fe95580b984f11af560f98ef6f60457104d885c7"
+    },
+    {
+      "path": "parking-prototype/tests/three-live.mjs",
+      "bytes": 4682,
+      "sha256": "762f664021238b776dc37d769ef96cb7a4939b1bfc825854e63c27298fc86b37"
+    },
+    {
+      "path": "parking-prototype/tests/three-model-clearance.mjs",
+      "bytes": 4154,
+      "sha256": "ba9205f102a748bb9068b038b9217fbbf12709fe49373e958025d74e05702b8e"
+    },
+    {
+      "path": "parking-prototype/tests/wokwi-esp32.test.mjs",
+      "bytes": 885,
+      "sha256": "3ea6d60be607a925cbc829a49c7b01e053248778b04d22536fb6c6493145c4c0"
+    },
+    {
+      "path": "parking-prototype/tests/wokwi-lot.test.mjs",
+      "bytes": 3137,
+      "sha256": "8c54c63452a0768e29d7c5508607133a3a6fd746b92293435408da81fecb0384"
+    },
+    {
+      "path": "parking-prototype/tests/wokwi-scene.test.mjs",
+      "bytes": 1829,
+      "sha256": "b449279936f7c27aa40b60d65c29788e6c85e55dc1c2b31f69c9fe0be89055f1"
+    },
+    {
+      "path": "parking-prototype/tests/wokwi.test.mjs",
+      "bytes": 4340,
+      "sha256": "0665ac956b1c48aa200f8efa9b7424230ef54b9cfa55e8839a17c5460a40a34f"
+    },
+    {
+      "path": "parking-prototype/THIRD_PARTY_DESIGN.md",
+      "bytes": 1881,
+      "sha256": "d36c06b051f1893ec4b0ad75be673d627338f4aedb875a643c4d0ddc04d7cbc3"
+    },
+    {
+      "path": "parking-prototype/tsconfig.json",
+      "bytes": 470,
+      "sha256": "cc917efabb8d331b346f996b1c682a17e787c8d1eef659fbf907a02f39f82a79"
+    },
+    {
+      "path": "parking-prototype/vite.config.ts",
+      "bytes": 1060,
+      "sha256": "600d7d8c719bd1a423f53e225c151fa29d48eb7c609c8b2f88769ac670cf9ed6"
+    },
+    {
+      "path": "parking-prototype/vite.saas.config.ts",
+      "bytes": 478,
+      "sha256": "24a7e4aa8523589f75228c1f4efc87849e08ea8c9a236fad8fcbf026bcb5b807"
+    },
+    {
+      "path": "parking-prototype/website/index.html",
+      "bytes": 446,
+      "sha256": "c6fdd93b52d9fc9a98e673f0eff017bd35237e31b765f94157f70707321c71e0"
+    },
+    {
+      "path": "PUBLICATION_SCOPE.md",
+      "bytes": 1278,
+      "sha256": "f7d0f491f4ec9194739be9a19f7e8b6426cfb4a1797dc82d5c0b89c1b5a52572"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6726,
+      "sha256": "553061b86bf7490548b49221e21f691b84336fc30369fcd9f7e7a8883a5dd63d"
+    },
+    {
+      "path": "tools/mcp-node/package-lock.json",
+      "bytes": 166401,
+      "sha256": "117ec28ebb37ce3646a6c26103740cd0b5200dd1913eb562b416a7edaa3ce630"
+    },
+    {
+      "path": "tools/mcp-node/package.json",
+      "bytes": 286,
+      "sha256": "8cd6829f5c79ffa77ce35a4a62e28e1aaae25720817c86070b5036197c1e8f7f"
+    },
+    {
+      "path": "wokwi-bollard-bench/bollard.chip.c",
+      "bytes": 2692,
+      "sha256": "7e0de7649d805b382239049bdf5bb9815ccf0802d5016b94e129e71f0522dd70"
+    },
+    {
+      "path": "wokwi-bollard-bench/bollard.chip.json",
+      "bytes": 442,
+      "sha256": "6d90b122c85b07afd054031a89d1395db5bab92e5245246967d5a427f8857a0b"
+    },
+    {
+      "path": "wokwi-bollard-bench/control.h",
+      "bytes": 2662,
+      "sha256": "be26c0a51e7b893cf2aa1a89c52b1544279b3fd086f201f1e60600b2a10e0027"
+    },
+    {
+      "path": "wokwi-bollard-bench/diagram.json",
+      "bytes": 8973,
+      "sha256": "e21579011646ec6a01728e0ee09dd2d35c34d4ab8d797bd65ceca91a3ebf1ac9"
+    },
+    {
+      "path": "wokwi-bollard-bench/generate.mjs",
+      "bytes": 3878,
+      "sha256": "5503d67c3ddbf32a4ba684c856f71474001c37589a0a46c9622ee01e9253f848"
+    },
+    {
+      "path": "wokwi-bollard-bench/package.ps1",
+      "bytes": 376,
+      "sha256": "8accc5d8709ad59906a803a0ed0321296cc4cdca42ddb67194b1e27dce055aae"
+    },
+    {
+      "path": "wokwi-bollard-bench/project.json",
+      "bytes": 204,
+      "sha256": "2911090ed3159b655669ad1a3e58125cc0390f5ce3cab9293d8fdb76673f9e5f"
+    },
+    {
+      "path": "wokwi-bollard-bench/publish.mjs",
+      "bytes": 2169,
+      "sha256": "5875f161195b2875a4e25dd4210528b6bec95f73c13720e59fef533987c4e937"
+    },
+    {
+      "path": "wokwi-bollard-bench/README.md",
+      "bytes": 4115,
+      "sha256": "0a21186c09b3fad24bf565d81f0b5b788fa4bc5012df34542b425ed3a75470b2"
+    },
+    {
+      "path": "wokwi-bollard-bench/sketch.ino",
+      "bytes": 3897,
+      "sha256": "167a606fc96ce670b078c1afc51c94b57fde8e47eab98a889faad37b15f97b94"
+    },
+    {
+      "path": "wokwi-bollard-bench/tests/control.cpp",
+      "bytes": 2200,
+      "sha256": "b2b8071a217f74b722b61765bcca3a52ec7e0116c64538171407aa77beb4f00b"
+    },
+    {
+      "path": "wokwi-bollard-bench/tests/control.test.mjs",
+      "bytes": 879,
+      "sha256": "f1c9c357cfc26716467328e49eef83d3fddd58cc6e2ca42866975772eb369473"
+    },
+    {
+      "path": "wokwi-bollard-bench/tests/wiring.test.mjs",
+      "bytes": 1159,
+      "sha256": "2b5cb7bbefae4312f31769a47c2f6a72768736d83572dd8b822eb12ab56fd711"
+    },
+    {
+      "path": "wokwi-bollard-bench/verify-live.mjs",
+      "bytes": 5263,
+      "sha256": "cf5340a3c58ec58a51a2cd7c7735c754bc1b174229a3f6d27a1261064792cc92"
+    },
+    {
+      "path": "wokwi-controller-labs/author-browser.mjs",
+      "bytes": 668,
+      "sha256": "a70cd0acacdec1fc1e1078461aaa543dc8a83c817cb4091bbc080b65e33da908"
+    },
+    {
+      "path": "wokwi-controller-labs/bay/diagram.json",
+      "bytes": 9050,
+      "sha256": "7bbf1adb61b96153c891739e761edc544164e89f5f77061ae87203d7308be7d1"
+    },
+    {
+      "path": "wokwi-controller-labs/bay/project.json",
+      "bytes": 157,
+      "sha256": "f7be184f6092e44bc7df8daf69d5e611712394ded5524eec444a61376a8545c5"
+    },
+    {
+      "path": "wokwi-controller-labs/bay/sketch.ino",
+      "bytes": 2365,
+      "sha256": "eaaff68419476106c80936fce91f4e09490cbae3ac86eadb40994edf43f132de"
+    },
+    {
+      "path": "wokwi-controller-labs/flow/bus.chip.c",
+      "bytes": 1357,
+      "sha256": "8ecca8edc66ba2e55019722a246ebe711659d2322905418c506d2f3b448aab84"
+    },
+    {
+      "path": "wokwi-controller-labs/flow/bus.chip.json",
+      "bytes": 219,
+      "sha256": "e922e7458bdfb1afd0eb4b967aa28f56380592bca56cedda306d3c2f54031781"
+    },
+    {
+      "path": "wokwi-controller-labs/flow/diagram.json",
+      "bytes": 6398,
+      "sha256": "78f4b7af0275a7b801dfd00147027e743b9d5954c0810b729a2085ec865a216c"
+    },
+    {
+      "path": "wokwi-controller-labs/flow/project.json",
+      "bytes": 158,
+      "sha256": "7027a15d2ccd01fb306c13cad82250b35823a0d8f4fb2423336ad86c6ee5f5c9"
+    },
+    {
+      "path": "wokwi-controller-labs/flow/sketch.ino",
+      "bytes": 2454,
+      "sha256": "31c24c60641280dda8039dba744781f83ba7d22bc8fe1674b3e786998210134c"
+    },
+    {
+      "path": "wokwi-controller-labs/generate.mjs",
+      "bytes": 3751,
+      "sha256": "51d2bf4fdb7bcc23b614ad01ef2d76a0cf675649e9a339fefc324c67f2081b18"
+    },
+    {
+      "path": "wokwi-controller-labs/package.ps1",
+      "bytes": 440,
+      "sha256": "42c22146a0a8164b9cebceaf92c0d971022b60ff12c1b70185dc50174ff8531c"
+    },
+    {
+      "path": "wokwi-controller-labs/publish.mjs",
+      "bytes": 2164,
+      "sha256": "2acc6b83c7dca31692f672b4652e4264479f0799e1c41f46a549072b23642815"
+    },
+    {
+      "path": "wokwi-controller-labs/README.md",
+      "bytes": 2641,
+      "sha256": "58318246a8595f372ad78fb75b311265c787eb8536e163e8c0d74fecafd349ed"
+    },
+    {
+      "path": "wokwi-controller-labs/runtime.mjs",
+      "bytes": 4368,
+      "sha256": "8903930a5c154e695b37f8a972553ac1844be04452fb8001787704eba81ee314"
+    },
+    {
+      "path": "wokwi-controller-labs/server.mjs",
+      "bytes": 1445,
+      "sha256": "b232fccf160e187a43845fce5ef17bc9f847078400f15ab5a3654b257b3f5831"
+    },
+    {
+      "path": "wokwi-controller-labs/state.mjs",
+      "bytes": 3157,
+      "sha256": "0e76ad84aadb752d462bb4b5357cab5079fe3cfa11e00d9be46ff51098fabf82"
+    },
+    {
+      "path": "wokwi-controller-labs/tests/runtime.test.mjs",
+      "bytes": 2954,
+      "sha256": "f05dcc606cdf5c4fe14d898b5e5af61b628e7765ab1f67e48f1ea221e50f3b06"
+    },
+    {
+      "path": "wokwi-controller-labs/tests/server.test.mjs",
+      "bytes": 2647,
+      "sha256": "6d9523308977ba7decbae905737e8acceab92660beab708188e55b052a069998"
+    },
+    {
+      "path": "wokwi-controller-labs/verify-live.mjs",
+      "bytes": 4320,
+      "sha256": "05aab7d1aacac2add014f052c77add1e2aa3dcc65659d3adbfad686c2b3b5aeb"
+    },
+    {
+      "path": "wokwi-esp32-lot/bom.csv",
+      "bytes": 1107,
+      "sha256": "929f2aea3baa02c93b44f9b1c485eb8abaf28f94a1dc48eba2ed09b40f78ee34"
+    },
+    {
+      "path": "wokwi-esp32-lot/bridge.mjs",
+      "bytes": 682,
+      "sha256": "f20a8d5f57bdafc38b821b29b4f6a96dcf86f4f9b2b8a868812be65de0a48410"
+    },
+    {
+      "path": "wokwi-esp32-lot/compile.mjs",
+      "bytes": 1209,
+      "sha256": "89c68f1c25a8be00b1ed239d418ce474d792216acbbb5ba532b23a6bc25c528d"
+    },
+    {
+      "path": "wokwi-esp32-lot/diagram.json",
+      "bytes": 37854,
+      "sha256": "e2138be9fcb96bb697ca0e2b50c22fb7079f52266b8f6f61261209e68db08ab6"
+    },
+    {
+      "path": "wokwi-esp32-lot/firmware/esp32_master/esp32_master.ino",
+      "bytes": 10204,
+      "sha256": "a4aadc588ec94c9eb88969153e99c9a409c01a65cb8c41f3173e35d2ebc3d49f"
+    },
+    {
+      "path": "wokwi-esp32-lot/gateway.chip.c",
+      "bytes": 2297,
+      "sha256": "c79243499da80422c22077486ee9c37b4f15ac7e9e16f45bea85a2e41c5f2f09"
+    },
+    {
+      "path": "wokwi-esp32-lot/gateway.chip.json",
+      "bytes": 455,
+      "sha256": "876a75f2f4fb833ec3cdc2880da48d79abcbce6072255f4bdf6ea83944cf6062"
+    },
+    {
+      "path": "wokwi-esp32-lot/generate-diagram.mjs",
+      "bytes": 5069,
+      "sha256": "8f109c235e430ded3c3380832359619c146e0667c2be67d5246edfbcb1b73564"
+    },
+    {
+      "path": "wokwi-esp32-lot/node.chip.c",
+      "bytes": 6486,
+      "sha256": "ca3a52d25491fb2c01b7935aed2c69bce1c19fce17f09a5b80f2a325ac2c55e2"
+    },
+    {
+      "path": "wokwi-esp32-lot/node.chip.json",
+      "bytes": 373,
+      "sha256": "13bff3784f304b1ffdd052b3d2b441046b47ed7a018b871e08fdde726132f01a"
+    },
+    {
+      "path": "wokwi-esp32-lot/package.json",
+      "bytes": 255,
+      "sha256": "6f6dc75224bfe3cbd11ae86ce7011412a4bf931d19e6805318d0d101854eaa62"
+    },
+    {
+      "path": "wokwi-esp32-lot/pin-map.json",
+      "bytes": 491,
+      "sha256": "53f5c011fbf3170c19d92945387b85b2f98085c3fcec18269be09d00032889a3"
+    },
+    {
+      "path": "wokwi-esp32-lot/plant.chip.c",
+      "bytes": 4158,
+      "sha256": "9aa4975f524093f4cdcb02639e56a4306fcfe36191374320dfc4736a281a85e0"
+    },
+    {
+      "path": "wokwi-esp32-lot/plant.chip.json",
+      "bytes": 426,
+      "sha256": "c770a4bb2f88a7fe7c6f426f35171edba40d946739b64b06f939841df684851d"
+    },
+    {
+      "path": "wokwi-esp32-lot/project.json",
+      "bytes": 149,
+      "sha256": "0357df1a049cd71aecf47dbe64f5698536271442ac142ed0b1261bb40de8e44c"
+    },
+    {
+      "path": "wokwi-esp32-lot/radio-map.json",
+      "bytes": 1537,
+      "sha256": "f7e4598fd9e27a035abd8d484688487e35b4c631b902aa8d002ca93fbe1f8e93"
+    },
+    {
+      "path": "wokwi-esp32-lot/README.md",
+      "bytes": 5710,
+      "sha256": "23f1b05413befdde4032f920efa264e812d6a100028d5d70e410983de472fb29"
+    },
+    {
+      "path": "wokwi-esp32-lot/sketch.ino",
+      "bytes": 10204,
+      "sha256": "a4aadc588ec94c9eb88969153e99c9a409c01a65cb8c41f3173e35d2ebc3d49f"
+    },
+    {
+      "path": "wokwi-esp32-lot/tests/Arduino.h",
+      "bytes": 1658,
+      "sha256": "d5aa2d5d26804e12b647684b6b641f5168e36d69037ac0fb50c54c397e283c4a"
+    },
+    {
+      "path": "wokwi-esp32-lot/tests/docker-live.mjs",
+      "bytes": 3273,
+      "sha256": "e7b1d65b90e205e05c1d9bc1243641acbe29e41fad7db823ac8fd7e2a2952004"
+    },
+    {
+      "path": "wokwi-esp32-lot/tests/esp_arduino_version.h",
+      "bytes": 51,
+      "sha256": "6b09b09af7ba69c79bc12a32d8e4cbd03b5f3470cd8229da63bdccae2b4b0011"
+    },
+    {
+      "path": "wokwi-esp32-lot/tests/live.mjs",
+      "bytes": 5816,
+      "sha256": "d1fd8aacfd7916acdee507a98b384be948c2c46d0554e3e8fd41f535bf2aa6e5"
+    },
+    {
+      "path": "wokwi-esp32-lot/tests/master.cpp",
+      "bytes": 2256,
+      "sha256": "99c04c324e5e728d176f1ef8243e954b0718299c293c0f3ae4783435d8cd7e02"
+    },
+    {
+      "path": "wokwi-esp32-lot/tests/master.test.mjs",
+      "bytes": 972,
+      "sha256": "30cdbf89b05efcf6422125c63f24eb4e7014fde53370cce35f5ea2c53866bb4f"
+    },
+    {
+      "path": "wokwi-esp32-lot/tests/network.c",
+      "bytes": 5507,
+      "sha256": "cf0ffd6c6c1bd2c2dda0215b8b34c770f63dc79135837f3487654ab8e7aa27b0"
+    },
+    {
+      "path": "wokwi-esp32-lot/tests/network.test.mjs",
+      "bytes": 1481,
+      "sha256": "2013a4df15011d5d3153e56cd8fe28b569693d06ebc53974b89101d86491009c"
+    },
+    {
+      "path": "wokwi-esp32-lot/tests/wiring.test.mjs",
+      "bytes": 1759,
+      "sha256": "4a53e35236f2a6b3f3a0dbaca8cd7ff276d07929c8e749fbcff3a2af4e6b16fe"
+    },
+    {
+      "path": "wokwi-esp32-lot/tests/wokwi-api.h",
+      "bytes": 1193,
+      "sha256": "fb25a230514b2852fc08cd3cd5a62acd6958083110a49b3ed83e08bc0ba32df2"
+    },
+    {
+      "path": "wokwi-esp32-lot/VERIFICATION.md",
+      "bytes": 3603,
+      "sha256": "f08a5a197517e066e5951631e6dcbf081d31392c278d7e91f6b43d49ec0f56c9"
+    },
+    {
+      "path": "wokwi-esp32-lot/wokwi.toml",
+      "bytes": 106,
+      "sha256": "1181028689d37aefad3cf76e428d5d188b9baec313c0183f275b139e944eae9e"
+    },
+    {
+      "path": "wokwi-integrated/.gitignore",
+      "bytes": 21,
+      "sha256": "bc5e8c0a684bb997c97fdbfb1fb4e3bf8a967021536ceee76f81d03dbfd8e218"
+    },
+    {
+      "path": "wokwi-integrated/bridge.mjs",
+      "bytes": 9448,
+      "sha256": "960fb53f0e441f900b008d282bad83044cb15fc83f15559f0f25525795154c8d"
+    },
+    {
+      "path": "wokwi-integrated/bundle/diagram.json",
+      "bytes": 7952,
+      "sha256": "99dfb11dde4a061b661e18bf2cb1f7a486022bcdca3b0722233d3653d520e4a7"
+    },
+    {
+      "path": "wokwi-integrated/bundle/plant.chip.c",
+      "bytes": 2318,
+      "sha256": "6621ea4645b715b13723a51f37f9c17ea789bdd72fcfa7ff03d18ec1a653a821"
+    },
+    {
+      "path": "wokwi-integrated/bundle/plant.chip.json",
+      "bytes": 278,
+      "sha256": "e95897bc2eb3d86beb73a7e3eae8c8d43c9fb265e3bc268f94c25b3d89f04408"
+    },
+    {
+      "path": "wokwi-integrated/bundle/sketch.ino",
+      "bytes": 7737,
+      "sha256": "0fc677ccd3d241696ebbba1276b89569656ff4a22408d7d669dbac0c035f6421"
+    },
+    {
+      "path": "wokwi-integrated/command-dispatcher.mjs",
+      "bytes": 662,
+      "sha256": "e2a1a41e8b87836727a9a35442b0d270d2211b44a4ade2f3a2b11d86c7f11c9c"
+    },
+    {
+      "path": "wokwi-integrated/compile.mjs",
+      "bytes": 1128,
+      "sha256": "6b91007c16f471569ba63cbb38d4606ac447bf92809fa6e650cea5a956d7ce59"
+    },
+    {
+      "path": "wokwi-integrated/diagram.json",
+      "bytes": 7952,
+      "sha256": "99dfb11dde4a061b661e18bf2cb1f7a486022bcdca3b0722233d3653d520e4a7"
+    },
+    {
+      "path": "wokwi-integrated/firmware/integrated/integrated.ino",
+      "bytes": 7737,
+      "sha256": "0fc677ccd3d241696ebbba1276b89569656ff4a22408d7d669dbac0c035f6421"
+    },
+    {
+      "path": "wokwi-integrated/package-lock.json",
+      "bytes": 608,
+      "sha256": "02c160aec2041707e530cb29d7bab74d518e7ce950de7ace8ca326536623640b"
+    },
+    {
+      "path": "wokwi-integrated/package.json",
+      "bytes": 347,
+      "sha256": "1111e48b7eb4dd99bd9a4aab56964d2e0fcddf0769fd7d0343a72667c2e57355"
+    },
+    {
+      "path": "wokwi-integrated/plant.chip.c",
+      "bytes": 2318,
+      "sha256": "6621ea4645b715b13723a51f37f9c17ea789bdd72fcfa7ff03d18ec1a653a821"
+    },
+    {
+      "path": "wokwi-integrated/plant.chip.json",
+      "bytes": 278,
+      "sha256": "e95897bc2eb3d86beb73a7e3eae8c8d43c9fb265e3bc268f94c25b3d89f04408"
+    },
+    {
+      "path": "wokwi-integrated/README.md",
+      "bytes": 6368,
+      "sha256": "b6176eb1f17724b5d90a584f62c7c7eeb2b97f35c02a9897109cb90e52b7cbc8"
+    },
+    {
+      "path": "wokwi-integrated/tests/deep-link.mjs",
+      "bytes": 477,
+      "sha256": "666615fabd6ea8f468ff8e0c6f1c7004bda92824ab10b5e55bdac18b22126d81"
+    },
+    {
+      "path": "wokwi-integrated/tests/firmware.test.mjs",
+      "bytes": 2304,
+      "sha256": "6a63be9b5b76fb46843b5bad84a2125fec3d554fca055d9d60de953dcfe42e41"
+    },
+    {
+      "path": "wokwi-integrated/tests/live.mjs",
+      "bytes": 5377,
+      "sha256": "a9e01a610edf0780e9f27fc23ca8a7a2573003ead582ced8d24765f4a9860dee"
+    },
+    {
+      "path": "wokwi-integrated/tests/rig.mjs",
+      "bytes": 3070,
+      "sha256": "5fd5209b4e3871ca962dfb206f7d41fd185a580ec3935e718963d6b08bca46c4"
+    },
+    {
+      "path": "wokwi-integrated/tests/viewer.test.mjs",
+      "bytes": 2745,
+      "sha256": "b89982f03694ddb717673ec390ede11760c98026a0a3e86da6b08fc63b1fcdea"
+    },
+    {
+      "path": "wokwi-integrated/viewer.mjs",
+      "bytes": 5819,
+      "sha256": "9e5962d4847707e1411ba6f3ec448884ae2fadf64320b79dd651571a3104b1fa"
+    },
+    {
+      "path": "wokwi-parking-lot/.gitignore",
+      "bytes": 21,
+      "sha256": "bc5e8c0a684bb997c97fdbfb1fb4e3bf8a967021536ceee76f81d03dbfd8e218"
+    },
+    {
+      "path": "wokwi-parking-lot/bridge.mjs",
+      "bytes": 1151,
+      "sha256": "39b6978a8e3099ae856067f6109edf6c01875a1a08c719f2453f61f0f00fc7a7"
+    },
+    {
+      "path": "wokwi-parking-lot/bundle/diagram.json",
+      "bytes": 29296,
+      "sha256": "9830aa91e79748c8badd2e60d195fc8c8353f0770e29808b0d4bd121f258ad2a"
+    },
+    {
+      "path": "wokwi-parking-lot/bundle/pin-map.json",
+      "bytes": 1077,
+      "sha256": "084330365cf98665c75433857e35fc0b0ab7223daf91073590747f2e1f6e7a2b"
+    },
+    {
+      "path": "wokwi-parking-lot/bundle/plant.chip.c",
+      "bytes": 4158,
+      "sha256": "9aa4975f524093f4cdcb02639e56a4306fcfe36191374320dfc4736a281a85e0"
+    },
+    {
+      "path": "wokwi-parking-lot/bundle/plant.chip.json",
+      "bytes": 426,
+      "sha256": "c770a4bb2f88a7fe7c6f426f35171edba40d946739b64b06f939841df684851d"
+    },
+    {
+      "path": "wokwi-parking-lot/bundle/sketch.ino",
+      "bytes": 9137,
+      "sha256": "c1bdd3530b70c4b521987a5ba80ab0a65058e3d86a3fc77a4d5cc3e4c2437c68"
+    },
+    {
+      "path": "wokwi-parking-lot/compile.mjs",
+      "bytes": 1122,
+      "sha256": "3e4f1222a3c3d430b9b9ee8353f027956063a6233afc2b8cb82dc7d11241c756"
+    },
+    {
+      "path": "wokwi-parking-lot/diagram.json",
+      "bytes": 29296,
+      "sha256": "9830aa91e79748c8badd2e60d195fc8c8353f0770e29808b0d4bd121f258ad2a"
+    },
+    {
+      "path": "wokwi-parking-lot/evidence/full-lot.hex",
+      "bytes": 23618,
+      "sha256": "c3ab2e624a55e15fee386bc557580bc2da1dcd8fada55433474bbce6d03c0f5c"
+    },
+    {
+      "path": "wokwi-parking-lot/firmware/full_lot/full_lot.ino",
+      "bytes": 9137,
+      "sha256": "c1bdd3530b70c4b521987a5ba80ab0a65058e3d86a3fc77a4d5cc3e4c2437c68"
+    },
+    {
+      "path": "wokwi-parking-lot/generate-diagram.mjs",
+      "bytes": 3195,
+      "sha256": "0c4e0cdedb7934450c288b478ce1252d2ef4af3726a42a4bfe17d7f5efbb146c"
+    },
+    {
+      "path": "wokwi-parking-lot/package-lock.json",
+      "bytes": 604,
+      "sha256": "cd82923e4e1aa66242aaeaa3b7c884e94d8269310fa86bf1c8e13ff6d4c76f20"
+    },
+    {
+      "path": "wokwi-parking-lot/package.json",
+      "bytes": 268,
+      "sha256": "6636937d4ef24f29f273e3e0996fea8b97bb5fc97ce1965dbc8a709b648d41da"
+    },
+    {
+      "path": "wokwi-parking-lot/pin-map.json",
+      "bytes": 1077,
+      "sha256": "084330365cf98665c75433857e35fc0b0ab7223daf91073590747f2e1f6e7a2b"
+    },
+    {
+      "path": "wokwi-parking-lot/plant.chip.c",
+      "bytes": 4158,
+      "sha256": "9aa4975f524093f4cdcb02639e56a4306fcfe36191374320dfc4736a281a85e0"
+    },
+    {
+      "path": "wokwi-parking-lot/plant.chip.json",
+      "bytes": 426,
+      "sha256": "c770a4bb2f88a7fe7c6f426f35171edba40d946739b64b06f939841df684851d"
+    },
+    {
+      "path": "wokwi-parking-lot/README.md",
+      "bytes": 5058,
+      "sha256": "bc84a1e6739012ade88271ad9bb3409684912e98dd395ec5804c0e5d89055c29"
+    },
+    {
+      "path": "wokwi-parking-lot/tests/full-lot.test.mjs",
+      "bytes": 2142,
+      "sha256": "27f1dc93004bed447c42891c6399a8d4cc40e1c54d39748faf5c31d8548c5057"
+    },
+    {
+      "path": "wokwi-parking-lot/tests/live.mjs",
+      "bytes": 6881,
+      "sha256": "819f73ac62a0115327dbfc7a08f23926085e041f113855ca677944b0c01d0f7f"
+    },
+    {
+      "path": "wokwi-parking-lot/tests/rig.mjs",
+      "bytes": 3838,
+      "sha256": "e06a358b457094970fc60a1e63e2d40c5437b2e09818c3dc46420f5523466eb3"
+    },
+    {
+      "path": "wokwi-parking-lot/tests/wiring.test.mjs",
+      "bytes": 749,
+      "sha256": "f46a564469e8ede690bdc8b0ee252926706df5b23e65cb8b283a5b4bbb95a149"
+    },
+    {
+      "path": "wokwi-wireless-lot/bom.csv",
+      "bytes": 1062,
+      "sha256": "cc363b6e8e4c9487e3d78587110f5c8f32a8bfe9cd71c9a82ef84c9b24c2eb8e"
+    },
+    {
+      "path": "wokwi-wireless-lot/bridge.mjs",
+      "bytes": 669,
+      "sha256": "ce2cd55d309977cb6cb27361cdd7cc2aeb5f63d974c51f8dd3249e260dbc2630"
+    },
+    {
+      "path": "wokwi-wireless-lot/compile.mjs",
+      "bytes": 1099,
+      "sha256": "457656cbc24689f4884a9318065f863272d486dbec1aa4440bc10cdaac538588"
+    },
+    {
+      "path": "wokwi-wireless-lot/diagram.json",
+      "bytes": 37644,
+      "sha256": "e03367acb2de3f3af03c06e178c2d37303c8802fb7add723c8b5277f5bc35291"
+    },
+    {
+      "path": "wokwi-wireless-lot/evidence/wireless-master.hex",
+      "bytes": 34770,
+      "sha256": "a80531dd46b8ad2fe81a95333993e2dbea9fdad31a1e06525b4a87d605de338f"
+    },
+    {
+      "path": "wokwi-wireless-lot/firmware/wireless_master/wireless_master.ino",
+      "bytes": 8867,
+      "sha256": "1bb56dbbabed783bdc8ba0e71bc217ccc4c3677120d2c086975e562856592213"
+    },
+    {
+      "path": "wokwi-wireless-lot/gateway.chip.c",
+      "bytes": 2297,
+      "sha256": "c79243499da80422c22077486ee9c37b4f15ac7e9e16f45bea85a2e41c5f2f09"
+    },
+    {
+      "path": "wokwi-wireless-lot/gateway.chip.json",
+      "bytes": 455,
+      "sha256": "b1374f8051c37d2eb5ae12420d89cae75d4085182a317a707c2600c7089a5c92"
+    },
+    {
+      "path": "wokwi-wireless-lot/generate-diagram.mjs",
+      "bytes": 4953,
+      "sha256": "bbb11d2f18c062794108bd97861e0b75e5ba898a1f3f080283a617dbca4abb3d"
+    },
+    {
+      "path": "wokwi-wireless-lot/node.chip.c",
+      "bytes": 6486,
+      "sha256": "ca3a52d25491fb2c01b7935aed2c69bce1c19fce17f09a5b80f2a325ac2c55e2"
+    },
+    {
+      "path": "wokwi-wireless-lot/node.chip.json",
+      "bytes": 363,
+      "sha256": "8a9e4a8b9d81d90d13a9eb1cdda56e93ac115f3d687c03ff7fbffd0618b0efd9"
+    },
+    {
+      "path": "wokwi-wireless-lot/package.json",
+      "bytes": 206,
+      "sha256": "52cb146f0e51edcc2b74886329ac54589a3b9e01b0f9c3e0668b40ac0a47aca1"
+    },
+    {
+      "path": "wokwi-wireless-lot/plant.chip.c",
+      "bytes": 4158,
+      "sha256": "9aa4975f524093f4cdcb02639e56a4306fcfe36191374320dfc4736a281a85e0"
+    },
+    {
+      "path": "wokwi-wireless-lot/plant.chip.json",
+      "bytes": 426,
+      "sha256": "c770a4bb2f88a7fe7c6f426f35171edba40d946739b64b06f939841df684851d"
+    },
+    {
+      "path": "wokwi-wireless-lot/radio-map.json",
+      "bytes": 1537,
+      "sha256": "f7e4598fd9e27a035abd8d484688487e35b4c631b902aa8d002ca93fbe1f8e93"
+    },
+    {
+      "path": "wokwi-wireless-lot/README.md",
+      "bytes": 9865,
+      "sha256": "17627c969eb7548ecec6d708cc704f029a387043e62ed44a2d42e73a69c5ca77"
+    },
+    {
+      "path": "wokwi-wireless-lot/sketch.ino",
+      "bytes": 8867,
+      "sha256": "1bb56dbbabed783bdc8ba0e71bc217ccc4c3677120d2c086975e562856592213"
+    },
+    {
+      "path": "wokwi-wireless-lot/tests/live.mjs",
+      "bytes": 5600,
+      "sha256": "84d65160380319b07777e27c79503c562f7c942a7ebfd8c2cedd5bec4df82cc3"
+    },
+    {
+      "path": "wokwi-wireless-lot/tests/master.test.mjs",
+      "bytes": 2222,
+      "sha256": "06e466bb91b9202c221765ac6549bcf65547ae96d0ea0a99611e4b8f266c840b"
+    },
+    {
+      "path": "wokwi-wireless-lot/tests/network.c",
+      "bytes": 5507,
+      "sha256": "cf0ffd6c6c1bd2c2dda0215b8b34c770f63dc79135837f3487654ab8e7aa27b0"
+    },
+    {
+      "path": "wokwi-wireless-lot/tests/network.test.mjs",
+      "bytes": 1481,
+      "sha256": "2013a4df15011d5d3153e56cd8fe28b569693d06ebc53974b89101d86491009c"
+    },
+    {
+      "path": "wokwi-wireless-lot/tests/wiring.test.mjs",
+      "bytes": 1131,
+      "sha256": "b14adec4832570debe61032290b25d0075b721938950947c3a6b39fc1ad5b5fb"
+    },
+    {
+      "path": "wokwi-wireless-lot/tests/wokwi-api.h",
+      "bytes": 1193,
+      "sha256": "fb25a230514b2852fc08cd3cd5a62acd6958083110a49b3ed83e08bc0ba32df2"
+    },
+    {
+      "path": "wokwi-wireless-lot/VERIFICATION.md",
+      "bytes": 5840,
+      "sha256": "04412b40ab944710122218557a02ef70591d441ff44565f50dee7ab08911eab3"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
+test('compiled single-bay control handles a full cycle and inhibits every unsafe movement',()=>{
+ const root=fileURLToPath(new URL('../',import.meta.url));const r=spawnSync('docker',['run','--rm','--mount',`type=bind,source=${root},target=/bench,readonly`,'--entrypoint','sh','baypilot-bridge','-c','g++ -std=c++17 -Wall -Wextra -Werror /bench/tests/control.cpp -o /tmp/bollard-control && /tmp/bollard-control'],{encoding:'utf8',timeout:60000});assert.equal(r.status,0,r.stderr);assert.match(r.stdout,/independent limits PASS/);assert.match(r.stdout,/jam timeout/);assert.match(r.stdout,/obstruction stops/);assert.match(r.stdout,/power link emergency/);assert.match(r.stdout,/occupancy appearing/);console.log(r.stdout)
+});

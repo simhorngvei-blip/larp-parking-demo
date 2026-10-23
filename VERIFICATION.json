@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-23T14:19:17.690714+00:00",
+  "passed": true,
+  "sourceScope": "Minimal local demonstrator; excluded private cloud-host material and workspace media",
+  "composeConfiguration": "passed",
+  "frontendTypecheckAndProductionBuild": "passed",
+  "applicationTests": 162,
+  "controllerViewerTests": 10,
+  "esp32ModelTests": 4,
+  "failedTests": 0,
+  "credentialPatternAndNestedSourceArchiveScan": "passed",
+  "limitations": [
+    "No fresh online Wokwi acceptance or physical hardware test in this release check.",
+    "Unit and native model checks do not certify hardware.",
+    "Existing hosted app is protected and dependent on a laptop.",
+    "Original project code has no new open-source license granted by this export."
+  ]
+}

@@ -1,0 +1,13 @@
+# Single-bay background ESP32 workbench
+
+Updated 23 October 2026. The earlier embedded editor has been replaced by a persistent background simulator, matching the flow/bay-controller viewer. Open `/server-room` and inspect a bay. The popup shows only the circuit capture, freshness/instance metadata and actual bench UART. It contains no Wokwi iframe and sends no movement commands. Closing the popup or browser leaves the runtime session running.
+
+The independent project remains https://wokwi.com/projects/478667707556941825 : one ESP32, one A4988/stepper surrogate, one animated bollard plant, independent UP/DOWN limits, physical test buttons and occupancy/power/link/safety fixtures. This is a new one-bay circuit, not the old nine-bay image. A separate project link provides interactive LOWER/RAISE/RESET/fault experiments in a separate browser session.
+
+`wokwi-controller-labs/runtime.mjs` starts flow, bay and bollard workers before any popup opens. The bollard project metadata is read from `wokwi-bollard-bench/project.json`. `/controller-runtime/bollard/status` and `/frame.jpg` are read-only local/hosted viewer routes. Packets must carry BOLLARD_BENCH and valid advancing sequence numbers. Stale serial text cannot keep a session live. Stale captures are refused; opening another bay reuses the explicitly labelled independent reference template, not a newly commissioned controller for that bay.
+
+The background UART and selected-fleet console are separate evidence sources. Neither the independent bench nor its PASS records proves the selected bay's physical condition. Ceiling ultrasonic sensors remain wired to their bay controller; the bollard bench receives an occupancy-state fixture. The model does not measure RF propagation, actual supply voltage/current or a commercial lock's physical safety.
+
+Tests: `node --test wokwi-controller-labs/tests/*.test.mjs`; `node parking-prototype/tests/single-bay-workbench-browser.mjs` with local Docker running. Actual browser evidence is under `parking-prototype/artifacts/single-bay-workbench/background-results.json`; laptop observations are in `laptop-background-results.json` when available. Earlier embedded-editor results are historical, superseded evidence.
+
+The four concurrent CPU simulations (shared lot plus three reference benches) use host resources even without viewers. The old laptop's two-CPU/3GiB container must remain awake and internet-connected. Short freshness observations are not a long-duration soak, throughput or physical deployment test. The independent bench remains a private engineering/demo aid in the intended product; see [product boundaries](39_PRODUCT_SHIPPING_AND_DEMO_BOUNDARIES.md).

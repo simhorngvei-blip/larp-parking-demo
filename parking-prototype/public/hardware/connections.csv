@@ -1,0 +1,57 @@
+assembly,source,source_pin,destination,destination_pin,notes
+Flow,ESP32,GPIO18,W5500,SCLK,3.3V logic; INT optional
+Flow,ESP32,GPIO23,W5500,MOSI,3.3V logic; INT optional
+Flow,ESP32,GPIO19,W5500,MISO,3.3V logic; INT optional
+Flow,ESP32,GPIO27,W5500,SCS,3.3V logic; INT optional
+Flow,ESP32,GPIO21,W5500,RESET,3.3V logic; INT optional
+Flow,ESP32,GPIO22,W5500,INT,3.3V logic; INT optional
+Flow,ESP32,GPIO17,Upstream RS485,DI,3.3V interface; direction has 10k pull-down
+Flow,ESP32,GPIO16,Upstream RS485,RO,3.3V interface; direction has 10k pull-down
+Flow,ESP32,GPIO4,Upstream RS485,DE+/RE,3.3V interface; direction has 10k pull-down
+Flow,DTJ1524S05,1,Power distribution,CTRL,CTRL open enabled; TRIM open; pin5 is NOT COM
+Flow,DTJ1524S05,2,Power distribution,Input 0V,CTRL open enabled; TRIM open; pin5 is NOT COM
+Flow,DTJ1524S05,3,Power distribution,Input +12V,CTRL open enabled; TRIM open; pin5 is NOT COM
+Flow,DTJ1524S05,4,Power distribution,Output return,CTRL open enabled; TRIM open; pin5 is NOT COM
+Flow,DTJ1524S05,5,Power distribution,TRIM,CTRL open enabled; TRIM open; pin5 is NOT COM
+Flow,DTJ1524S05,6,Power distribution,Output +5V,CTRL open enabled; TRIM open; pin5 is NOT COM
+Bay,ESP32,GPIO17,Upstream RS485,DI,3.3V interface; direction has 10k pull-down
+Bay,ESP32,GPIO16,Upstream RS485,RO,3.3V interface; direction has 10k pull-down
+Bay,ESP32,GPIO4,Upstream RS485,DE+/RE,3.3V interface; direction has 10k pull-down
+Bay,DTJ1524S05,1,Power distribution,CTRL,CTRL open enabled; TRIM open; pin5 is NOT COM
+Bay,DTJ1524S05,2,Power distribution,Input 0V,CTRL open enabled; TRIM open; pin5 is NOT COM
+Bay,DTJ1524S05,3,Power distribution,Input +12V,CTRL open enabled; TRIM open; pin5 is NOT COM
+Bay,DTJ1524S05,4,Power distribution,Output return,CTRL open enabled; TRIM open; pin5 is NOT COM
+Bay,DTJ1524S05,5,Power distribution,TRIM,CTRL open enabled; TRIM open; pin5 is NOT COM
+Bay,DTJ1524S05,6,Power distribution,Output +5V,CTRL open enabled; TRIM open; pin5 is NOT COM
+Bay,ESP32,GPIO26,Sensor RS485,DI,Installation option; independent bus
+Bay,ESP32,GPIO25,Sensor RS485,RO,Installation option; independent bus
+Bay,ESP32,GPIO27,Sensor RS485,DE+/RE,Installation option; independent bus
+Bay bench,ESP32,GPIO13,HC-SR04 1,TRIG,Via 74AHCT125 powered at5V; OE low
+Bay bench,HC-SR04 1,ECHO,ESP32,GPIO32,10k series /15k to0V divider; short wires only
+Bay bench,ESP32,GPIO14,HC-SR04 2,TRIG,Via 74AHCT125 powered at5V; OE low
+Bay bench,HC-SR04 2,ECHO,ESP32,GPIO33,10k series /15k to0V divider; short wires only
+Bay bench,ESP32,GPIO18,HC-SR04 3,TRIG,Via 74AHCT125 powered at5V; OE low
+Bay bench,HC-SR04 3,ECHO,ESP32,GPIO34,10k series /15k to0V divider; short wires only
+Bay bench,ESP32,GPIO19,HC-SR04 4,TRIG,Via 74AHCT125 powered at5V; OE low
+Bay bench,HC-SR04 4,ECHO,ESP32,GPIO35,10k series /15k to0V divider; short wires only
+Bay bench,ESP32,GPIO21,HC-SR04 5,TRIG,Via 74AHCT125 powered at5V; OE low
+Bay bench,HC-SR04 5,ECHO,ESP32,GPIO36,10k series /15k to0V divider; short wires only
+Bay bench,ESP32,GPIO22,HC-SR04 6,TRIG,Via 74AHCT125 powered at5V; OE low
+Bay bench,HC-SR04 6,ECHO,ESP32,GPIO39,10k series /15k to0V divider; short wires only
+Bollard bench,ESP32,GPIO18,DRV8833,AIN1,nSLEEP 10k down; nFAULT 10k pull-up to3V3
+Bollard bench,ESP32,GPIO19,DRV8833,AIN2,nSLEEP 10k down; nFAULT 10k pull-up to3V3
+Bollard bench,ESP32,GPIO23,DRV8833,nSLEEP,nSLEEP 10k down; nFAULT 10k pull-up to3V3
+Bollard bench,ESP32,GPIO22,DRV8833,nFAULT,nSLEEP 10k down; nFAULT 10k pull-up to3V3
+Bollard bench,UP limit,Contact to0V,ESP32,GPIO32,10k pull-up to3V3; NO limits active LOW; obstruction open blocks raise
+Bollard bench,DOWN limit,Contact to0V,ESP32,GPIO33,10k pull-up to3V3; NO limits active LOW; obstruction open blocks raise
+Bollard bench,Obstruction NC loop,Contact to0V,ESP32,GPIO25,10k pull-up to3V3; NO limits active LOW; obstruction open blocks raise
+Bollard bench,Motor supply,+6V,Driver,VM,Through fuse and physical bench E-stop; stall current must fit driver
+Bollard bench,Supply ADC,220k/100k divider,ESP32,GPIO34,100nF to0V; ADC calibration required
+All,Logic return,0V,Non-isolated interfaces,GND,Do not equate signal GND with protective earth; installation isolation review required
+Gate reference,ESP32,GPIO25,3.3V-compatible relay interface,OPEN relay driver,Normally-open dry contacts to vendor OPEN/CLOSE/COM; never motor power
+Gate reference,ESP32,GPIO26,3.3V-compatible relay interface,CLOSE relay driver,Normally-open dry contacts to vendor OPEN/CLOSE/COM; never motor power
+Gate reference,Conditioned isolated status,UP limit,ESP32,GPIO32,3.3V only; external pull-ups; vendor safety remains local
+Gate reference,Conditioned isolated status,DOWN limit,ESP32,GPIO33,3.3V only; external pull-ups; vendor safety remains local
+Gate reference,Conditioned isolated status,Beam clear,ESP32,GPIO34,3.3V only; external pull-ups; vendor safety remains local
+Gate reference,Conditioned isolated status,Vehicle loop clear,ESP32,GPIO35,3.3V only; external pull-ups; vendor safety remains local
+Gate reference,Conditioned isolated status,Local stop healthy,ESP32,GPIO36,3.3V only; external pull-ups; vendor safety remains local

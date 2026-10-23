@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img">
+<title>RS-485 wiring - upstream bus and separate sensor bus</title><defs>
+<marker id="power" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ce4554"/></marker>
+<marker id="ground" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#394453"/></marker>
+<marker id="bus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2368c4"/></marker>
+<marker id="logic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7b4ac6"/></marker>
+<marker id="rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#138780"/></marker>
+</defs><rect width="1600" height="1000" fill="#f5f7fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#243248}.title{font-size:33px;font-weight:700}.small{font-size:14px}.body{font-size:16px}.head{font-size:19px;font-weight:700}</style>
+<text x="48" y="45" font-size="14" fill="#54728b">LARP / TEAM CIRCUIT COMPLETION / 06</text>
+<text x="48" y="88" font-size="33" fill="#243248">RS-485 wiring - upstream bus and separate sensor bus</text>
+<text x="48" y="119" font-size="16" fill="#243248">A/B must be consistent with the selected module datasheet. RS-485 is an electrical interface; addressing, integrity and freshness belong to the protocol.</text>
+<text x="45" y="170" font-size="18" fill="#243248" font-weight="700">MAIN BACKBONE: FC-001 plus BC-001 .. BC-008</text>
+<rect x="52" y="200" width="145" height="95" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="67" y="230" font-size="19" fill="#2368c4" font-weight="700">FC-001</text>
+<text x="67" y="258" font-size="15" fill="#243248">Master</text>
+<line x1="92" y1="295" x2="92" y2="360" stroke="#2368c4" stroke-width="3"/>
+<line x1="122" y1="295" x2="122" y2="405" stroke="#7b4ac6" stroke-width="3"/>
+<line x1="152" y1="295" x2="152" y2="450" stroke="#394453" stroke-width="3"/>
+<rect x="220" y="200" width="145" height="95" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="235" y="230" font-size="19" fill="#2368c4" font-weight="700">BC-001</text>
+<text x="235" y="258" font-size="15" fill="#243248">Address 1</text>
+<line x1="260" y1="295" x2="260" y2="360" stroke="#2368c4" stroke-width="3"/>
+<line x1="290" y1="295" x2="290" y2="405" stroke="#7b4ac6" stroke-width="3"/>
+<line x1="320" y1="295" x2="320" y2="450" stroke="#394453" stroke-width="3"/>
+<rect x="388" y="200" width="145" height="95" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="403" y="230" font-size="19" fill="#2368c4" font-weight="700">BC-002</text>
+<text x="403" y="258" font-size="15" fill="#243248">Address 2</text>
+<line x1="428" y1="295" x2="428" y2="360" stroke="#2368c4" stroke-width="3"/>
+<line x1="458" y1="295" x2="458" y2="405" stroke="#7b4ac6" stroke-width="3"/>
+<line x1="488" y1="295" x2="488" y2="450" stroke="#394453" stroke-width="3"/>
+<rect x="556" y="200" width="145" height="95" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="571" y="230" font-size="19" fill="#2368c4" font-weight="700">BC-003</text>
+<text x="571" y="258" font-size="15" fill="#243248">Address 3</text>
+<line x1="596" y1="295" x2="596" y2="360" stroke="#2368c4" stroke-width="3"/>
+<line x1="626" y1="295" x2="626" y2="405" stroke="#7b4ac6" stroke-width="3"/>
+<line x1="656" y1="295" x2="656" y2="450" stroke="#394453" stroke-width="3"/>
+<rect x="724" y="200" width="145" height="95" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="739" y="230" font-size="19" fill="#2368c4" font-weight="700">BC-004</text>
+<text x="739" y="258" font-size="15" fill="#243248">Address 4</text>
+<line x1="764" y1="295" x2="764" y2="360" stroke="#2368c4" stroke-width="3"/>
+<line x1="794" y1="295" x2="794" y2="405" stroke="#7b4ac6" stroke-width="3"/>
+<line x1="824" y1="295" x2="824" y2="450" stroke="#394453" stroke-width="3"/>
+<rect x="892" y="200" width="145" height="95" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="907" y="230" font-size="19" fill="#2368c4" font-weight="700">BC-005</text>
+<text x="907" y="258" font-size="15" fill="#243248">Address 5</text>
+<line x1="932" y1="295" x2="932" y2="360" stroke="#2368c4" stroke-width="3"/>
+<line x1="962" y1="295" x2="962" y2="405" stroke="#7b4ac6" stroke-width="3"/>
+<line x1="992" y1="295" x2="992" y2="450" stroke="#394453" stroke-width="3"/>
+<rect x="1060" y="200" width="145" height="95" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1075" y="230" font-size="19" fill="#2368c4" font-weight="700">BC-006</text>
+<text x="1075" y="258" font-size="15" fill="#243248">Address 6</text>
+<line x1="1100" y1="295" x2="1100" y2="360" stroke="#2368c4" stroke-width="3"/>
+<line x1="1130" y1="295" x2="1130" y2="405" stroke="#7b4ac6" stroke-width="3"/>
+<line x1="1160" y1="295" x2="1160" y2="450" stroke="#394453" stroke-width="3"/>
+<rect x="1228" y="200" width="145" height="95" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1243" y="230" font-size="19" fill="#2368c4" font-weight="700">BC-007</text>
+<text x="1243" y="258" font-size="15" fill="#243248">Address 7</text>
+<line x1="1268" y1="295" x2="1268" y2="360" stroke="#2368c4" stroke-width="3"/>
+<line x1="1298" y1="295" x2="1298" y2="405" stroke="#7b4ac6" stroke-width="3"/>
+<line x1="1328" y1="295" x2="1328" y2="450" stroke="#394453" stroke-width="3"/>
+<rect x="1396" y="200" width="145" height="95" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1411" y="230" font-size="19" fill="#2368c4" font-weight="700">BC-008</text>
+<text x="1411" y="258" font-size="15" fill="#243248">Address 8</text>
+<line x1="1436" y1="295" x2="1436" y2="360" stroke="#2368c4" stroke-width="3"/>
+<line x1="1466" y1="295" x2="1466" y2="405" stroke="#7b4ac6" stroke-width="3"/>
+<line x1="1496" y1="295" x2="1496" y2="450" stroke="#394453" stroke-width="3"/>
+<line x1="65" y1="360" x2="1530" y2="360" stroke="#2368c4" stroke-width="3"/>
+<line x1="65" y1="405" x2="1530" y2="405" stroke="#7b4ac6" stroke-width="3"/>
+<line x1="65" y1="450" x2="1530" y2="450" stroke="#394453" stroke-width="3"/>
+<text x="48" y="343" font-size="15" fill="#243248">A</text>
+<text x="48" y="393" font-size="15" fill="#243248">B</text>
+<text x="48" y="481" font-size="15" fill="#243248">Reference conductor: not a motor-current return. Shield / chassis termination requires installation review.</text>
+<line x1="65" y1="360" x2="65" y2="370" stroke="#394453" stroke-width="3"/>
+<rect x="56" y="370" width="18" height="25" fill="white" stroke="#394453"/>
+<line x1="65" y1="395" x2="65" y2="405" stroke="#394453" stroke-width="3"/>
+<line x1="1530" y1="360" x2="1530" y2="370" stroke="#394453" stroke-width="3"/>
+<rect x="1521" y="370" width="18" height="25" fill="white" stroke="#394453"/>
+<line x1="1530" y1="395" x2="1530" y2="405" stroke="#394453" stroke-width="3"/>
+<text x="83" y="384" font-size="14" fill="#243248">120 ohm at first node</text>
+<text x="1270" y="384" font-size="14" fill="#243248">120 ohm at last node</text>
+<rect x="45" y="540" width="710" height="300" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="570" font-size="19" fill="#2368c4" font-weight="700">Direction control, grounding and protection</text>
+<text x="60" y="598" font-size="15" fill="#243248">DI &lt;- UART TX; RO -&gt; UART RX</text>
+<text x="60" y="619" font-size="15" fill="#243248">DE and /RE tied together, driven by direction GPIO</text>
+<text x="60" y="640" font-size="15" fill="#243248">10k direction pull-down: receiver enabled at boot</text>
+<text x="60" y="661" font-size="15" fill="#243248">Use 3.3V transceivers with idle/open/short failsafe</text>
+<text x="60" y="682" font-size="15" fill="#243248">THVD1410-class reference needs no external idle bias</text>
+<text x="60" y="703" font-size="15" fill="#243248">MAX485 / MAX3485 substitutions need electrical review</text>
+<text x="60" y="724" font-size="15" fill="#243248">Provide connector ESD protection; assess isolation for field cabling</text>
+<text x="60" y="745" font-size="15" fill="#243248">Do not connect every node with a separate long star cable</text>
+<rect x="800" y="540" width="745" height="300" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="815" y="570" font-size="19" fill="#2368c4" font-weight="700">Independent ceiling-sensor bus at each BC</text>
+<text x="815" y="598" font-size="15" fill="#243248">BC sensor port -&gt; sensor 1 -&gt; ... -&gt; sensor 6</text>
+<text x="815" y="619" font-size="15" fill="#243248">Do not join its A/B pair to the upstream backbone</text>
+<text x="815" y="640" font-size="15" fill="#243248">Terminate at BC sensor port and final sensor only</text>
+<text x="815" y="661" font-size="15" fill="#243248">Each sensor has a unique address and freshness deadline</text>
+<text x="815" y="682" font-size="15" fill="#243248">Power conductors and fuses follow measured load / voltage drop</text>
+<text x="815" y="703" font-size="15" fill="#243248">Main bus: 9 interfaces. Separate sensor port: 1 interface per BC</text>
+<text x="815" y="724" font-size="15" fill="#243248">Industrial sensors include their own bus interface</text>
+<text x="815" y="745" font-size="15" fill="#243248">Raw HC-SR04 bench mode replaces this sensor bus</text>
+<text x="48" y="900" font-size="15" fill="#243248">Commission one controller with one sensor and one actuator first; then six bays; then eight controller addresses. Scope is design capacity, not measured field reliability.</text>
+<line x1="45" y1="942" x2="1550" y2="942" stroke="#394453" stroke-width="3"/>
+<text x="48" y="969" font-size="14" fill="#243248">BENCH / MODULE REFERENCE - not a certified safety circuit or fabrication-ready PCB. See wiring schedule and design notes.</text>
+<text x="48" y="991" font-size="13" fill="#243248">GPIO maps: ESP32-WROOM-32E DevKitC. The team WT32-ETH01 requires its own pin-map review. Motor current and field safety remain unverified.</text></svg>

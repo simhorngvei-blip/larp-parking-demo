@@ -1,0 +1,2287 @@
+{
+  "version": 1,
+  "author": "LARP",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp32",
+      "left": 0,
+      "top": -500,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "title",
+      "left": 0,
+      "top": -625,
+      "attrs": {
+        "text": "LARP | ADDRESSED WIRELESS BOLLARDS | 5 BAYS PER GATEWAY"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "disclosure",
+      "left": 0,
+      "top": -580,
+      "attrs": {
+        "text": "ESP32 MASTER CPU | Local gateway/bay ESP32s are behavioural models | Ideal packet medium, not native ESP-NOW"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "masterLabel",
+      "left": 0,
+      "top": -540,
+      "attrs": {
+        "text": "ESP32-WROOM MASTER | UART0 to application/server database"
+      }
+    },
+    {
+      "type": "chip-gateway",
+      "id": "gateway0",
+      "left": 420,
+      "top": -490,
+      "attrs": {
+        "zone": "0",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "zone0",
+      "left": 420,
+      "top": -530,
+      "attrs": {
+        "text": "ZONE A: 5 bays | TX/RX GATEWAY"
+      }
+    },
+    {
+      "type": "chip-gateway",
+      "id": "gateway1",
+      "left": 760,
+      "top": -490,
+      "attrs": {
+        "zone": "1",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "zone1",
+      "left": 760,
+      "top": -530,
+      "attrs": {
+        "text": "ZONE B: 4 of 5 bays | TX/RX GATEWAY"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "emergency",
+      "left": 50,
+      "top": -140,
+      "attrs": {
+        "value": "0",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "entryBeam",
+      "left": 440,
+      "top": -140,
+      "attrs": {
+        "value": "1",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "exitBeam",
+      "left": 860,
+      "top": -140,
+      "attrs": {
+        "value": "1",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "entryGate",
+      "left": 430,
+      "top": -275,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "entryGateLabel",
+      "left": 430,
+      "top": -320,
+      "attrs": {
+        "text": "ENTRY BOOM | LANE CONTROL"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "exitGate",
+      "left": 860,
+      "top": -275,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "exitGateLabel",
+      "left": 860,
+      "top": -320,
+      "attrs": {
+        "text": "EXIT BOOM | LANE CONTROL"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "bayR101",
+      "left": 0,
+      "top": -35,
+      "attrs": {
+        "text": "R-101 | ZONE A | ADDRESSED LOCAL RX/TX + CONTROLLER"
+      }
+    },
+    {
+      "type": "chip-node",
+      "id": "receiverR101",
+      "left": 0,
+      "top": 0,
+      "attrs": {
+        "node": "0",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantR101",
+      "left": 140,
+      "top": 0,
+      "attrs": {
+        "initial": "100",
+        "jam": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorR101",
+      "left": 345,
+      "top": 30,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverR101",
+      "left": 350,
+      "top": 190,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorR101",
+      "left": 140,
+      "top": 300,
+      "attrs": {
+        "distance": "30"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerR101",
+      "left": 10,
+      "top": 400,
+      "attrs": {
+        "text": "LOCAL POWER MODEL | actual supply / battery design pending"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "bayR102",
+      "left": 510,
+      "top": -35,
+      "attrs": {
+        "text": "R-102 | ZONE A | ADDRESSED LOCAL RX/TX + CONTROLLER"
+      }
+    },
+    {
+      "type": "chip-node",
+      "id": "receiverR102",
+      "left": 510,
+      "top": 0,
+      "attrs": {
+        "node": "1",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantR102",
+      "left": 650,
+      "top": 0,
+      "attrs": {
+        "initial": "0",
+        "jam": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "bayMotor",
+      "left": 855,
+      "top": 30,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverR102",
+      "left": 860,
+      "top": 190,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "baySensor",
+      "left": 650,
+      "top": 300,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerR102",
+      "left": 520,
+      "top": 400,
+      "attrs": {
+        "text": "LOCAL POWER MODEL | actual supply / battery design pending"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "bayR103",
+      "left": 1020,
+      "top": -35,
+      "attrs": {
+        "text": "R-103 | ZONE A | ADDRESSED LOCAL RX/TX + CONTROLLER"
+      }
+    },
+    {
+      "type": "chip-node",
+      "id": "receiverR103",
+      "left": 1020,
+      "top": 0,
+      "attrs": {
+        "node": "2",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantR103",
+      "left": 1160,
+      "top": 0,
+      "attrs": {
+        "initial": "100",
+        "jam": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorR103",
+      "left": 1365,
+      "top": 30,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverR103",
+      "left": 1370,
+      "top": 190,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorR103",
+      "left": 1160,
+      "top": 300,
+      "attrs": {
+        "distance": "30"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerR103",
+      "left": 1030,
+      "top": 400,
+      "attrs": {
+        "text": "LOCAL POWER MODEL | actual supply / battery design pending"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "bayR104",
+      "left": 0,
+      "top": 435,
+      "attrs": {
+        "text": "R-104 | ZONE A | ADDRESSED LOCAL RX/TX + CONTROLLER"
+      }
+    },
+    {
+      "type": "chip-node",
+      "id": "receiverR104",
+      "left": 0,
+      "top": 470,
+      "attrs": {
+        "node": "3",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantR104",
+      "left": 140,
+      "top": 470,
+      "attrs": {
+        "initial": "0",
+        "jam": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorR104",
+      "left": 345,
+      "top": 500,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverR104",
+      "left": 350,
+      "top": 660,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorR104",
+      "left": 140,
+      "top": 770,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerR104",
+      "left": 10,
+      "top": 870,
+      "attrs": {
+        "text": "LOCAL POWER MODEL | actual supply / battery design pending"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "bayV01",
+      "left": 510,
+      "top": 435,
+      "attrs": {
+        "text": "V-01 | ZONE A | ADDRESSED LOCAL RX/TX + CONTROLLER"
+      }
+    },
+    {
+      "type": "chip-node",
+      "id": "receiverV01",
+      "left": 510,
+      "top": 470,
+      "attrs": {
+        "node": "4",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantV01",
+      "left": 650,
+      "top": 470,
+      "attrs": {
+        "initial": "0",
+        "jam": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorV01",
+      "left": 855,
+      "top": 500,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverV01",
+      "left": 860,
+      "top": 660,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorV01",
+      "left": 650,
+      "top": 770,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerV01",
+      "left": 520,
+      "top": 870,
+      "attrs": {
+        "text": "LOCAL POWER MODEL | actual supply / battery design pending"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "bayV02",
+      "left": 1020,
+      "top": 435,
+      "attrs": {
+        "text": "V-02 | ZONE B | ADDRESSED LOCAL RX/TX + CONTROLLER"
+      }
+    },
+    {
+      "type": "chip-node",
+      "id": "receiverV02",
+      "left": 1020,
+      "top": 470,
+      "attrs": {
+        "node": "5",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantV02",
+      "left": 1160,
+      "top": 470,
+      "attrs": {
+        "initial": "0",
+        "jam": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorV02",
+      "left": 1365,
+      "top": 500,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverV02",
+      "left": 1370,
+      "top": 660,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorV02",
+      "left": 1160,
+      "top": 770,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerV02",
+      "left": 1030,
+      "top": 870,
+      "attrs": {
+        "text": "LOCAL POWER MODEL | actual supply / battery design pending"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "bayV03",
+      "left": 0,
+      "top": 905,
+      "attrs": {
+        "text": "V-03 | ZONE B | ADDRESSED LOCAL RX/TX + CONTROLLER"
+      }
+    },
+    {
+      "type": "chip-node",
+      "id": "receiverV03",
+      "left": 0,
+      "top": 940,
+      "attrs": {
+        "node": "6",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantV03",
+      "left": 140,
+      "top": 940,
+      "attrs": {
+        "initial": "0",
+        "jam": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorV03",
+      "left": 345,
+      "top": 970,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverV03",
+      "left": 350,
+      "top": 1130,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorV03",
+      "left": 140,
+      "top": 1240,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerV03",
+      "left": 10,
+      "top": 1340,
+      "attrs": {
+        "text": "LOCAL POWER MODEL | actual supply / battery design pending"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "bayV04",
+      "left": 510,
+      "top": 905,
+      "attrs": {
+        "text": "V-04 | ZONE B | ADDRESSED LOCAL RX/TX + CONTROLLER"
+      }
+    },
+    {
+      "type": "chip-node",
+      "id": "receiverV04",
+      "left": 510,
+      "top": 940,
+      "attrs": {
+        "node": "7",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantV04",
+      "left": 650,
+      "top": 940,
+      "attrs": {
+        "initial": "0",
+        "jam": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorV04",
+      "left": 855,
+      "top": 970,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverV04",
+      "left": 860,
+      "top": 1130,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorV04",
+      "left": 650,
+      "top": 1240,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerV04",
+      "left": 520,
+      "top": 1340,
+      "attrs": {
+        "text": "LOCAL POWER MODEL | actual supply / battery design pending"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "bayT01",
+      "left": 1020,
+      "top": 905,
+      "attrs": {
+        "text": "T-01 | ZONE B | ADDRESSED LOCAL RX/TX + CONTROLLER"
+      }
+    },
+    {
+      "type": "chip-node",
+      "id": "receiverT01",
+      "left": 1020,
+      "top": 940,
+      "attrs": {
+        "node": "8",
+        "offline": "0"
+      }
+    },
+    {
+      "type": "chip-plant",
+      "id": "plantT01",
+      "left": 1160,
+      "top": 940,
+      "attrs": {
+        "initial": "0",
+        "jam": "0"
+      }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "motorT01",
+      "left": 1365,
+      "top": 970,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "driverT01",
+      "left": 1370,
+      "top": 1130,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sensorT01",
+      "left": 1160,
+      "top": 1240,
+      "attrs": {
+        "distance": "250"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "powerT01",
+      "left": 1030,
+      "top": 1340,
+      "attrs": {
+        "text": "LOCAL POWER MODEL | actual supply / battery design pending"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp32:26",
+      "gateway0:RX",
+      "green",
+      []
+    ],
+    [
+      "gateway0:TX",
+      "esp32:25",
+      "blue",
+      []
+    ],
+    [
+      "esp32:3V3",
+      "gateway0:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp32:GND.1",
+      "gateway0:GND",
+      "black",
+      []
+    ],
+    [
+      "esp32:17",
+      "gateway1:RX",
+      "green",
+      []
+    ],
+    [
+      "gateway1:TX",
+      "esp32:16",
+      "blue",
+      []
+    ],
+    [
+      "esp32:3V3",
+      "gateway1:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp32:GND.1",
+      "gateway1:GND",
+      "black",
+      []
+    ],
+    [
+      "esp32:4",
+      "emergency:2",
+      "green",
+      []
+    ],
+    [
+      "esp32:GND.1",
+      "emergency:1",
+      "black",
+      []
+    ],
+    [
+      "esp32:32",
+      "entryBeam:2",
+      "green",
+      []
+    ],
+    [
+      "esp32:GND.1",
+      "entryBeam:1",
+      "black",
+      []
+    ],
+    [
+      "esp32:33",
+      "exitBeam:2",
+      "green",
+      []
+    ],
+    [
+      "esp32:GND.1",
+      "exitBeam:1",
+      "black",
+      []
+    ],
+    [
+      "esp32:18",
+      "entryGate:PWM",
+      "green",
+      []
+    ],
+    [
+      "esp32:5V",
+      "entryGate:V+",
+      "red",
+      []
+    ],
+    [
+      "esp32:GND.1",
+      "entryGate:GND",
+      "black",
+      []
+    ],
+    [
+      "esp32:18",
+      "plantR102:ENTRY_PWM",
+      "orange",
+      []
+    ],
+    [
+      "esp32:21",
+      "plantR102:ENTRY_OPEN",
+      "blue",
+      []
+    ],
+    [
+      "esp32:22",
+      "plantR102:ENTRY_CLOSED",
+      "blue",
+      []
+    ],
+    [
+      "esp32:19",
+      "exitGate:PWM",
+      "green",
+      []
+    ],
+    [
+      "esp32:5V",
+      "exitGate:V+",
+      "red",
+      []
+    ],
+    [
+      "esp32:GND.1",
+      "exitGate:GND",
+      "black",
+      []
+    ],
+    [
+      "esp32:19",
+      "plantR102:EXIT_PWM",
+      "orange",
+      []
+    ],
+    [
+      "esp32:23",
+      "plantR102:EXIT_OPEN",
+      "blue",
+      []
+    ],
+    [
+      "esp32:27",
+      "plantR102:EXIT_CLOSED",
+      "blue",
+      []
+    ],
+    [
+      "receiverR101:STEP",
+      "driverR101:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverR101:DIR",
+      "driverR101:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverR101:STEP",
+      "plantR101:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverR101:DIR",
+      "plantR101:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverR101:DOWN",
+      "plantR101:DOWN",
+      "green",
+      []
+    ],
+    [
+      "receiverR101:UP",
+      "plantR101:UP",
+      "green",
+      []
+    ],
+    [
+      "receiverR101:TRIG",
+      "sensorR101:TRIG",
+      "green",
+      []
+    ],
+    [
+      "receiverR101:ECHO",
+      "sensorR101:ECHO",
+      "green",
+      []
+    ],
+    [
+      "sensorR101:ECHO",
+      "plantR101:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantR101:ENABLE",
+      "driverR101:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverR101:1B",
+      "motorR101:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverR101:1A",
+      "motorR101:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverR101:2A",
+      "motorR101:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverR101:2B",
+      "motorR101:A-",
+      "orange",
+      []
+    ],
+    [
+      "receiverR101:VCC",
+      "driverR101:VDD",
+      "red",
+      []
+    ],
+    [
+      "receiverR101:VCC",
+      "driverR101:RESET",
+      "red",
+      []
+    ],
+    [
+      "receiverR101:VCC",
+      "driverR101:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "receiverR101:VCC",
+      "sensorR101:VCC",
+      "red",
+      []
+    ],
+    [
+      "receiverR101:GND",
+      "driverR101:GND.1",
+      "black",
+      []
+    ],
+    [
+      "receiverR101:GND",
+      "driverR101:MS1",
+      "black",
+      []
+    ],
+    [
+      "receiverR101:GND",
+      "driverR101:MS2",
+      "black",
+      []
+    ],
+    [
+      "receiverR101:GND",
+      "driverR101:MS3",
+      "black",
+      []
+    ],
+    [
+      "receiverR101:GND",
+      "sensorR101:GND",
+      "black",
+      []
+    ],
+    [
+      "receiverR101:GND",
+      "plantR101:GND",
+      "black",
+      []
+    ],
+    [
+      "gateway0:AIR_TX0",
+      "receiverR101:RX",
+      "",
+      []
+    ],
+    [
+      "receiverR101:TX",
+      "gateway0:AIR_RX0",
+      "",
+      []
+    ],
+    [
+      "receiverR102:STEP",
+      "driverR102:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverR102:DIR",
+      "driverR102:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverR102:STEP",
+      "plantR102:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverR102:DIR",
+      "plantR102:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverR102:DOWN",
+      "plantR102:DOWN",
+      "green",
+      []
+    ],
+    [
+      "receiverR102:UP",
+      "plantR102:UP",
+      "green",
+      []
+    ],
+    [
+      "receiverR102:TRIG",
+      "baySensor:TRIG",
+      "green",
+      []
+    ],
+    [
+      "receiverR102:ECHO",
+      "baySensor:ECHO",
+      "green",
+      []
+    ],
+    [
+      "baySensor:ECHO",
+      "plantR102:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantR102:ENABLE",
+      "driverR102:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverR102:1B",
+      "bayMotor:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverR102:1A",
+      "bayMotor:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverR102:2A",
+      "bayMotor:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverR102:2B",
+      "bayMotor:A-",
+      "orange",
+      []
+    ],
+    [
+      "receiverR102:VCC",
+      "driverR102:VDD",
+      "red",
+      []
+    ],
+    [
+      "receiverR102:VCC",
+      "driverR102:RESET",
+      "red",
+      []
+    ],
+    [
+      "receiverR102:VCC",
+      "driverR102:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "receiverR102:VCC",
+      "baySensor:VCC",
+      "red",
+      []
+    ],
+    [
+      "receiverR102:GND",
+      "driverR102:GND.1",
+      "black",
+      []
+    ],
+    [
+      "receiverR102:GND",
+      "driverR102:MS1",
+      "black",
+      []
+    ],
+    [
+      "receiverR102:GND",
+      "driverR102:MS2",
+      "black",
+      []
+    ],
+    [
+      "receiverR102:GND",
+      "driverR102:MS3",
+      "black",
+      []
+    ],
+    [
+      "receiverR102:GND",
+      "baySensor:GND",
+      "black",
+      []
+    ],
+    [
+      "receiverR102:GND",
+      "plantR102:GND",
+      "black",
+      []
+    ],
+    [
+      "gateway0:AIR_TX1",
+      "receiverR102:RX",
+      "",
+      []
+    ],
+    [
+      "receiverR102:TX",
+      "gateway0:AIR_RX1",
+      "",
+      []
+    ],
+    [
+      "receiverR103:STEP",
+      "driverR103:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverR103:DIR",
+      "driverR103:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverR103:STEP",
+      "plantR103:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverR103:DIR",
+      "plantR103:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverR103:DOWN",
+      "plantR103:DOWN",
+      "green",
+      []
+    ],
+    [
+      "receiverR103:UP",
+      "plantR103:UP",
+      "green",
+      []
+    ],
+    [
+      "receiverR103:TRIG",
+      "sensorR103:TRIG",
+      "green",
+      []
+    ],
+    [
+      "receiverR103:ECHO",
+      "sensorR103:ECHO",
+      "green",
+      []
+    ],
+    [
+      "sensorR103:ECHO",
+      "plantR103:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantR103:ENABLE",
+      "driverR103:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverR103:1B",
+      "motorR103:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverR103:1A",
+      "motorR103:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverR103:2A",
+      "motorR103:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverR103:2B",
+      "motorR103:A-",
+      "orange",
+      []
+    ],
+    [
+      "receiverR103:VCC",
+      "driverR103:VDD",
+      "red",
+      []
+    ],
+    [
+      "receiverR103:VCC",
+      "driverR103:RESET",
+      "red",
+      []
+    ],
+    [
+      "receiverR103:VCC",
+      "driverR103:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "receiverR103:VCC",
+      "sensorR103:VCC",
+      "red",
+      []
+    ],
+    [
+      "receiverR103:GND",
+      "driverR103:GND.1",
+      "black",
+      []
+    ],
+    [
+      "receiverR103:GND",
+      "driverR103:MS1",
+      "black",
+      []
+    ],
+    [
+      "receiverR103:GND",
+      "driverR103:MS2",
+      "black",
+      []
+    ],
+    [
+      "receiverR103:GND",
+      "driverR103:MS3",
+      "black",
+      []
+    ],
+    [
+      "receiverR103:GND",
+      "sensorR103:GND",
+      "black",
+      []
+    ],
+    [
+      "receiverR103:GND",
+      "plantR103:GND",
+      "black",
+      []
+    ],
+    [
+      "gateway0:AIR_TX2",
+      "receiverR103:RX",
+      "",
+      []
+    ],
+    [
+      "receiverR103:TX",
+      "gateway0:AIR_RX2",
+      "",
+      []
+    ],
+    [
+      "receiverR104:STEP",
+      "driverR104:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverR104:DIR",
+      "driverR104:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverR104:STEP",
+      "plantR104:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverR104:DIR",
+      "plantR104:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverR104:DOWN",
+      "plantR104:DOWN",
+      "green",
+      []
+    ],
+    [
+      "receiverR104:UP",
+      "plantR104:UP",
+      "green",
+      []
+    ],
+    [
+      "receiverR104:TRIG",
+      "sensorR104:TRIG",
+      "green",
+      []
+    ],
+    [
+      "receiverR104:ECHO",
+      "sensorR104:ECHO",
+      "green",
+      []
+    ],
+    [
+      "sensorR104:ECHO",
+      "plantR104:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantR104:ENABLE",
+      "driverR104:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverR104:1B",
+      "motorR104:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverR104:1A",
+      "motorR104:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverR104:2A",
+      "motorR104:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverR104:2B",
+      "motorR104:A-",
+      "orange",
+      []
+    ],
+    [
+      "receiverR104:VCC",
+      "driverR104:VDD",
+      "red",
+      []
+    ],
+    [
+      "receiverR104:VCC",
+      "driverR104:RESET",
+      "red",
+      []
+    ],
+    [
+      "receiverR104:VCC",
+      "driverR104:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "receiverR104:VCC",
+      "sensorR104:VCC",
+      "red",
+      []
+    ],
+    [
+      "receiverR104:GND",
+      "driverR104:GND.1",
+      "black",
+      []
+    ],
+    [
+      "receiverR104:GND",
+      "driverR104:MS1",
+      "black",
+      []
+    ],
+    [
+      "receiverR104:GND",
+      "driverR104:MS2",
+      "black",
+      []
+    ],
+    [
+      "receiverR104:GND",
+      "driverR104:MS3",
+      "black",
+      []
+    ],
+    [
+      "receiverR104:GND",
+      "sensorR104:GND",
+      "black",
+      []
+    ],
+    [
+      "receiverR104:GND",
+      "plantR104:GND",
+      "black",
+      []
+    ],
+    [
+      "gateway0:AIR_TX3",
+      "receiverR104:RX",
+      "",
+      []
+    ],
+    [
+      "receiverR104:TX",
+      "gateway0:AIR_RX3",
+      "",
+      []
+    ],
+    [
+      "receiverV01:STEP",
+      "driverV01:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverV01:DIR",
+      "driverV01:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverV01:STEP",
+      "plantV01:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverV01:DIR",
+      "plantV01:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverV01:DOWN",
+      "plantV01:DOWN",
+      "green",
+      []
+    ],
+    [
+      "receiverV01:UP",
+      "plantV01:UP",
+      "green",
+      []
+    ],
+    [
+      "receiverV01:TRIG",
+      "sensorV01:TRIG",
+      "green",
+      []
+    ],
+    [
+      "receiverV01:ECHO",
+      "sensorV01:ECHO",
+      "green",
+      []
+    ],
+    [
+      "sensorV01:ECHO",
+      "plantV01:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantV01:ENABLE",
+      "driverV01:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverV01:1B",
+      "motorV01:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverV01:1A",
+      "motorV01:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverV01:2A",
+      "motorV01:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverV01:2B",
+      "motorV01:A-",
+      "orange",
+      []
+    ],
+    [
+      "receiverV01:VCC",
+      "driverV01:VDD",
+      "red",
+      []
+    ],
+    [
+      "receiverV01:VCC",
+      "driverV01:RESET",
+      "red",
+      []
+    ],
+    [
+      "receiverV01:VCC",
+      "driverV01:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "receiverV01:VCC",
+      "sensorV01:VCC",
+      "red",
+      []
+    ],
+    [
+      "receiverV01:GND",
+      "driverV01:GND.1",
+      "black",
+      []
+    ],
+    [
+      "receiverV01:GND",
+      "driverV01:MS1",
+      "black",
+      []
+    ],
+    [
+      "receiverV01:GND",
+      "driverV01:MS2",
+      "black",
+      []
+    ],
+    [
+      "receiverV01:GND",
+      "driverV01:MS3",
+      "black",
+      []
+    ],
+    [
+      "receiverV01:GND",
+      "sensorV01:GND",
+      "black",
+      []
+    ],
+    [
+      "receiverV01:GND",
+      "plantV01:GND",
+      "black",
+      []
+    ],
+    [
+      "gateway0:AIR_TX4",
+      "receiverV01:RX",
+      "",
+      []
+    ],
+    [
+      "receiverV01:TX",
+      "gateway0:AIR_RX4",
+      "",
+      []
+    ],
+    [
+      "receiverV02:STEP",
+      "driverV02:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverV02:DIR",
+      "driverV02:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverV02:STEP",
+      "plantV02:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverV02:DIR",
+      "plantV02:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverV02:DOWN",
+      "plantV02:DOWN",
+      "green",
+      []
+    ],
+    [
+      "receiverV02:UP",
+      "plantV02:UP",
+      "green",
+      []
+    ],
+    [
+      "receiverV02:TRIG",
+      "sensorV02:TRIG",
+      "green",
+      []
+    ],
+    [
+      "receiverV02:ECHO",
+      "sensorV02:ECHO",
+      "green",
+      []
+    ],
+    [
+      "sensorV02:ECHO",
+      "plantV02:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantV02:ENABLE",
+      "driverV02:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverV02:1B",
+      "motorV02:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverV02:1A",
+      "motorV02:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverV02:2A",
+      "motorV02:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverV02:2B",
+      "motorV02:A-",
+      "orange",
+      []
+    ],
+    [
+      "receiverV02:VCC",
+      "driverV02:VDD",
+      "red",
+      []
+    ],
+    [
+      "receiverV02:VCC",
+      "driverV02:RESET",
+      "red",
+      []
+    ],
+    [
+      "receiverV02:VCC",
+      "driverV02:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "receiverV02:VCC",
+      "sensorV02:VCC",
+      "red",
+      []
+    ],
+    [
+      "receiverV02:GND",
+      "driverV02:GND.1",
+      "black",
+      []
+    ],
+    [
+      "receiverV02:GND",
+      "driverV02:MS1",
+      "black",
+      []
+    ],
+    [
+      "receiverV02:GND",
+      "driverV02:MS2",
+      "black",
+      []
+    ],
+    [
+      "receiverV02:GND",
+      "driverV02:MS3",
+      "black",
+      []
+    ],
+    [
+      "receiverV02:GND",
+      "sensorV02:GND",
+      "black",
+      []
+    ],
+    [
+      "receiverV02:GND",
+      "plantV02:GND",
+      "black",
+      []
+    ],
+    [
+      "gateway1:AIR_TX0",
+      "receiverV02:RX",
+      "",
+      []
+    ],
+    [
+      "receiverV02:TX",
+      "gateway1:AIR_RX0",
+      "",
+      []
+    ],
+    [
+      "receiverV03:STEP",
+      "driverV03:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverV03:DIR",
+      "driverV03:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverV03:STEP",
+      "plantV03:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverV03:DIR",
+      "plantV03:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverV03:DOWN",
+      "plantV03:DOWN",
+      "green",
+      []
+    ],
+    [
+      "receiverV03:UP",
+      "plantV03:UP",
+      "green",
+      []
+    ],
+    [
+      "receiverV03:TRIG",
+      "sensorV03:TRIG",
+      "green",
+      []
+    ],
+    [
+      "receiverV03:ECHO",
+      "sensorV03:ECHO",
+      "green",
+      []
+    ],
+    [
+      "sensorV03:ECHO",
+      "plantV03:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantV03:ENABLE",
+      "driverV03:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverV03:1B",
+      "motorV03:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverV03:1A",
+      "motorV03:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverV03:2A",
+      "motorV03:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverV03:2B",
+      "motorV03:A-",
+      "orange",
+      []
+    ],
+    [
+      "receiverV03:VCC",
+      "driverV03:VDD",
+      "red",
+      []
+    ],
+    [
+      "receiverV03:VCC",
+      "driverV03:RESET",
+      "red",
+      []
+    ],
+    [
+      "receiverV03:VCC",
+      "driverV03:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "receiverV03:VCC",
+      "sensorV03:VCC",
+      "red",
+      []
+    ],
+    [
+      "receiverV03:GND",
+      "driverV03:GND.1",
+      "black",
+      []
+    ],
+    [
+      "receiverV03:GND",
+      "driverV03:MS1",
+      "black",
+      []
+    ],
+    [
+      "receiverV03:GND",
+      "driverV03:MS2",
+      "black",
+      []
+    ],
+    [
+      "receiverV03:GND",
+      "driverV03:MS3",
+      "black",
+      []
+    ],
+    [
+      "receiverV03:GND",
+      "sensorV03:GND",
+      "black",
+      []
+    ],
+    [
+      "receiverV03:GND",
+      "plantV03:GND",
+      "black",
+      []
+    ],
+    [
+      "gateway1:AIR_TX1",
+      "receiverV03:RX",
+      "",
+      []
+    ],
+    [
+      "receiverV03:TX",
+      "gateway1:AIR_RX1",
+      "",
+      []
+    ],
+    [
+      "receiverV04:STEP",
+      "driverV04:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverV04:DIR",
+      "driverV04:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverV04:STEP",
+      "plantV04:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverV04:DIR",
+      "plantV04:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverV04:DOWN",
+      "plantV04:DOWN",
+      "green",
+      []
+    ],
+    [
+      "receiverV04:UP",
+      "plantV04:UP",
+      "green",
+      []
+    ],
+    [
+      "receiverV04:TRIG",
+      "sensorV04:TRIG",
+      "green",
+      []
+    ],
+    [
+      "receiverV04:ECHO",
+      "sensorV04:ECHO",
+      "green",
+      []
+    ],
+    [
+      "sensorV04:ECHO",
+      "plantV04:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantV04:ENABLE",
+      "driverV04:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverV04:1B",
+      "motorV04:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverV04:1A",
+      "motorV04:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverV04:2A",
+      "motorV04:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverV04:2B",
+      "motorV04:A-",
+      "orange",
+      []
+    ],
+    [
+      "receiverV04:VCC",
+      "driverV04:VDD",
+      "red",
+      []
+    ],
+    [
+      "receiverV04:VCC",
+      "driverV04:RESET",
+      "red",
+      []
+    ],
+    [
+      "receiverV04:VCC",
+      "driverV04:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "receiverV04:VCC",
+      "sensorV04:VCC",
+      "red",
+      []
+    ],
+    [
+      "receiverV04:GND",
+      "driverV04:GND.1",
+      "black",
+      []
+    ],
+    [
+      "receiverV04:GND",
+      "driverV04:MS1",
+      "black",
+      []
+    ],
+    [
+      "receiverV04:GND",
+      "driverV04:MS2",
+      "black",
+      []
+    ],
+    [
+      "receiverV04:GND",
+      "driverV04:MS3",
+      "black",
+      []
+    ],
+    [
+      "receiverV04:GND",
+      "sensorV04:GND",
+      "black",
+      []
+    ],
+    [
+      "receiverV04:GND",
+      "plantV04:GND",
+      "black",
+      []
+    ],
+    [
+      "gateway1:AIR_TX2",
+      "receiverV04:RX",
+      "",
+      []
+    ],
+    [
+      "receiverV04:TX",
+      "gateway1:AIR_RX2",
+      "",
+      []
+    ],
+    [
+      "receiverT01:STEP",
+      "driverT01:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverT01:DIR",
+      "driverT01:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverT01:STEP",
+      "plantT01:STEP",
+      "green",
+      []
+    ],
+    [
+      "receiverT01:DIR",
+      "plantT01:DIR",
+      "green",
+      []
+    ],
+    [
+      "receiverT01:DOWN",
+      "plantT01:DOWN",
+      "green",
+      []
+    ],
+    [
+      "receiverT01:UP",
+      "plantT01:UP",
+      "green",
+      []
+    ],
+    [
+      "receiverT01:TRIG",
+      "sensorT01:TRIG",
+      "green",
+      []
+    ],
+    [
+      "receiverT01:ECHO",
+      "sensorT01:ECHO",
+      "green",
+      []
+    ],
+    [
+      "sensorT01:ECHO",
+      "plantT01:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "plantT01:ENABLE",
+      "driverT01:ENABLE",
+      "orange",
+      []
+    ],
+    [
+      "driverT01:1B",
+      "motorT01:B-",
+      "orange",
+      []
+    ],
+    [
+      "driverT01:1A",
+      "motorT01:B+",
+      "orange",
+      []
+    ],
+    [
+      "driverT01:2A",
+      "motorT01:A+",
+      "orange",
+      []
+    ],
+    [
+      "driverT01:2B",
+      "motorT01:A-",
+      "orange",
+      []
+    ],
+    [
+      "receiverT01:VCC",
+      "driverT01:VDD",
+      "red",
+      []
+    ],
+    [
+      "receiverT01:VCC",
+      "driverT01:RESET",
+      "red",
+      []
+    ],
+    [
+      "receiverT01:VCC",
+      "driverT01:SLEEP",
+      "red",
+      []
+    ],
+    [
+      "receiverT01:VCC",
+      "sensorT01:VCC",
+      "red",
+      []
+    ],
+    [
+      "receiverT01:GND",
+      "driverT01:GND.1",
+      "black",
+      []
+    ],
+    [
+      "receiverT01:GND",
+      "driverT01:MS1",
+      "black",
+      []
+    ],
+    [
+      "receiverT01:GND",
+      "driverT01:MS2",
+      "black",
+      []
+    ],
+    [
+      "receiverT01:GND",
+      "driverT01:MS3",
+      "black",
+      []
+    ],
+    [
+      "receiverT01:GND",
+      "sensorT01:GND",
+      "black",
+      []
+    ],
+    [
+      "receiverT01:GND",
+      "plantT01:GND",
+      "black",
+      []
+    ],
+    [
+      "gateway1:AIR_TX3",
+      "receiverT01:RX",
+      "",
+      []
+    ],
+    [
+      "receiverT01:TX",
+      "gateway1:AIR_RX3",
+      "",
+      []
+    ],
+    [
+      "esp32:TX",
+      "$serialMonitor:RX",
+      "purple",
+      []
+    ],
+    [
+      "$serialMonitor:TX",
+      "esp32:RX",
+      "purple",
+      []
+    ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  },
+  "dependencies": {}
+}

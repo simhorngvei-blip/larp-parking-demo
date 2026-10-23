@@ -1,0 +1,3 @@
+﻿import {createRequire} from 'node:module';
+const {chromium}=createRequire(new URL('../tools/mcp-node/package.json',import.meta.url))('playwright');
+const browser=await chromium.launch({headless:true,args:['--remote-debugging-port=9226']});const context=await browser.newContext({viewport:{width:1500,height:950}});const page=await context.newPage();await page.goto('https://wokwi.com/projects/new/esp32');await page.waitForFunction(()=>window.monaco?.editor.getModels().some(m=>m.uri.toString()==='vfs:sketch.ino'));console.log('Controller lab authoring ready on 9226');console.log((await page.locator('body').innerText()).slice(-2500));await new Promise(()=>{});

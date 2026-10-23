@@ -1,0 +1,101 @@
+name: baypilot
+services:
+  api:
+    build: {context: ., target: api}
+    init: true
+    environment:
+      PARKING_HOST: 0.0.0.0
+      PARKING_PORT: '4176'
+      PARKING_DB: ':memory:'
+      PARKING_SCALE_DB: /workspace/parking-prototype/data/scaled.sqlite
+      PARKING_PUBLIC_DB: /workspace/parking-prototype/data/public.sqlite
+    volumes:
+      - demo-data:/workspace/parking-prototype/data
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:4176/api/state').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+  web:
+    build: {context: ., target: web}
+    ports:
+      - '127.0.0.1:${WEB_PORT:-8080}:80'
+    depends_on:
+      api: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, wget, -q, -O, /dev/null, 'http://127.0.0.1/']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+  developer:
+    build: {context: ., target: developer}
+    ports:
+      - '127.0.0.1:8081:80'
+    depends_on:
+      api: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, wget, -q, -O, /dev/null, 'http://127.0.0.1/']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+  bridge:
+    profiles: [live]
+    build: {context: ., target: bridge}
+    init: true
+    shm_size: 1gb
+    environment:
+      PARKING_API_URL: http://api:4176
+      PARKING_APP_URL: http://web
+      PARKING_PUBLIC_URL: '${PUBLIC_URL:-http://localhost:${WEB_PORT:-8080}}'
+    volumes:
+      - demo-data:/workspace/parking-prototype/data:ro
+      - circuit-evidence:/workspace/wokwi-integrated/evidence
+    depends_on:
+      api: {condition: service_healthy}
+      web: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:4177/status').then(r=>r.json()).then(s=>process.exit(s.wokwi?.connected&&s.frameAgeMs!==null&&s.frameAgeMs<4000?0:1)).catch(()=>process.exit(1))"]
+      start_period: 720s
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    restart: 'no'
+  controller-labs:
+    profiles: [live]
+    build: {context: ., target: controller-labs}
+    init: true
+    shm_size: 1gb
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:4178/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      start_period: 720s
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    restart: unless-stopped
+  tests:
+    profiles: [test]
+    build: {context: ., target: tests}
+  circuit-tests:
+    profiles: [test]
+    build: {context: ., target: circuit-tests}
+  smoke:
+    profiles: [test]
+    build: {context: ., target: bridge}
+    init: true
+    shm_size: 1gb
+    environment:
+      SMOKE_URL: http://web
+      SMOKE_LIVE: '${SMOKE_LIVE:-0}'
+    volumes:
+      - smoke-evidence:/workspace/wokwi-integrated/evidence
+      - demo-data:/workspace/parking-prototype/data:ro
+    command: [node, docker/smoke.mjs]
+    depends_on:
+      web: {condition: service_healthy}
+volumes:
+  demo-data:
+  circuit-evidence:
+  smoke-evidence:

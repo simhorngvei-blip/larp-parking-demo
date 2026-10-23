@@ -1,0 +1,229 @@
+﻿{
+  "name": "baypilot",
+  "networks": {
+    "default": {
+      "name": "baypilot_default",
+      "ipam": {}
+    }
+  },
+  "services": {
+    "api": {
+      "build": {
+        "context": "D:\\Sime Darby\\Hackathon Final Project",
+        "dockerfile": "Dockerfile",
+        "target": "api"
+      },
+      "command": null,
+      "entrypoint": null,
+      "environment": {
+        "PARKING_DB": ":memory:",
+        "PARKING_HOST": "0.0.0.0",
+        "PARKING_PORT": "4176"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:4176/api/state').then(r=\u003eprocess.exit(r.ok?0:1)).catch(()=\u003eprocess.exit(1))"
+        ],
+        "timeout": "3s",
+        "interval": "5s",
+        "retries": 12
+      },
+      "init": true,
+      "networks": {
+        "default": null
+      },
+      "restart": "unless-stopped",
+      "volumes": [
+        {
+          "type": "volume",
+          "source": "demo-data",
+          "target": "/workspace/parking-prototype/data",
+          "volume": {}
+        }
+      ]
+    },
+    "bridge": {
+      "profiles": [
+        "live"
+      ],
+      "build": {
+        "context": "D:\\Sime Darby\\Hackathon Final Project",
+        "dockerfile": "Dockerfile",
+        "target": "bridge"
+      },
+      "command": null,
+      "depends_on": {
+        "api": {
+          "condition": "service_healthy",
+          "required": true
+        },
+        "web": {
+          "condition": "service_healthy",
+          "required": true
+        }
+      },
+      "entrypoint": null,
+      "environment": {
+        "PARKING_API_URL": "http://api:4176",
+        "PARKING_APP_URL": "http://web",
+        "PARKING_PUBLIC_URL": "http://localhost:8080"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:4177/status').then(r=\u003er.json()).then(s=\u003eprocess.exit(s.wokwi?.connected\u0026\u0026s.frameAgeMs!==null\u0026\u0026s.frameAgeMs\u003c4000?0:1)).catch(()=\u003eprocess.exit(1))"
+        ],
+        "timeout": "5s",
+        "interval": "10s",
+        "retries": 6,
+        "start_period": "3m0s"
+      },
+      "init": true,
+      "networks": {
+        "default": null
+      },
+      "restart": "no",
+      "shm_size": "1073741824",
+      "volumes": [
+        {
+          "type": "volume",
+          "source": "demo-data",
+          "target": "/workspace/parking-prototype/data",
+          "read_only": true,
+          "volume": {}
+        },
+        {
+          "type": "volume",
+          "source": "circuit-evidence",
+          "target": "/workspace/wokwi-integrated/evidence",
+          "volume": {}
+        }
+      ]
+    },
+    "circuit-tests": {
+      "profiles": [
+        "test"
+      ],
+      "build": {
+        "context": "D:\\Sime Darby\\Hackathon Final Project",
+        "dockerfile": "Dockerfile",
+        "target": "circuit-tests"
+      },
+      "command": null,
+      "entrypoint": null,
+      "networks": {
+        "default": null
+      }
+    },
+    "smoke": {
+      "profiles": [
+        "test"
+      ],
+      "build": {
+        "context": "D:\\Sime Darby\\Hackathon Final Project",
+        "dockerfile": "Dockerfile",
+        "target": "bridge"
+      },
+      "command": [
+        "node",
+        "docker/smoke.mjs"
+      ],
+      "depends_on": {
+        "web": {
+          "condition": "service_healthy",
+          "required": true
+        }
+      },
+      "entrypoint": null,
+      "environment": {
+        "SMOKE_LIVE": "0",
+        "SMOKE_URL": "http://web"
+      },
+      "init": true,
+      "networks": {
+        "default": null
+      },
+      "shm_size": "1073741824",
+      "volumes": [
+        {
+          "type": "volume",
+          "source": "smoke-evidence",
+          "target": "/workspace/wokwi-integrated/evidence",
+          "volume": {}
+        }
+      ]
+    },
+    "tests": {
+      "profiles": [
+        "test"
+      ],
+      "build": {
+        "context": "D:\\Sime Darby\\Hackathon Final Project",
+        "dockerfile": "Dockerfile",
+        "target": "tests"
+      },
+      "command": null,
+      "entrypoint": null,
+      "networks": {
+        "default": null
+      }
+    },
+    "web": {
+      "build": {
+        "context": "D:\\Sime Darby\\Hackathon Final Project",
+        "dockerfile": "Dockerfile",
+        "target": "web"
+      },
+      "command": null,
+      "depends_on": {
+        "api": {
+          "condition": "service_healthy",
+          "required": true
+        }
+      },
+      "entrypoint": null,
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "wget",
+          "-q",
+          "-O",
+          "/dev/null",
+          "http://127.0.0.1/"
+        ],
+        "timeout": "3s",
+        "interval": "5s",
+        "retries": 12
+      },
+      "networks": {
+        "default": null
+      },
+      "ports": [
+        {
+          "mode": "ingress",
+          "host_ip": "127.0.0.1",
+          "target": 80,
+          "published": "8080",
+          "protocol": "tcp"
+        }
+      ],
+      "restart": "unless-stopped"
+    }
+  },
+  "volumes": {
+    "circuit-evidence": {
+      "name": "baypilot_circuit-evidence"
+    },
+    "demo-data": {
+      "name": "baypilot_demo-data"
+    },
+    "smoke-evidence": {
+      "name": "baypilot_smoke-evidence"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "role": "bollard",
+  "url": "https://wokwi.com/projects/478667707556941825",
+  "scope": "ISOLATED_SINGLE_BAY_BENCH",
+  "cpu": "ESP32",
+  "sharedApi": false,
+  "runsIn": "BACKGROUND_RUNTIME"
+}

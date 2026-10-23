@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img">
+<title>Local bollard node - actuator, feedback and radio</title><defs>
+<marker id="power" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ce4554"/></marker>
+<marker id="ground" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#394453"/></marker>
+<marker id="bus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2368c4"/></marker>
+<marker id="logic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7b4ac6"/></marker>
+<marker id="rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#138780"/></marker>
+</defs><rect width="1600" height="1000" fill="#f5f7fb"/>
+<style>text{font-family:Arial,sans-serif;fill:#243248}.title{font-size:33px;font-weight:700}.small{font-size:14px}.body{font-size:16px}.head{font-size:19px;font-weight:700}</style>
+<text x="48" y="45" font-size="14" fill="#54728b">LARP / TEAM CIRCUIT COMPLETION / 05</text>
+<text x="48" y="88" font-size="33" fill="#243248">Local bollard node - actuator, feedback and radio</text>
+<text x="48" y="119" font-size="16" fill="#243248">Custom low-current bench mechanism. The purchased 6V remote lock is NOT assumed to expose this interface or to accept ESP32 radio packets.</text>
+<rect x="45" y="160" width="410" height="110" rx="10" fill="white" stroke="#138780" stroke-width="2"/>
+<text x="60" y="190" font-size="19" fill="#138780" font-weight="700">Addressed two-way RF</text>
+<text x="60" y="218" font-size="15" fill="#243248">Enrolled bay/controller IDs; replay protection</text>
+<text x="60" y="239" font-size="15" fill="#243248">Receipt ACK is not physical DOWN feedback</text>
+<rect x="640" y="160" width="330" height="410" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="655" y="190" font-size="19" fill="#2368c4" font-weight="700">Local ESP32 controller</text>
+<text x="655" y="218" font-size="15" fill="#243248">Motor IN1=18; IN2=19</text>
+<text x="655" y="239" font-size="15" fill="#243248">Driver /SLEEP=23 (10k to 0V)</text>
+<text x="655" y="260" font-size="15" fill="#243248">Driver /FAULT -&gt; GPIO22 (10k pull-up)</text>
+<text x="655" y="281" font-size="15" fill="#243248">UP switch -&gt; GPIO32</text>
+<text x="655" y="302" font-size="15" fill="#243248">DOWN switch -&gt; GPIO33</text>
+<text x="655" y="323" font-size="15" fill="#243248">Obstruction NC loop -&gt; GPIO25</text>
+<text x="655" y="344" font-size="15" fill="#243248">Supply ADC1 -&gt; GPIO34</text>
+<text x="655" y="365" font-size="15" fill="#243248">Limits NO to 0V; external 10k pull-</text>
+<text x="655" y="386" font-size="15" fill="#243248">ups</text>
+<text x="655" y="407" font-size="15" fill="#243248">Both limits asserted = contradictory</text>
+<polyline points="455,215 640,215" fill="none" stroke="#138780" stroke-width="2.5" marker-end="url(#rf)" marker-start="url(#rf)"/>
+<rect x="45" y="325" width="410" height="255" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="355" font-size="19" fill="#2368c4" font-weight="700">Local physical feedback</text>
+<text x="60" y="383" font-size="15" fill="#243248">Upper and lower end switches</text>
+<text x="60" y="404" font-size="15" fill="#243248">Bench NO contacts -&gt; input active LOW</text>
+<text x="60" y="425" font-size="15" fill="#243248">NC obstruction loop: open/broken blocks raise</text>
+<text x="60" y="446" font-size="15" fill="#243248">Switch debounce + movement timeout</text>
+<text x="60" y="467" font-size="15" fill="#243248">Wire-break supervision / certified field safety</text>
+<text x="60" y="488" font-size="15" fill="#243248">requires further engineering</text>
+<polyline points="455,415 640,415" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)"/>
+<text x="468" y="395" font-size="14" fill="#7b4ac6">Limits + obstruction</text>
+<rect x="1165" y="160" width="380" height="260" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1180" y="190" font-size="19" fill="#2368c4" font-weight="700">Motor driver / bench H bridge</text>
+<text x="1180" y="218" font-size="15" fill="#243248">DRV8833 breakout with /FAULT and /SLEEP</text>
+<text x="1180" y="239" font-size="15" fill="#243248">VM=protected 6V motor supply</text>
+<text x="1180" y="260" font-size="15" fill="#243248">AIN1 &lt;- 18; AIN2 &lt;- 19</text>
+<text x="1180" y="281" font-size="15" fill="#243248">AOUT1 / AOUT2 -&gt; motor</text>
+<text x="1180" y="302" font-size="15" fill="#243248">Current/thermal limits depend on package</text>
+<text x="1180" y="323" font-size="15" fill="#243248">Motor stall &lt;= selected driver budget</text>
+<text x="1180" y="344" font-size="15" fill="#243248">Unused bridge inputs held LOW</text>
+<polyline points="970,255 1165,255" fill="none" stroke="#7b4ac6" stroke-width="2.5" marker-end="url(#logic)" marker-start="url(#logic)"/>
+<text x="977" y="235" font-size="14" fill="#7b4ac6">IN1/IN2/SLEEP/FAULT</text>
+<rect x="1165" y="530" width="380" height="130" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1180" y="560" font-size="19" fill="#2368c4" font-weight="700">6V low-current geared DC motor</text>
+<text x="1180" y="588" font-size="15" fill="#243248">Bench mechanism only; validate stall</text>
+<text x="1180" y="609" font-size="15" fill="#243248">current</text>
+<text x="1180" y="630" font-size="15" fill="#243248">Commercial lock motor/interface not</text>
+<text x="1180" y="651" font-size="15" fill="#243248">selected</text>
+<polyline points="1340,420 1340,530" fill="none" stroke="#ce4554" stroke-width="2.5" marker-end="url(#power)"/>
+<text x="1360" y="477" font-size="14" fill="#ce4554">AOUT1 / AOUT2</text>
+<rect x="45" y="665" width="410" height="200" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="60" y="695" font-size="19" fill="#2368c4" font-weight="700">Protected motor supply branch</text>
+<text x="60" y="723" font-size="15" fill="#243248">6V nominal, fuse sized to measured load</text>
+<text x="60" y="744" font-size="15" fill="#243248">Hardwired bench E-stop cuts motor VM</text>
+<text x="60" y="765" font-size="15" fill="#243248">Logic supply remains separate for telemetry</text>
+<text x="60" y="786" font-size="15" fill="#243248">No motor current through ESP32 pins</text>
+<text x="60" y="807" font-size="15" fill="#243248">Do not power six motors from PoE splitter</text>
+<polyline points="300,865 300,900 1035,900 1035,395 1165,395" fill="none" stroke="#ce4554" stroke-width="2.5" marker-end="url(#power)"/>
+<text x="50" y="895" font-size="14" fill="#ce4554">Fused VM / local E-stop</text>
+<rect x="535" y="775" width="450" height="110" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="550" y="805" font-size="19" fill="#2368c4" font-weight="700">Logic supply / separate regulated rail</text>
+<text x="550" y="833" font-size="15" fill="#243248">6V -&gt; regulated 5V -&gt; dev-board VIN</text>
+<text x="550" y="854" font-size="15" fill="#243248">Common logic/driver return; decouple locally</text>
+<polyline points="455,805 535,805" fill="none" stroke="#ce4554" stroke-width="2.5" marker-end="url(#power)"/>
+<polyline points="780,775 780,570" fill="none" stroke="#ce4554" stroke-width="2.5" marker-end="url(#power)"/>
+<text x="795" y="642" font-size="14" fill="#ce4554">5V logic</text>
+<rect x="1060" y="745" width="485" height="145" rx="10" fill="white" stroke="#2368c4" stroke-width="2"/>
+<text x="1075" y="775" font-size="19" fill="#2368c4" font-weight="700">Supply-voltage feedback (bench)</text>
+<text x="1075" y="803" font-size="15" fill="#243248">VM -&gt; 220k -&gt; ADC34 -&gt; 100k -&gt; 0V</text>
+<text x="1075" y="824" font-size="15" fill="#243248">100nF ADC34 to 0V; calibrate ADC</text>
+<text x="1075" y="845" font-size="15" fill="#243248">6.0V nominal gives ~1.875V input</text>
+<text x="1075" y="866" font-size="15" fill="#243248">Driver fault pin does not identify root cause</text>
+<text x="48" y="915" font-size="15" fill="#243248">Raise only with fresh clear-bay permission, stable limits, no local obstruction and no active emergency. RF loss alone never authorizes raising.</text>
+<line x1="45" y1="942" x2="1550" y2="942" stroke="#394453" stroke-width="3"/>
+<text x="48" y="969" font-size="14" fill="#243248">BENCH / MODULE REFERENCE - not a certified safety circuit or fabrication-ready PCB. See wiring schedule and design notes.</text>
+<text x="48" y="991" font-size="13" fill="#243248">GPIO maps: ESP32-WROOM-32E DevKitC. The team WT32-ETH01 requires its own pin-map review. Motor current and field safety remain unverified.</text></svg>

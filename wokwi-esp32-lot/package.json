@@ -1,0 +1,11 @@
+{
+  "name": "larp-esp32-lot",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node generate-diagram.mjs",
+    "compile": "node compile.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "bridge": "node bridge.mjs"
+  }
+}

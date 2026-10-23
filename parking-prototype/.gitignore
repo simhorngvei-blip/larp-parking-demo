@@ -1,0 +1,11 @@
+node_modules/
+dist/
+data/
+*.log
+
+.vercel
+supabase/.temp/
+supabase/.branches/
+.env
+.env.local
+.env.*.local
