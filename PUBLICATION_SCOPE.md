@@ -9,3 +9,5 @@ The six-bays-per-controller/eight-controllers-per-flow topology is the target ar
 Compatibility names in tests and internal downloads are retained where needed to avoid breaking references. This export does not grant a new license to original project code; upstream license notices are preserved.
 
 A separate public GitHub Release contains the five-minute silent demo video. The video is intentionally kept out of the source Git history and source ZIP; download it from the README or Releases page. It contains no narration or audio stream.
+
+The README also embeds the silent video as a GitHub-native attachment player. Both the attachment and Release copy are outside the source Git history.

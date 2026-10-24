@@ -1179,13 +1179,13 @@
     },
     {
       "path": "PUBLICATION_SCOPE.md",
-      "bytes": 1513,
-      "sha256": "2050eaed1570f3c1b0ca9c66f97f8062c73932a7dede2186737622f7aee6c2c0"
+      "bytes": 1665,
+      "sha256": "1aa10512c10134d88e5bebadc378ce0481689f0a3c3893c3513e0cb5c580f61b"
     },
     {
       "path": "README.md",
-      "bytes": 8370,
-      "sha256": "a32354740bc628bb7e3394e118711b968d74367f0163bbe1dce7e1050ff6e130"
+      "bytes": 8458,
+      "sha256": "7f807c490dd14352530cc137c8ad49ae623b5bb40f843f16900883cf278e6540"
     },
     {
       "path": "RUN_LOCALLY.md",
