@@ -10,6 +10,23 @@ Built by **Team AC/DC** for the **Sime Darby Property University Hackathon 2026*
 
 [Watch the silent demo](#demo-video) | [Try the hosted demo](https://larp-demo.vercel.app/app) · [Hosted access guide](HOSTED_DEMO.md) · [Run locally](RUN_LOCALLY.md) · [Verification record](VERIFICATION.json)
 
+## Open the apps and website
+
+All hosted links open without a login or access code. The user and Guard links are mobile web previews of the interfaces used by the Android wrappers.
+
+| App or demo | Open hosted preview |
+| --- | --- |
+| User mobile app - property owner | [Owner parking, visitor approvals and EV bookings](https://larp-demo.vercel.app/app?identity=resident-alicia&native=user) |
+| User mobile app - public / visitor | [Find parking, request a visit and book EV charging](https://larp-demo.vercel.app/app?identity=public-visitor&native=user) |
+| Security mobile app - Guard | [Guard duty, complaints and patrol records](https://larp-demo.vercel.app/guard?native=guard) |
+| Security server-room dashboard | [System flowchart, device consoles and circuit inspection](https://larp-demo.vercel.app/server-room) |
+| SaaS / service website | [LARP product website](https://larp-demo.vercel.app/saas) |
+| Connected 3D parking journey | [Follow the car through the nine-bay circuit demo](https://larp-demo.vercel.app/?view=three) |
+| Scaled multilevel 3D building | [Explore the larger virtual parking building](https://larp-demo.vercel.app/?view=scale-three) |
+| Private software developer console | [Local setup and creator-key instructions](RUN_LOCALLY.md) - intentionally not hosted publicly |
+
+The old laptop must remain awake and online. Reference circuits start when inspected and may wait for compilation. These links open web demos; they do not install an Android APK.
+
 ## Demo video
 
 https://github.com/user-attachments/assets/43a74e6c-7dcf-4c14-b418-ccf52cb207d1
