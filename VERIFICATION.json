@@ -12,7 +12,7 @@
   "limitations": [
     "Online Wokwi acceptance passed for one hosted journey and short idle/browser checks; no physical hardware or extended soak/load test.",
     "Unit and native model checks do not certify hardware.",
-    "Public production demo requires the published reviewer code and depends on an awake, online laptop.",
+    "Public production demo opens without login or code and depends on an awake, online old laptop.",
     "Original project code has no new open-source license granted by this export."
   ],
   "totalTests": 185,
@@ -24,7 +24,7 @@
     "userGuardServerRoomWebsiteAndTwo3DViews": "passed",
     "ownerComplaintGuardResolution": "passed",
     "visitorApprovalAndUnusedEVBookingCancellation": "passed",
-    "access": "Production domain now accepts public reviewer code without Vercel account; earlier team-authenticated checks remain historical.",
+    "access": "Historical team-authenticated journey check; production now opens without login or code.",
     "host": "Old laptop retained; near-full CPU; short acceptance only"
   },
   "publicReviewerAcceptance": {
@@ -45,6 +45,33 @@
       "Old laptop remains the active runtime"
     ],
     "errors": [],
-    "scope": "Anonymous browser; public reviewer code only; one synthetic complaint resolved; no vehicle actions or resets"
+    "scope": "Historical code-based acceptance; superseded by publicNoLoginAcceptance"
+  },
+  "publicNoLoginAcceptance": {
+    "passed": true,
+    "at": "2026-10-24T21:26:41.200Z",
+    "origin": "https://larp-demo.vercel.app",
+    "checks": [
+      "Fresh anonymous browser opens the app directly; no login, code, cookies, Vercel account or bypass header",
+      "user renders hosted data for outside reviewer",
+      "guard renders hosted data for outside reviewer",
+      "server-room renders hosted data for outside reviewer",
+      "/?view=three renders",
+      "/?view=scale-three renders",
+      "Public service website renders",
+      "Outside reviewer can create a synthetic complaint and resolve it from the Guard profile",
+      "Private developer and central APIs and developer app remain blocked",
+      "Old laptop remains the active runtime"
+    ],
+    "errors": [],
+    "readRetries": [],
+    "scope": "Anonymous browser; no login, code or cookies; one synthetic complaint resolved; no vehicle actions or resets"
+  },
+  "windowsDevelopmentRuntime": {
+    "dockerInstalled": true,
+    "localLarpContainers": "Five stopped; restart policies set to no",
+    "dockerDesktop": "Closed",
+    "data": "Images, volumes and records retained",
+    "freeRamObservedGiB": 6.74
   }
 }

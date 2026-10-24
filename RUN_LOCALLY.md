@@ -5,7 +5,7 @@ This repository contains the code needed to run and inspect the local software d
 
 ## Try the hosted demo
 
-Open **https://larp-demo.vercel.app/demo-login** and enter the public reviewer code **`LARP-DEMO-2026`**. No Vercel account or approval is required. See [hosted views and testing instructions](HOSTED_DEMO.md). The shared simulation depends on the old laptop being awake and online; use Docker below for independent local evaluation.
+Open **https://larp-demo.vercel.app/app** directly. No login, access code, Vercel account or approval is required. See [hosted views and testing instructions](HOSTED_DEMO.md). The shared simulation depends on the old laptop being awake and online; use Docker below for independent local evaluation.
 
 ## Start with Docker
 
@@ -78,6 +78,8 @@ Ports 8080 and 8081 must be free. The Compose project and some internal compatib
 
 Synthetic identity selection is not production authentication. Plate input is simulated, not OCR. Physical RF, motor power, obstruction sensing, electrical safety, enclosure design and installation are unverified engineering gates. A ceiling occupancy sensor does not identify a vehicle plate. Exact failed-part diagnosis requires appropriate instrumentation; a missing response alone does not prove its root cause. No real OCPP, guaranteed charge percentage, charging payments, native background push, offline site operation or high availability is delivered.
 
-The hosted production demo accepts the published reviewer code without a Vercel account and depends on a separate laptop runtime. It is not guaranteed always-on hosting. This public source repository is the independently accessible alternative; running the connected demonstration still needs a computer, Docker, internet and third-party simulator availability. Cloud credentials, host provisioning, databases, team personal contacts, APK binaries, proposal media, research repositories, capture logs and installed dependencies are intentionally excluded.
+The hosted production demo opens without a login or access code and depends on a separate laptop runtime. It is not guaranteed always-on hosting. This public source repository is the independently accessible alternative; running the connected demonstration still needs a computer, Docker, internet and third-party simulator availability. Cloud credentials, host provisioning, databases, team personal contacts, APK binaries, proposal media, research repositories, capture logs and installed dependencies are intentionally excluded.
+
+Docker Desktop and local LARP containers can stay stopped on the Windows development PC. Their restart policies are set to `no`; manually start the Compose services when local development is needed. Docker remains installed and its images, volumes and records are preserved. Stopping saves CPU/RAM rather than disk space. The old Linux host must keep running for hosted demonstrations.
 
 Original project code is supplied for review; no new open-source license has been granted by this packaging step. Upstream component/font notices remain in `parking-prototype/public/licenses/` and `parking-prototype/THIRD_PARTY_DESIGN.md`. See `PUBLICATION_SCOPE.md` and `VERIFICATION.json` for the snapshot scope and measured checks.

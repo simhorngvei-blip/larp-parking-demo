@@ -39,7 +39,7 @@ Manual lowering remains a permission-checked movement request. A user tap is nev
 
 ## How the current demonstration is connected
 
-The Vercel production domain serves the website and demo web interfaces using the published reviewer code. Preview/generated deployment URLs remain protected. A Vercel gateway forwards allowed app requests through a private Supabase job queue to one active Docker runtime on the old laptop. That runtime runs the Node application, working SQLite databases, the shared Wokwi bridge and independent background test benches. Committed SQLite checkpoints are stored through the private cloud service for recovery.
+The Vercel production domain serves the website and demo web interfaces without a login or access code. Preview/generated deployment URLs remain protected. A Vercel gateway forwards allowed app requests through a private Supabase job queue to one active Docker runtime on the old laptop. That runtime runs the Node application, working SQLite databases, the shared Wokwi bridge and independent background test benches. Committed SQLite checkpoints are stored through the private cloud service for recovery.
 
 Supabase is presently used for a private queue, runtime ownership/lease and compressed SQLite checkpoints. It is not yet the normalized production database for all homeowners, reservations and devices, and Supabase Auth is not integrated into the selectable demo identities. The public website, browser app and APK shell should never receive the service-role key.
 
@@ -74,6 +74,6 @@ The commercial PDF's 20-bay price is RM29,769.73 but its payback example uses ap
 - Server room: `http://localhost:8080/server-room`
 - Website: `http://localhost:8080/saas`
 - Private developer tool: `http://localhost:8081/`
-- Hosted demonstration: `https://larp-demo.vercel.app/demo-login` (public reviewer code `LARP-DEMO-2026`; no Vercel account required; old laptop must remain awake and online)
+- Hosted demonstration: `https://larp-demo.vercel.app/app` (no login, code or Vercel account required; old laptop must remain awake and online)
 - Android operating guide: [28_LARP_APPS_AND_ANDROID.md](28_LARP_APPS_AND_ANDROID.md)
 - Submission handoff: [Proposal README](../../../Proposal/README.md)

@@ -1,10 +1,10 @@
 # Try the public LARP demo
 
-**Open:** https://larp-demo.vercel.app/demo-login
+**Open:** https://larp-demo.vercel.app/app
 
-**Reviewer code:** `LARP-DEMO-2026`
+**No login or access code is required.**
 
-No Vercel account, access request, team membership or private credential is required. Enter the published reviewer code, then choose a synthetic demo profile. This code intentionally grants access to the shared demonstration; it is not a production account password.
+Open the link and choose a synthetic demo profile. No Vercel account, access request, team membership, cookie or private credential is required. This is a public shared simulation.
 
 ## Views
 
@@ -17,7 +17,7 @@ No Vercel account, access request, team membership or private credential is requ
 | Connected 3D journey | https://larp-demo.vercel.app/?view=three | Wait for fresh circuit feedback, then use Follow car for an arrival-to-exit journey |
 | Scaled virtual building | https://larp-demo.vercel.app/?view=scale-three | Explore the larger building using separate software devices |
 
-A direct app link may first send you to the demo-code screen. After entering the code, open the desired view. Use the production links above; generated deployment and preview URLs remain protected.
+App links open directly. The old `/demo-login` link redirects to `/app` without asking for a code. Use the production links above; generated deployment and preview URLs remain protected.
 
 ## Shared demonstration limits
 
