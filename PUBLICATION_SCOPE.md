@@ -7,3 +7,5 @@ Excluded: proposal decks/video, personal contact details, Team reference documen
 The six-bays-per-controller/eight-controllers-per-flow topology is the target architecture. The connected nine-bay fixture retains an earlier two-zone allocation; it is not a commissioned 48-bay fleet. Independent reference benches are not physically chained production controllers. Read the main README for operational and evidence limitations.
 
 Compatibility names in tests and internal downloads are retained where needed to avoid breaking references. This export does not grant a new license to original project code; upstream license notices are preserved.
+
+A separate public GitHub Release contains the five-minute silent demo video. The video is intentionally kept out of the source Git history and source ZIP; download it from the README or Releases page. It contains no narration or audio stream.
