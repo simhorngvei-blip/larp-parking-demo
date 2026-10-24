@@ -8,7 +8,7 @@ LARP brings drivers, homeowners, guards and technical operations into the same p
 
 Built by **Team AC/DC** for the **Sime Darby Property University Hackathon 2026**. This repository is the runnable software prototype, with simulated vehicles and electronics.
 
-[Watch the silent demo](#demo-video) | [Try the hosted demo](https://larp-demo-rain-s-projects2.vercel.app/demo-login) · [Hosted access guide](HOSTED_DEMO.md) · [Run locally](RUN_LOCALLY.md) · [Verification record](VERIFICATION.json)
+[Watch the silent demo](#demo-video) | [Try the hosted demo](https://larp-demo.vercel.app/demo-login) · [Hosted access guide](HOSTED_DEMO.md) · [Run locally](RUN_LOCALLY.md) · [Verification record](VERIFICATION.json)
 
 ## Demo video
 
@@ -38,7 +38,7 @@ https://github.com/user-attachments/assets/43a74e6c-7dcf-4c14-b418-ccf52cb207d1
 
 ## Try it
 
-**Hosted:** [Open LARP on Vercel](https://larp-demo-rain-s-projects2.vercel.app/demo-login). Access currently requires Vercel approval and a privately supplied LARP demo code. The backend and browser simulations depend on the team's laptop runtime being online. A fresh complete hosted entry/parking/exit/relock test passed on 25 October. Independent reference circuits pause during that journey to give the main circuit CPU priority, then resume; the server room labels them PAUSED. The laptop remains a limited demonstration host. See the [hosted testing guide](HOSTED_DEMO.md) for all routes and access steps.
+**Hosted:** [Open the public LARP demo](https://larp-demo.vercel.app/demo-login). Enter reviewer code **`LARP-DEMO-2026`**. No Vercel account or team approval is required. This is a shared simulation with synthetic profiles; the laptop host must stay online. Independent reference circuits pause during vehicle journeys, then resume automatically. See the [reviewer guide](HOSTED_DEMO.md) for views and testing steps.
 
 **Local:** install Docker with Linux containers and Compose, then run:
 

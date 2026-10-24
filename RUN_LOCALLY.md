@@ -5,7 +5,7 @@ This repository contains the code needed to run and inspect the local software d
 
 ## Try the hosted demo
 
-Open **https://larp-demo-rain-s-projects2.vercel.app/demo-login**. See [hosted views and testing instructions](HOSTED_DEMO.md) for the user app, Guard app, server room, website and 3D journeys. Vercel access approval and a privately supplied LARP demo code are required. The hosted service depends on the team's laptop runtime being online; it is not an anonymous or guaranteed always-on demo. Use the Docker option below for independent local evaluation.
+Open **https://larp-demo.vercel.app/demo-login** and enter the public reviewer code **`LARP-DEMO-2026`**. No Vercel account or approval is required. See [hosted views and testing instructions](HOSTED_DEMO.md). The shared simulation depends on the old laptop being awake and online; use Docker below for independent local evaluation.
 
 ## Start with Docker
 
@@ -78,6 +78,6 @@ Ports 8080 and 8081 must be free. The Compose project and some internal compatib
 
 Synthetic identity selection is not production authentication. Plate input is simulated, not OCR. Physical RF, motor power, obstruction sensing, electrical safety, enclosure design and installation are unverified engineering gates. A ceiling occupancy sensor does not identify a vehicle plate. Exact failed-part diagnosis requires appropriate instrumentation; a missing response alone does not prove its root cause. No real OCPP, guaranteed charge percentage, charging payments, native background push, offline site operation or high availability is delivered.
 
-The existing hosted demo is protected and depends on a separate laptop runtime. It is not an anonymous, always-on judging link. This public source repository is the independently accessible alternative; running the connected demonstration still needs a computer, Docker, internet and third-party simulator availability. Cloud credentials, host provisioning, databases, team personal contacts, APK binaries, proposal media, research repositories, capture logs and installed dependencies are intentionally excluded.
+The hosted production demo accepts the published reviewer code without a Vercel account and depends on a separate laptop runtime. It is not guaranteed always-on hosting. This public source repository is the independently accessible alternative; running the connected demonstration still needs a computer, Docker, internet and third-party simulator availability. Cloud credentials, host provisioning, databases, team personal contacts, APK binaries, proposal media, research repositories, capture logs and installed dependencies are intentionally excluded.
 
 Original project code is supplied for review; no new open-source license has been granted by this packaging step. Upstream component/font notices remain in `parking-prototype/public/licenses/` and `parking-prototype/THIRD_PARTY_DESIGN.md`. See `PUBLICATION_SCOPE.md` and `VERIFICATION.json` for the snapshot scope and measured checks.

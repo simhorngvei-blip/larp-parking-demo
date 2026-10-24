@@ -12,7 +12,7 @@
   "limitations": [
     "Online Wokwi acceptance passed for one hosted journey and short idle/browser checks; no physical hardware or extended soak/load test.",
     "Unit and native model checks do not certify hardware.",
-    "Existing hosted app is protected and dependent on a laptop.",
+    "Public production demo requires the published reviewer code and depends on an awake, online laptop.",
     "Original project code has no new open-source license granted by this export."
   ],
   "totalTests": 185,
@@ -24,7 +24,27 @@
     "userGuardServerRoomWebsiteAndTwo3DViews": "passed",
     "ownerComplaintGuardResolution": "passed",
     "visitorApprovalAndUnusedEVBookingCancellation": "passed",
-    "access": "Existing approved Vercel access plus private LARP code; anonymous hosted access is not enabled",
+    "access": "Production domain now accepts public reviewer code without Vercel account; earlier team-authenticated checks remain historical.",
     "host": "Old laptop retained; near-full CPU; short acceptance only"
+  },
+  "publicReviewerAcceptance": {
+    "passed": true,
+    "at": "2026-10-24T18:25:20.770Z",
+    "origin": "https://larp-demo.vercel.app",
+    "checks": [
+      "Fresh anonymous browser signs in using only the published reviewer code; no Vercel account, privileged cookie or bypass header",
+      "user renders hosted data for outside reviewer",
+      "guard renders hosted data for outside reviewer",
+      "server-room renders hosted data for outside reviewer",
+      "/?view=three renders",
+      "/?view=scale-three renders",
+      "Public service website renders",
+      "Outside reviewer can create a synthetic complaint and resolve it from the Guard profile",
+      "Private developer and central APIs and developer app remain blocked",
+      "Wrong demo code rejected",
+      "Old laptop remains the active runtime"
+    ],
+    "errors": [],
+    "scope": "Anonymous browser; public reviewer code only; one synthetic complaint resolved; no vehicle actions or resets"
   }
 }

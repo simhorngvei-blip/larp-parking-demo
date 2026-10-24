@@ -94,13 +94,13 @@
     },
     {
       "path": "docs/implementation/39_PRODUCT_SHIPPING_AND_DEMO_BOUNDARIES.md",
-      "bytes": 12353,
-      "sha256": "8546686e87806927da8812569ed0c69a8fe46121a33a8605bf23b8ac8d639902"
+      "bytes": 12467,
+      "sha256": "018944edc1628cb1f9541154515e113a9b9efd93209e38e6722e62c8bdab88dc"
     },
     {
       "path": "HOSTED_DEMO.md",
-      "bytes": 4408,
-      "sha256": "4af22fc8fded1a7ffe58638b2eae9b0fa7b0945746d73ca6faae808b0ef090d6"
+      "bytes": 2819,
+      "sha256": "1cc71e5735dc1b24e1e6146753a2b8dbf71e109f7ba024bdbe6403c0b249bb48"
     },
     {
       "path": "parking-prototype/.gitignore",
@@ -1184,13 +1184,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 8743,
-      "sha256": "f0a9afbcc94582a9aac565bb1f4f5a8ac3bfaf63326bbff73206ab45c204afee"
+      "bytes": 8531,
+      "sha256": "d4faaabad018e47c326742d946150709e38cfd35358124b88daaeb18894fc470"
     },
     {
       "path": "RUN_LOCALLY.md",
-      "bytes": 7128,
-      "sha256": "5af3041c5185ce92208eace0a1e11e67a6c9d97628fd2a07149b362a9d5731ff"
+      "bytes": 7047,
+      "sha256": "e4d4bdb650d35a1a254f902c12cd0e65afea8acf9f42c8c416fddfa80847967c"
     },
     {
       "path": "tools/mcp-node/package-lock.json",
