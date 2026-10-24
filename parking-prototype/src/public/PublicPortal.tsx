@@ -1,3 +1,4 @@
+import {startVisiblePolling} from '../visible-polling'
 import {useEffect,useRef,useState} from 'react'
 import {lazy} from 'react'
 import {Bell,Building2,Code2,Leaf,ShieldCheck,Smartphone} from 'lucide-react'
@@ -27,7 +28,7 @@ export default function PublicPortal({portal,centralOnly=false,guardOnly=false}:
    const r=await fetch('/api/public/state',{headers:headers()}),data=await r.json();if(!r.ok){if(r.status===403&&portal==='developer'){sessionStorage.removeItem('baypilot-creator-key');setCreatorKey('')}throw Error(data.error||'Parking service unavailable')}
    if(active){setState(data);setOnline(true);setLastSuccess(Date.now());setConnectionError('')}
   }catch(e){if(active){setOnline(false);setConnectionError(e instanceof Error?e.message:'Parking service unavailable')}}}
-  void refresh();const timer=setInterval(()=>void refresh(),1200);window.addEventListener('larp-alert',refresh);return()=>{active=false;clearInterval(timer);window.removeEventListener('larp-alert',refresh)}
+  const polling=startVisiblePolling(refresh,{intervalMs:2000});window.addEventListener('larp-alert',polling.refresh);return()=>{active=false;polling.stop();window.removeEventListener('larp-alert',polling.refresh)}
  },[identity,creatorKey,portal])
  useEffect(()=>{if(portal!=='developer'||creatorKey)void loadProfiles().catch(e=>setError(String(e)))},[creatorKey,portal])
  useEffect(()=>{const candidate=profiles.find(p=>p.role===portal);if(candidate&&!profiles.some(p=>p.id===identity&&p.role===portal))setIdentity(candidate.id)},[profiles,identity,portal])

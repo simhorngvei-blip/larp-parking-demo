@@ -23,7 +23,7 @@ App links open directly. The old `/demo-login` link redirects to `/app` without 
 
 The old laptop must remain powered, awake, ventilated, online and running Docker. Wokwi compilation may take several minutes after a restart. The two-core host runs near full CPU and simulations may progress slowly. Coordinate one vehicle journey at a time. Enter only synthetic test data: other reviewers share the same fixture and may see its records.
 
-During a vehicle journey the independent flow, bay and bollard reference benches pause to prioritize the actual shared parking circuit. Their viewers show PAUSED and hide stale readings/captures; they resume after the journey and final observed relock. The main circuit remains the feedback source. A stale image, lost heartbeat or queued command does not confirm movement.
+The independent flow, bay and bollard references start when their component popup is viewed, and close after 45 seconds without a visible viewer. Reopening creates a new ESP32 session and may wait for Wokwi compilation. IDLE and PAUSED views never present old images or readings as live. Vehicle journeys close reference browsers to prioritize the actual parking circuit; after final relock, a still-open viewer can request a new session. Main circuit telemetry continues independently. Captures run only while viewed, and hidden tabs stop polling. A queued command does not confirm movement.
 
 The software developer console, central administration and private engineering APIs remain unavailable. Real ANPR, physical RF/power/actuator tests, production identity and real charger integration are outside this prototype. The scaled building and reference benches are separate software demonstrations.
 

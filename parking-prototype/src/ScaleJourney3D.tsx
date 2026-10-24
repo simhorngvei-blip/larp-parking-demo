@@ -1,3 +1,4 @@
+import {startVisiblePolling} from './visible-polling'
 import {useCallback,useEffect,useRef,useState} from 'react'
 import {ArrowLeft,ArrowRight,Building2,Camera,Car,Check,ChevronRight,CirclePause,Download,Layers3,Maximize2,Play,Radio,ShieldCheck,Smartphone} from 'lucide-react'
 import type {ScaleState} from './ScaleDemo'
@@ -11,7 +12,7 @@ export default function ScaleJourney3D(){
  settings.current={site,bayId,plate,speed};data.current=state
  useEffect(()=>{const url=new URL(location.href);url.searchParams.set('site',site);url.searchParams.set('bay',bayId);history.replaceState({},'',url)},[site,bayId])
  const refresh=useCallback(async()=>{const scoped=settings.current.site,id=director.current?.journeyId;const response=await fetch(`/api/scale/state?siteId=${encodeURIComponent(scoped)}&building=1${id?'&journeyId='+encodeURIComponent(id):''}`);const result=await response.json();if(!response.ok)throw Error(result.error||'The building simulation is unavailable');if(mounted.current&&settings.current.site===scoped){lastPoll.current=Date.now();setState(result);setError('')}},[])
- useEffect(()=>{mounted.current=true;const poll=()=>refresh().catch(e=>{if(mounted.current)setError(e.message)});void poll();const timer=setInterval(poll,500);return()=>{mounted.current=false;clearInterval(timer)}},[refresh,site])
+ useEffect(()=>{mounted.current=true;const poll=()=>refresh().catch(e=>{if(mounted.current)setError(e.message)});const polling=startVisiblePolling(poll,{intervalMs:500});return()=>{mounted.current=false;polling.stop()}},[refresh,site])
  const configKey=state?`${state.siteId}/${state.config.baysPerSite}/${state.config.levels}`:''
  useEffect(()=>{
   if(!state||state.siteId!==site||!host.current)return

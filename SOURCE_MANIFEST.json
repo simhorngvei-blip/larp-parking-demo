@@ -99,8 +99,8 @@
     },
     {
       "path": "HOSTED_DEMO.md",
-      "bytes": 2720,
-      "sha256": "47fe7023dc4fde0b62e3c42d282757c7dad652917b9d0b44c366e7e879d26f36"
+      "bytes": 2939,
+      "sha256": "b251cabc34e9c7979f1aa7c7d3d9949991ead0084c1dd992df8d458aab3da36a"
     },
     {
       "path": "parking-prototype/.gitignore",
@@ -524,8 +524,8 @@
     },
     {
       "path": "parking-prototype/src/App.tsx",
-      "bytes": 32284,
-      "sha256": "66c55e963d25314f3d954db0c8a21af31538f6dd46ed0f85e4e43ae31a2771bd"
+      "bytes": 32333,
+      "sha256": "578efd2a2f0146e0f0ccc627e8b3cfdbd795094e8af94add23b465ede3841f5b"
     },
     {
       "path": "parking-prototype/src/components/magicui/blur-fade.tsx",
@@ -584,13 +584,13 @@
     },
     {
       "path": "parking-prototype/src/Parking3D.tsx",
-      "bytes": 16866,
-      "sha256": "4aef10b74b535f6e33bae6c72d8efdb101c7ff527e58340c830da0eec464ac97"
+      "bytes": 16938,
+      "sha256": "3ade3a158c15c70e5883c59c98a6a2879eae2f395f5bb14d5a79020c01df3f4d"
     },
     {
       "path": "parking-prototype/src/public/BollardWorkbench.tsx",
-      "bytes": 2007,
-      "sha256": "4b58ce4e89ffa6f129e757b2c5c842c3922931f810f74cf6fe0d667e8df8b810"
+      "bytes": 2055,
+      "sha256": "063cde14d814a36c09abf05558bf11417717a3ab25864577dba0f863a3addecd"
     },
     {
       "path": "parking-prototype/src/public/central.css",
@@ -649,13 +649,13 @@
     },
     {
       "path": "parking-prototype/src/public/EndpointCircuit.tsx",
-      "bytes": 3321,
-      "sha256": "823a1c5f359b693236ed239d33f3cf32478b8b89ff7761fc1cffbb9c318f03bb"
+      "bytes": 3333,
+      "sha256": "986b44b81637b49d5e06cf9259d1fb43a88effa02e2d764cdeff4f3f4534634f"
     },
     {
       "path": "parking-prototype/src/public/GuardAlerts.tsx",
-      "bytes": 2437,
-      "sha256": "3401bc54953afc0f8dcf35127e85e694205e25c2ed7e985e61809e90f66640af"
+      "bytes": 2650,
+      "sha256": "086281732ac1bd68884910e1a5aaa639fa82ef5f3349117cb4aa92f145d7f5e9"
     },
     {
       "path": "parking-prototype/src/public/operations.css",
@@ -694,8 +694,8 @@
     },
     {
       "path": "parking-prototype/src/public/PersistentBench.tsx",
-      "bytes": 4818,
-      "sha256": "9d9f0c2d95280d9f90c54fa24fc3355300eff17b7cf889196d370a03b1f3f221"
+      "bytes": 5050,
+      "sha256": "7e15929c73f338a774d8883bc70695b76310fa3c6c7e2d9f9cf0344d4b9ec15d"
     },
     {
       "path": "parking-prototype/src/public/public.css",
@@ -704,8 +704,8 @@
     },
     {
       "path": "parking-prototype/src/public/PublicPortal.tsx",
-      "bytes": 8278,
-      "sha256": "b4c7052eece0fc784250fa93f81cefcbfb4cff5b5578bf7b192ead458b988ba3"
+      "bytes": 8341,
+      "sha256": "d3a84820bfeb4db18dcb8f7b67f5230ac9a41e9deb6c883d2a3a07f78b9f549a"
     },
     {
       "path": "parking-prototype/src/public/ResidentialPanel.tsx",
@@ -794,13 +794,13 @@
     },
     {
       "path": "parking-prototype/src/ScaleDemo.tsx",
-      "bytes": 14848,
-      "sha256": "5b3b7815682a10b7d42bd000eb3b795511b04453a911e344a4ba35458b9eca64"
+      "bytes": 14908,
+      "sha256": "5b49f42e8f5a815c5f4eb6485194910e3954bc762c3d32a071ef0e916ba6af39"
     },
     {
       "path": "parking-prototype/src/ScaleJourney3D.tsx",
-      "bytes": 14788,
-      "sha256": "5323912c40fb82f14e86474bfea0a6bb959b0e38ad16846709bcb71859d3a5fb"
+      "bytes": 14848,
+      "sha256": "9ce0ed2b4d4f3b8ac45a40936217d0e19294cdb09ad8418db427cc49fd03ab6c"
     },
     {
       "path": "parking-prototype/src/style.css",
@@ -1184,13 +1184,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 8494,
-      "sha256": "2c08c6037b938c857fa5c2cc64419fa0865aa4edabd6d80d8572d99f83243598"
+      "bytes": 8528,
+      "sha256": "1520517b97d697385fe333fd9332fa0b2897e4bfa1557c8b76500c32fd61f55c"
     },
     {
       "path": "RUN_LOCALLY.md",
-      "bytes": 7376,
-      "sha256": "ce309ed975fc2b99ae1a5420f03a868f10e35bacf190916fa10dd75f5e51bfea"
+      "bytes": 7610,
+      "sha256": "3dba6cf518d0b6d8573e931ccef41a4fdd6d0abd5c4ac7b8126c9918068f923b"
     },
     {
       "path": "tools/mcp-node/package-lock.json",
@@ -1339,18 +1339,18 @@
     },
     {
       "path": "wokwi-controller-labs/runtime.mjs",
-      "bytes": 5626,
-      "sha256": "60db13a04cd2099b83f03914a06b82b5b07094f74b4107be6e61a7f977d4908f"
+      "bytes": 5904,
+      "sha256": "89d9f321a811139d7e1a63951dd0bc21d32114786db710a760f4b9a694846da5"
     },
     {
       "path": "wokwi-controller-labs/server.mjs",
-      "bytes": 1445,
-      "sha256": "b232fccf160e187a43845fce5ef17bc9f847078400f15ab5a3654b257b3f5831"
+      "bytes": 1580,
+      "sha256": "5d3de13d946d10929457af8697f2f52afd8a8106cd7ca98b396a1f41a7a75f4c"
     },
     {
       "path": "wokwi-controller-labs/state.mjs",
-      "bytes": 3242,
-      "sha256": "0e80aa604b86c33df52f36e0bd88a844a0b88b1d6cc621e97a49ac84a31955ba"
+      "bytes": 3784,
+      "sha256": "17ec083c43b181d4968bac2ca302998ce114e71c86f3e072cd249581569401ef"
     },
     {
       "path": "wokwi-controller-labs/tests/runtime.test.mjs",
@@ -1524,8 +1524,8 @@
     },
     {
       "path": "wokwi-integrated/bridge.mjs",
-      "bytes": 9742,
-      "sha256": "c181eea83cfaf8e8897332ff58c403829662f61ad273a1f73c19085e0464a4cc"
+      "bytes": 9843,
+      "sha256": "9a8ab46280a25e392a4d7271bc2d20606c967b9fbe4262f62891a5b33d00223f"
     },
     {
       "path": "wokwi-integrated/bundle/diagram.json",
@@ -1614,13 +1614,13 @@
     },
     {
       "path": "wokwi-integrated/tests/viewer.test.mjs",
-      "bytes": 2745,
-      "sha256": "b89982f03694ddb717673ec390ede11760c98026a0a3e86da6b08fc63b1fcdea"
+      "bytes": 3213,
+      "sha256": "eab820bec799f137fbafee8fc2c7725c6772704ac0ae4e707326cdbb600577f5"
     },
     {
       "path": "wokwi-integrated/viewer.mjs",
-      "bytes": 5819,
-      "sha256": "9e5962d4847707e1411ba6f3ec448884ae2fadf64320b79dd651571a3104b1fa"
+      "bytes": 6058,
+      "sha256": "d186fbde26e72655947d1a0077a19716530fa15b8e4d6c928e17a46cc9f48f0b"
     },
     {
       "path": "wokwi-parking-lot/.gitignore",
@@ -1861,6 +1861,21 @@
       "path": "wokwi-integrated/tests/simulation-config.test.mjs",
       "bytes": 4760,
       "sha256": "2360549f1330f8f2de9fabf69da5cf774d0a91ba72e21fb9be4db96f939e09e3"
+    },
+    {
+      "path": "parking-prototype/src/visible-polling.ts",
+      "bytes": 954,
+      "sha256": "8b3933ebfd90dfb14133718a66c9a7366ec408e24c1dd06941b5fd2c8b207726"
+    },
+    {
+      "path": "parking-prototype/tests/visible-polling.test.mjs",
+      "bytes": 968,
+      "sha256": "fffaaf5019db52aeebbb26ee3dbde884ade7855d2aabc3f0d979b7dde2700291"
+    },
+    {
+      "path": "wokwi-controller-labs/tests/demand.test.mjs",
+      "bytes": 1978,
+      "sha256": "9678faef25155338d9a5b8f1f0503c2e3544fe492e5073eae05b6fe488315304"
     }
   ]
 }

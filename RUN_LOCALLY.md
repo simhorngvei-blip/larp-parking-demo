@@ -35,7 +35,7 @@ docker compose --profile live ps
 docker compose --profile live logs --tail 60 bridge controller-labs
 ```
 
-Allow several minutes for browser simulations and remote compilation. Wokwi is an external online service; availability, rate limits and browser resource use affect this mode. App-only mode works without a Wokwi connection after images are built, but cannot prove circuit motion. The flow, bay and individual-bollard reference benches are independent of the connected nine-bay fleet. The larger virtual building uses software devices.
+Allow several minutes for browser simulations and remote compilation. Wokwi is an external online service; availability, rate limits and browser resource use affect this mode. App-only mode works without a Wokwi connection after images are built, but cannot prove circuit motion. The flow, bay and individual-bollard reference benches are independent of the connected nine-bay fleet. They start only when viewed and close after 45 idle seconds; reopening may wait for compilation. Overview and health checks do not start them. The main circuit keeps running, and circuit screenshots are captured only while requested. The larger virtual building uses software devices.
 
 ## Try the workflow
 

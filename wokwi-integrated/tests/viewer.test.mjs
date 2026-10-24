@@ -38,3 +38,5 @@ test('simultaneous viewer exposes the app, actual captured frames and honest fra
   assert.equal((await fetch(viewer.url+'/unknown')).status,404);
  }finally{await viewer.close();}
 });
+
+test('main image capture sleeps without viewers and refuses an expired image',async()=>{let now=1000;const v=await createViewer({port:0,now:()=>now,captureIdleMs:15000});try{assert.equal(v.captureRequested(),false);await fetch(v.url+'/status');assert.equal(v.captureRequested(),true);v.publish(Buffer.from('image'));now=7000;assert.equal((await fetch(v.url+'/circuit.jpg')).status,503);now=23000;assert.equal(v.captureRequested(),false);}finally{await v.close();}});

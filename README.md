@@ -38,7 +38,7 @@ https://github.com/user-attachments/assets/43a74e6c-7dcf-4c14-b418-ccf52cb207d1
 
 ## Try it
 
-**Hosted:** [Open the public LARP demo](https://larp-demo.vercel.app/app). No login, access code, Vercel account or approval is required. This is a shared simulation with synthetic profiles; the old laptop host must stay online. Independent reference circuits pause during vehicle journeys, then resume automatically. See the [reviewer guide](HOSTED_DEMO.md) for views and testing steps.
+**Hosted:** [Open the public LARP demo](https://larp-demo.vercel.app/app). No login, access code, Vercel account or approval is required. This is a shared simulation with synthetic profiles; the old laptop host must stay online. Independent reference circuits start only when viewed and close after 45 idle seconds. They yield during vehicle journeys. See the [reviewer guide](HOSTED_DEMO.md) for views and testing steps.
 
 **Local:** install Docker with Linux containers and Compose, then run:
 
@@ -92,7 +92,7 @@ The proposed physical hierarchy is **central application → flow controller →
 
 ## Verification and prototype boundaries
 
-The [25 October 2026 verification snapshot](VERIFICATION.json) records a successful frontend build and **185 passing tests**: 162 app tests, 19 controller/viewer/configuration tests and 4 ESP32 model tests. These are software checks, not hardware certification. Reproduce the checks using the commands in [Run locally](RUN_LOCALLY.md#verify).
+The [25 October 2026 verification snapshot](VERIFICATION.json) records a successful frontend build and **190 passing tests**: 163 app tests, 23 controller/viewer/configuration tests and 4 ESP32 model tests. These are software checks, not hardware certification. Reproduce the checks using the commands in [Run locally](RUN_LOCALLY.md#verify).
 
 Plate input and identities are simulated; real ANPR/OCR and production authentication remain to be integrated. Physical radio, actuator power, obstruction sensing, electrical safety and installation require reviewed hardware tests. Occupancy does not identify a vehicle, and missing feedback alone cannot identify an exact failed part. EV booking uses a software charger adapter; real OCPP, billing and guaranteed vehicle charge data are not implemented. Native background push, offline site operation and high availability remain future work.
 

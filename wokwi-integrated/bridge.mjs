@@ -11,7 +11,7 @@ const requireTools=createRequire(path.join(root,'../tools/mcp-node/package.json'
 const {chromium}=requireTools('playwright');
 export const PROJECT_URL='https://wokwi.com/projects/478131710214850561';
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-export async function startBridge({base='http://127.0.0.1:4176',key,headless=false,record=false,appUrl='http://127.0.0.1:5175',viewerAppUrl=appUrl,viewerHost='127.0.0.1',viewerPort=0,projectUrl=PROJECT_URL,fit=false,captureIntervalMs=500,captureClip={x:850,y:80,width:850,height:720}}={}){
+export async function startBridge({base='http://127.0.0.1:4176',key,headless=false,record=false,appUrl='http://127.0.0.1:5175',viewerAppUrl=appUrl,viewerHost='127.0.0.1',viewerPort=0,projectUrl=PROJECT_URL,fit=false,captureIntervalMs=500,openApp=true,captureClip={x:850,y:80,width:850,height:720}}={}){
  key=key||readFileSync(path.join(root,'../parking-prototype/data/wokwi-bridge-key'),'utf8').trim();
  mkdirSync(path.join(root,'evidence'),{recursive:true});
  const browser=await chromium.launch({headless,args:['--disable-background-timer-throttling','--disable-backgrounding-occluded-windows','--disable-renderer-backgrounding']});
@@ -70,13 +70,13 @@ export async function startBridge({base='http://127.0.0.1:4176',key,headless=fal
  }
  await tick();
  const loop=(async()=>{while(!stopped){try{await tick();transportError='';}catch(error){transportError=error.message;if(!browser.isConnected())stopped=true;writeFileSync(path.join(root,'evidence/bridge-status.json'),JSON.stringify({connected:false,error:transportError}));}if(!stopped)await sleep(200);}})();
- const appPage=await context.newPage(),journeyAppUrl=new URL(appUrl);journeyAppUrl.searchParams.set('view','journey');await appPage.goto(journeyAppUrl.href);await appPage.bringToFront();
+ let appPage=null;if(openApp){appPage=await context.newPage();const journeyAppUrl=new URL(appUrl);journeyAppUrl.searchParams.set('view','journey');await appPage.goto(journeyAppUrl.href);await appPage.bringToFront();}
  let viewer;
  try{viewer=await createViewer({port:viewerPort,host:viewerHost,appUrl:viewerAppUrl,state:async()=>{const response=await fetch(base+'/api/state');if(!response.ok)throw new Error('App API unavailable');return await response.json();}});}
  catch(error){stopped=true;await loop;await browser.close();throw error;}
  // Capture the circuit through Chromium directly: remote web fonts must not block live canvas frames.
  const captureSession=await context.newCDPSession(page);
- const captureLoop=(async()=>{while(!stopped){try{
+ const captureLoop=(async()=>{while(!stopped){if(!viewer.captureRequested()){await sleep(500);continue;}try{
   // Fixed engine viewport: capture its simulation pane, excluding the source editor.
   const shot=await captureSession.send('Page.captureScreenshot',{format:'jpeg',quality:70,clip:{...captureClip,scale:1},captureBeyondViewport:false});
   viewer.publish(Buffer.from(shot.data,'base64'));

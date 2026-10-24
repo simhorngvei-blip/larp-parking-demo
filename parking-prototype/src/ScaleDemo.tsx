@@ -1,3 +1,4 @@
+import {startVisiblePolling} from './visible-polling'
 import {useCallback,useEffect,useRef,useState} from 'react'
 import {ArrowLeft,Building2,Car,Layers3,Play,Radio,RotateCcw,ShieldAlert,WifiOff} from 'lucide-react'
 import {ScaleBuilding} from './scale/building'
@@ -20,7 +21,7 @@ export default function ScaleDemo(){
  const [site,setSite]=useState('SITE-001'),[level,setLevel]=useState(0),[state,setState]=useState<ScaleState|null>(null),[error,setError]=useState(''),[notice,setNotice]=useState(''),[connected,setConnected]=useState(false),[busy,setBusy]=useState(false),[selected,setSelected]=useState('B-0001'),[plate,setPlate]=useState('DEMO2026'),[mode,setMode]=useState<'three'|'map'>('three'),[preset,setPreset]=useState(0)
  const scope=useRef({site,level});scope.current={site,level}
  const refresh=useCallback(async()=>{const requestScope={...scope.current};const r=await fetch(`/api/scale/state?siteId=${encodeURIComponent(requestScope.site)}&level=${requestScope.level}`);const data=await r.json();if(!r.ok)throw Error(data.error||'Scaled simulation is unavailable');if(scope.current.site===requestScope.site&&scope.current.level===requestScope.level){setState(data);setConnected(true);setError('')}},[])
- useEffect(()=>{let live=true;const poll=()=>refresh().catch(e=>{if(live){setConnected(false);setError(e.message)}});void poll();const timer=setInterval(poll,1000);return()=>{live=false;clearInterval(timer)}},[refresh,site,level])
+ useEffect(()=>{let live=true;const poll=()=>refresh().catch(e=>{if(live){setConnected(false);setError(e.message)}});const polling=startVisiblePolling(poll,{intervalMs:1000});return()=>{live=false;polling.stop()}},[refresh,site,level])
  useEffect(()=>{if(state&&!state.bays.some(b=>b.id===selected))setSelected(state.bays[0]?.id||'')},[state?.siteId,state?.level,state?.config.baysPerSite])
  async function action(name:string,body:object,message=''){
   setBusy(true);setError('');setNotice('');try{const r=await fetch('/api/scale/'+name,{method:'POST',headers:{'content-type':'application/json','x-creator-key':sessionStorage.getItem('baypilot-creator-key')||'','x-demo-actor':'management'},body:JSON.stringify(body)});const data=await r.json();if(!r.ok)throw Error(data.error||'Action rejected');if(name==='configure'){scope.current={site:'SITE-001',level:0};setSite('SITE-001');setLevel(0)}await refresh();setNotice(message);return data}catch(e){setError(e instanceof Error?e.message:'Action failed')}finally{setBusy(false)}

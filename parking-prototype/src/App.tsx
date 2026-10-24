@@ -1,3 +1,4 @@
+import {startVisiblePolling} from './visible-polling'
 import { lazy, Suspense, useCallback, useEffect, useState, type ComponentType } from 'react'
 import { ArrowDownLeft, ArrowRight, ArrowUpRight, Bell, Building2, Car, Check, ChevronRight, CircleHelp, CircuitBoard, Clock3, Download, FlaskConical, Layers3, LayoutDashboard, LockKeyhole, MapPin, MoreHorizontal, Play, Plus, Radio, RotateCcw, Route, Settings2, ShieldCheck, ShieldAlert, Smartphone, Sparkles, Users, Workflow, Zap } from 'lucide-react'
 import type { Bay, Policy, Snapshot, Visit } from './types'
@@ -21,7 +22,7 @@ function Empty({children}:{children:React.ReactNode}){return <div className="emp
 export default function App(){
   const [view,setView]=useState<View>(()=>new URLSearchParams(window.location.search).get('view')==='three'?'three':new URLSearchParams(window.location.search).get('view')==='journey'?'journey':'overview'),[state,setState]=useState<Snapshot|null>(null),[error,setError]=useState(''),[notice,setNotice]=useState(''),[busy,setBusy]=useState(false),[selected,setSelected]=useState('R-102')
   const refresh=useCallback(async()=>{const response=await fetch('/api/state');if(!response.ok)throw new Error('Parking service is unavailable');setState(await response.json())},[])
-  useEffect(()=>{refresh().catch(()=>setError('Start the parking API to connect the workspace.'));const timer=setInterval(()=>refresh().catch(()=>{}),500);return()=>clearInterval(timer)},[refresh])
+  useEffect(()=>{const polling=startVisiblePolling(refresh,{intervalMs:500,onError:()=>setError('Parking service unavailable; wait for fresh feedback.')});return()=>polling.stop()},[refresh])
   async function action(endpoint:string,body:object={},actor='management',message=''){setBusy(true);setError('');setNotice('');try{const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','x-creator-key':sessionStorage.getItem('baypilot-creator-key')||'','x-demo-actor':actor},body:JSON.stringify(body)});const data=await response.json();if(!response.ok)throw new Error(data.error);await refresh();if(message)setNotice(message);return data}catch(problem){setError(problem instanceof Error?problem.message:'Action failed')}finally{setBusy(false)}}
   const [guest,setGuest]=useState({name:'Daniel Wong',plate:'BMA 4321',unit:'10-02'})
   const [draft,setDraft]=useState<Policy|null>(null)

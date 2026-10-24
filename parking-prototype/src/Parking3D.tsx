@@ -1,3 +1,4 @@
+import {startVisiblePolling} from './visible-polling'
 import {useEffect,useRef,useState} from 'react'
 import {ArrowLeft,ArrowRight,Building2,Camera,Car,Check,ChevronRight,CirclePause,CircuitBoard,Download,Eye,Layers3,Maximize2,Play,Radio,ShieldCheck,Smartphone,Waypoints} from 'lucide-react'
 import type {Snapshot} from './types'
@@ -76,4 +77,4 @@ export default function Parking3D({snapshot,refresh,onBack}:Props){
   {!ready&&!error&&<div className="three-loading"><Layers3 size={28}/><span>Building your parking scene…</span></div>}
  </div>
 }
-function CircuitImage(){const [stamp,setStamp]=useState(Date.now());useEffect(()=>{const timer=setInterval(()=>setStamp(Date.now()),1000);return()=>clearInterval(timer)},[]);return <img src={`${circuitUrl}/circuit.jpg?t=${stamp}`} alt="Actual connected Wokwi circuit"/>}
+function CircuitImage(){const [stamp,setStamp]=useState(Date.now());useEffect(()=>{const polling=startVisiblePolling(()=>setStamp(Date.now()),{intervalMs:2000});return()=>polling.stop()},[]);return <img src={`${circuitUrl}/circuit.jpg?t=${stamp}`} alt="Actual connected Wokwi circuit"/>}

@@ -1,8 +1,15 @@
 import {randomUUID} from 'node:crypto';
 export const FRESH_MS=8000,FRAME_MS=5000;
+export class ReferenceDemand {
+ constructor({idleMs=45000,captureMs=15000}={}){this.idleMs=idleMs;this.captureMs=captureMs;this.views=new Map();}
+ touch(role,now=Date.now()){this.views.set(role,now);}
+ active(role,now=Date.now()){return this.views.has(role)&&now-this.views.get(role)<this.idleMs;}
+ captureActive(role,now=Date.now()){return this.views.has(role)&&now-this.views.get(role)<this.captureMs;}
+}
 export class BenchState {
  constructor(role,url){if(!['flow','bay','bollard'].includes(role))throw Error('Unknown bench role');this.role=role;this.url=url;this.startedAt=null;this.restarts=-1;this.events=[];this.latest=new Map();this.seen=new Set();this.sequence=null;this.lastSeenAt=null;this.frame=null;this.capturedAt=null;this.error='';this.instance=null;}
- begin(now=Date.now()){this.instance=randomUUID();this.startedAt=now;this.restarts++;this.events=[];this.latest.clear();this.seen.clear();this.sequence=null;this.lastSeenAt=null;this.frame=null;this.capturedAt=null;this.error='';this.paused=false;}
+ begin(now=Date.now()){this.instance=randomUUID();this.startedAt=now;this.restarts++;this.events=[];this.latest.clear();this.seen.clear();this.sequence=null;this.lastSeenAt=null;this.frame=null;this.capturedAt=null;this.error='';this.paused=false;this.idle=false;}
+ sleep(){this.idle=true;this.paused=false;this.frame=null;this.capturedAt=null;this.error='';}
  setPaused(value){this.paused=value===true;}
  observe(packets,now=Date.now()){
   for(const packet of packets){
@@ -17,7 +24,7 @@ export class BenchState {
  capture(buffer,now=Date.now()){this.frame=buffer;this.capturedAt=now;}
  fail(message){this.error=String(message).slice(0,500);}
  snapshot(now=Date.now()){
-  const age=this.lastSeenAt===null?null:Math.max(0,now-this.lastSeenAt),status=this.error?'ERROR':this.paused?'PAUSED':!this.sequence?'STARTING':age>FRESH_MS?'STALE':'LIVE';
+  const age=this.lastSeenAt===null?null:Math.max(0,now-this.lastSeenAt),status=this.error?'ERROR':this.paused?'PAUSED':this.idle?'IDLE':!this.sequence?'STARTING':age>FRESH_MS?'STALE':'LIVE';
   return {role:this.role,url:this.url,scope:'ISOLATED_CONTROLLER_BENCH',sharedApi:false,instance:this.instance,status,error:this.error,restarts:Math.max(0,this.restarts),startedAt:this.startedAt===null?null:new Date(this.startedAt).toISOString(),uptimeMs:this.startedAt===null?0:Math.max(0,now-this.startedAt),sequence:this.sequence,telemetryAgeMs:age,frameAgeMs:this.capturedAt===null?null:Math.max(0,now-this.capturedAt),events:this.events.slice(),channels:Array.from({length:this.role==='flow'?8:this.role==='bay'?6:1},(_,i)=>{const e=this.latest.get(i+1),fresh=status==='LIVE'&&e&&now-e.observedAt<=FRESH_MS;return {address:i+1,result:fresh?e.result:e?'STALE':'NOT_MEASURED',check:e?.check||'',sequence:e?.seq??null,cm:fresh?e.cm:null,occupancy:fresh?e.occupancy:null,position:fresh?e.position??null:null,upLimit:fresh?e.upLimit??null:null,downLimit:fresh?e.downLimit??null:null,motorEnabled:fresh?e.motorEnabled??null:null,detail:e?.detail||'',at:e?.at||null};})};
  }
 }

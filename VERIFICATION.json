@@ -1,11 +1,11 @@
 {
-  "at": "2026-10-24T17:52:00.457350+00:00",
+  "at": "2026-10-24T22:02:13.108144+00:00",
   "passed": true,
   "sourceScope": "Minimal local demonstrator; excluded private cloud-host material and workspace media",
   "composeConfiguration": "passed",
   "frontendTypecheckAndProductionBuild": "passed",
-  "applicationTests": 162,
-  "controllerViewerTests": 19,
+  "applicationTests": 163,
+  "controllerViewerTests": 23,
   "esp32ModelTests": 4,
   "failedTests": 0,
   "credentialPatternAndNestedSourceArchiveScan": "passed",
@@ -15,7 +15,7 @@
     "Public production demo opens without login or code and depends on an awake, online old laptop.",
     "Original project code has no new open-source license granted by this export."
   ],
-  "totalTests": 185,
+  "totalTests": 190,
   "hostedAuthenticatedAcceptance": {
     "date": "2026-10-25",
     "fullArrivalParkingExitAndFinalRelock": "passed",
@@ -49,7 +49,7 @@
   },
   "publicNoLoginAcceptance": {
     "passed": true,
-    "at": "2026-10-24T21:26:41.200Z",
+    "at": "2026-10-24T22:00:26.039Z",
     "origin": "https://larp-demo.vercel.app",
     "checks": [
       "Fresh anonymous browser opens the app directly; no login, code, cookies, Vercel account or bypass header",
@@ -73,5 +73,25 @@
     "dockerDesktop": "Closed",
     "data": "Images, volumes and records retained",
     "freeRamObservedGiB": 6.74
-  }
+  },
+  "runtimeDemandAcceptance": {
+    "passed": true,
+    "scope": "Same old laptop; main circuit always active; references start only when viewed",
+    "performance": {
+      "at": "2026-10-24T22:01:44.443041+00:00",
+      "beforeCPUPercent": 191.4,
+      "afterCPUPercent": 160.33,
+      "cpuReductionPercent": 16.233019853709507,
+      "journeySeconds": 162.084,
+      "medianHostedRequestMs": 923,
+      "maxHostedRequestMs": 10708,
+      "scope": "Three short idle samples on the same old laptop; all four browsers before vs main only after; not load/soak acceptance."
+    },
+    "referenceBenches": "All three emitted advancing UART and fresh images; final all-IDLE confirmed after closing viewers",
+    "mainCapture": "Sleeps without requests; stale frames rejected; firmware stays live",
+    "browserPolling": "No overlapping automatic state requests; hidden polling stopped; visibility resumed refresh",
+    "fullVehicleJourney": "Passed arrival, parking, exit and final UP relock without heartbeat or command-expiry error",
+    "limits": "Short acceptance only; cold references may wait for compilation; queue and emulator latency remain"
+  },
+  "dockerExecutionDuringDemandUpdate": "Windows Docker Desktop kept closed as requested; Node 24 app/runtime tests and production build ran locally. Four ESP32 model checks are retained from the same-day unchanged native source verification."
 }
