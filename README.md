@@ -8,13 +8,13 @@ LARP brings drivers, homeowners, guards and technical operations into the same p
 
 Built by **Team AC/DC** for the **Sime Darby Property University Hackathon 2026**. This repository is the runnable software prototype, with simulated vehicles and electronics.
 
-[Watch / download the silent demo](https://github.com/simhorngvei-blip/larp-parking-demo/releases/tag/demo-v1) ? [Try the hosted demo](https://larp-demo-rain-s-projects2.vercel.app/demo-login) · [Hosted access guide](HOSTED_DEMO.md) · [Run locally](RUN_LOCALLY.md) · [Verification record](VERIFICATION.json)
+[Watch / download the silent demo](https://github.com/simhorngvei-blip/larp-parking-demo/releases/tag/demo-v1) | [Try the hosted demo](https://larp-demo-rain-s-projects2.vercel.app/demo-login) · [Hosted access guide](HOSTED_DEMO.md) · [Run locally](RUN_LOCALLY.md) · [Verification record](VERIFICATION.json)
 
 ![LARP's ten-level virtual parking building and guided vehicle journey](docs/images/larp-3d-building.png)
 
 *The 500-bay building is a virtual demonstration. The connected ESP32/Wokwi demonstration uses a separate nine-bay model.*
 
-**Video:** [Download the five-minute silent MP4](https://github.com/simhorngvei-blip/larp-parking-demo/releases/download/demo-v1/LARP_Alternate_Guided_Tour_5_Minutes_Silent.mp4) ? 1080p ? 25 fps ? no audio stream. The public GitHub Release download needs no Vercel approval or team demo code. The video is stored as a release asset to keep the source checkout small.
+**Video:** [Download the five-minute silent MP4](https://github.com/simhorngvei-blip/larp-parking-demo/releases/download/demo-v1/LARP_Alternate_Guided_Tour_5_Minutes_Silent.mp4) | 1080p | 25 fps | no audio stream. The public GitHub Release download needs no Vercel approval or team demo code. The video is stored as a release asset to keep the source checkout small.
 
 ## What you can explore
 
