@@ -12,9 +12,11 @@ FROM app-build AS tests
 WORKDIR /workspace
 COPY wokwi-integrated/viewer.mjs wokwi-integrated/viewer.mjs
 COPY wokwi-integrated/tests/viewer.test.mjs wokwi-integrated/tests/viewer.test.mjs
+COPY wokwi-integrated/simulation-config.mjs wokwi-integrated/simulation-config.mjs
+COPY wokwi-integrated/tests/simulation-config.test.mjs wokwi-integrated/tests/simulation-config.test.mjs
 COPY wokwi-controller-labs/state.mjs wokwi-controller-labs/server.mjs wokwi-controller-labs/
 COPY wokwi-controller-labs/tests/ wokwi-controller-labs/tests/
-CMD ["sh", "-c", "cd parking-prototype && npm test && cd .. && node --test wokwi-integrated/tests/viewer.test.mjs wokwi-controller-labs/tests/*.test.mjs"]
+CMD ["sh", "-c", "cd parking-prototype && npm test && cd .. && node --test wokwi-integrated/tests/viewer.test.mjs wokwi-integrated/tests/simulation-config.test.mjs wokwi-controller-labs/tests/*.test.mjs"]
 
 FROM node:${NODE_VERSION}-bookworm-slim AS api
 ENV NODE_ENV=production PARKING_HOST=0.0.0.0 PARKING_PORT=4176 PARKING_DB=:memory:
@@ -32,6 +34,7 @@ COPY docker/package*.json ./
 RUN npm ci && npx playwright install --with-deps chromium && chmod -R a+rX /ms-playwright
 WORKDIR /workspace
 COPY --chown=node:node wokwi-integrated/bridge.mjs wokwi-integrated/viewer.mjs wokwi-integrated/command-dispatcher.mjs ./wokwi-integrated/
+COPY --chown=node:node wokwi-integrated/simulation-config.mjs ./wokwi-integrated/
 COPY --chown=node:node wokwi-parking-lot/bridge.mjs ./wokwi-parking-lot/
 COPY --chown=node:node docker/start-bridge.mjs docker/smoke.mjs docker/multilevel-smoke.mjs ./docker/
 RUN mkdir -p wokwi-integrated/evidence parking-prototype/data && chown -R node:node wokwi-integrated parking-prototype

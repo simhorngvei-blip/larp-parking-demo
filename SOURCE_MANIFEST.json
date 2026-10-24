@@ -1,5 +1,5 @@
 {
-  "prepared": "2026-10-23",
+  "prepared": "2026-10-25",
   "scope": "Minimal local LARP demonstrator; no personal contacts or cloud deployment secrets",
   "files": [
     {
@@ -69,8 +69,8 @@
     },
     {
       "path": "Dockerfile",
-      "bytes": 4098,
-      "sha256": "945a70512f1895d08d2ddae4226dae97cf51e15ea59dd2656e89c4f64147d1e4"
+      "bytes": 4421,
+      "sha256": "51c17775a31dc72095c69a58580e8d2927f962fd09c99a6a18c2934f22065684"
     },
     {
       "path": "docs/images/larp-3d-building.png",
@@ -99,8 +99,8 @@
     },
     {
       "path": "HOSTED_DEMO.md",
-      "bytes": 3333,
-      "sha256": "330415bcd198626785f538ad3432c9ba6467e2ff1808d5038c3a8cebb56b9d5a"
+      "bytes": 4408,
+      "sha256": "4af22fc8fded1a7ffe58638b2eae9b0fa7b0945746d73ca6faae808b0ef090d6"
     },
     {
       "path": "parking-prototype/.gitignore",
@@ -694,8 +694,8 @@
     },
     {
       "path": "parking-prototype/src/public/PersistentBench.tsx",
-      "bytes": 4527,
-      "sha256": "9c0c0e899d08d3e45f614e0472720069ba0cc7dc3b9955f930d50db741eda854"
+      "bytes": 4818,
+      "sha256": "9d9f0c2d95280d9f90c54fa24fc3355300eff17b7cf889196d370a03b1f3f221"
     },
     {
       "path": "parking-prototype/src/public/public.css",
@@ -1184,8 +1184,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8458,
-      "sha256": "7f807c490dd14352530cc137c8ad49ae623b5bb40f843f16900883cf278e6540"
+      "bytes": 8743,
+      "sha256": "f0a9afbcc94582a9aac565bb1f4f5a8ac3bfaf63326bbff73206ab45c204afee"
     },
     {
       "path": "RUN_LOCALLY.md",
@@ -1339,8 +1339,8 @@
     },
     {
       "path": "wokwi-controller-labs/runtime.mjs",
-      "bytes": 4368,
-      "sha256": "8903930a5c154e695b37f8a972553ac1844be04452fb8001787704eba81ee314"
+      "bytes": 5626,
+      "sha256": "60db13a04cd2099b83f03914a06b82b5b07094f74b4107be6e61a7f977d4908f"
     },
     {
       "path": "wokwi-controller-labs/server.mjs",
@@ -1349,13 +1349,13 @@
     },
     {
       "path": "wokwi-controller-labs/state.mjs",
-      "bytes": 3157,
-      "sha256": "0e76ad84aadb752d462bb4b5357cab5079fe3cfa11e00d9be46ff51098fabf82"
+      "bytes": 3242,
+      "sha256": "0e80aa604b86c33df52f36e0bd88a844a0b88b1d6cc621e97a49ac84a31955ba"
     },
     {
       "path": "wokwi-controller-labs/tests/runtime.test.mjs",
-      "bytes": 2954,
-      "sha256": "f05dcc606cdf5c4fe14d898b5e5af61b628e7765ab1f67e48f1ea221e50f3b06"
+      "bytes": 3601,
+      "sha256": "f7f768d03f8d3da6c31ce72a9cacd31552294e4d5f1410208a003e1a78bddffa"
     },
     {
       "path": "wokwi-controller-labs/tests/server.test.mjs",
@@ -1524,8 +1524,8 @@
     },
     {
       "path": "wokwi-integrated/bridge.mjs",
-      "bytes": 9448,
-      "sha256": "960fb53f0e441f900b008d282bad83044cb15fc83f15559f0f25525795154c8d"
+      "bytes": 9742,
+      "sha256": "c181eea83cfaf8e8897332ff58c403829662f61ad273a1f73c19085e0464a4cc"
     },
     {
       "path": "wokwi-integrated/bundle/diagram.json",
@@ -1851,6 +1851,16 @@
       "path": "wokwi-wireless-lot/VERIFICATION.md",
       "bytes": 5840,
       "sha256": "04412b40ab944710122218557a02ef70591d441ff44565f50dee7ab08911eab3"
+    },
+    {
+      "path": "wokwi-integrated/simulation-config.mjs",
+      "bytes": 2761,
+      "sha256": "92efb35f734624e881b552a647c5915725a0a940871fd6a6885645a435da3c42"
+    },
+    {
+      "path": "wokwi-integrated/tests/simulation-config.test.mjs",
+      "bytes": 4760,
+      "sha256": "2360549f1330f8f2de9fabf69da5cf774d0a91ba72e21fb9be4db96f939e09e3"
     }
   ]
 }

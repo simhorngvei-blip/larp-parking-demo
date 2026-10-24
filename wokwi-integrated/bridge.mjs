@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {createViewer} from './viewer.mjs';
 import {createCommandDispatcher} from './command-dispatcher.mjs';
+import {prepareSimulationCpuLimit,readSerialPackets,setSimulationTelemetryInterval} from './simulation-config.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url));
 const requireTools=createRequire(path.join(root,'../tools/mcp-node/package.json'));
 const {chromium}=requireTools('playwright');
@@ -20,6 +21,8 @@ export async function startBridge({base='http://127.0.0.1:4176',key,headless=fal
   await page.goto(projectUrl,{waitUntil:'domcontentloaded'});
   // The SSR play button exists before its client handler is hydrated.
   await page.waitForFunction(()=>window.monaco?.editor.getModels().some(m=>m.uri.toString()==='vfs:sketch.ino')&&document.querySelector('#bayMotor'),null,{timeout:Number(process.env.WOKWI_HYDRATION_TIMEOUT_MS||30000)});
+  if(process.env.WOKWI_SIM_CPU_MHZ)await prepareSimulationCpuLimit(page,Number(process.env.WOKWI_SIM_CPU_MHZ));
+  if(process.env.WOKWI_TELEMETRY_INTERVAL_MS)await page.evaluate(setSimulationTelemetryInterval,Number(process.env.WOKWI_TELEMETRY_INTERVAL_MS));
   if(fit){await page.getByRole('button',{name:'Zoom, grid, and more',exact:true}).click();await page.getByText('Fit',{exact:true}).click();await page.keyboard.press('Escape');}
   await page.getByRole('button',{name:'Start the simulation',exact:true}).click({timeout:30000});
   // Public Wokwi builds can queue for several minutes before firmware starts.
@@ -39,7 +42,7 @@ export async function startBridge({base='http://127.0.0.1:4176',key,headless=fal
    await input.fill(`${command.id} ${command.verb} ${command.bayId??''} ${command.value??''}`,{timeout:3000});await input.press('Enter');
    // Pace UART requests by actual firmware acknowledgements. A burst can overrun
    // the AVR's 64-byte RX buffer while it is emitting full-lot telemetry.
-   await page.waitForFunction(id=>document.body.innerText.includes('"kind":"ack","id":"'+id+'"'),command.id,{timeout:4000});
+   await page.waitForFunction(id=>document.querySelector('[class*="monitorContainer__"]')?.textContent.includes('"kind":"ack","id":"'+id+'"'),command.id,{timeout:4000});
   }else if(command.op==='distance'){
    const sensorId=command.bayId&&command.bayId!=='R-102'?'sensor'+command.bayId.replace('-',''):'baySensor';
    const range=page.locator('input[type=range]').first();
@@ -58,7 +61,7 @@ export async function startBridge({base='http://127.0.0.1:4176',key,headless=fal
  }
  const commands=createCommandDispatcher(apply,error=>{transportError=error.message;writeFileSync(path.join(root,'evidence/bridge-status.json'),JSON.stringify({connected:false,error:transportError}));});
  async function tick(){
-  const frames=await page.evaluate(()=>document.body.innerText.split(/[\r\n]+/).filter(line=>line.startsWith('{"kind":')).flatMap(line=>{try{return [JSON.parse(line)];}catch{return [];}}));
+  const frames=await page.evaluate(readSerialPackets,'kind');
   for(const frame of frames){if(frame.kind==='telemetry'&&(!lastFrame||frame.seq>lastFrame.seq))lastFrame=frame;if(frame.kind==='ack'&&!consumedAcks.has(frame.id)){consumedAcks.add(frame.id);acks.push(frame);}}
   const sentAcks=acks.splice(0);
   let data;try{const response=await fetch(base+'/api/wokwi/poll',{method:'POST',headers:{'content-type':'application/json','x-demo-actor':'management','x-bridge-key':key},body:JSON.stringify({instance,frame:lastFrame,acks:sentAcks})});data=await response.json();if(!response.ok)throw new Error(data.error||'Bridge rejected');}catch(error){acks.unshift(...sentAcks);throw error;}

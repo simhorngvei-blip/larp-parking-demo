@@ -38,7 +38,7 @@ https://github.com/user-attachments/assets/43a74e6c-7dcf-4c14-b418-ccf52cb207d1
 
 ## Try it
 
-**Hosted:** [Open LARP on Vercel](https://larp-demo-rain-s-projects2.vercel.app/demo-login). Access currently requires Vercel approval and a privately supplied LARP demo code. The backend and browser simulations depend on the team's laptop runtime being online. See the [hosted testing guide](HOSTED_DEMO.md) for all routes and access steps.
+**Hosted:** [Open LARP on Vercel](https://larp-demo-rain-s-projects2.vercel.app/demo-login). Access currently requires Vercel approval and a privately supplied LARP demo code. The backend and browser simulations depend on the team's laptop runtime being online. A fresh complete hosted entry/parking/exit/relock test passed on 25 October. Independent reference circuits pause during that journey to give the main circuit CPU priority, then resume; the server room labels them PAUSED. The laptop remains a limited demonstration host. See the [hosted testing guide](HOSTED_DEMO.md) for all routes and access steps.
 
 **Local:** install Docker with Linux containers and Compose, then run:
 
@@ -92,7 +92,7 @@ The proposed physical hierarchy is **central application → flow controller →
 
 ## Verification and prototype boundaries
 
-The [23 October 2026 verification snapshot](VERIFICATION.json) records a successful frontend build and **176 passing tests**: 162 app tests, 10 controller/viewer tests and 4 ESP32 model tests. These are software checks, not hardware certification. Reproduce the checks using the commands in [Run locally](RUN_LOCALLY.md#verify).
+The [25 October 2026 verification snapshot](VERIFICATION.json) records a successful frontend build and **185 passing tests**: 162 app tests, 19 controller/viewer/configuration tests and 4 ESP32 model tests. These are software checks, not hardware certification. Reproduce the checks using the commands in [Run locally](RUN_LOCALLY.md#verify).
 
 Plate input and identities are simulated; real ANPR/OCR and production authentication remain to be integrated. Physical radio, actuator power, obstruction sensing, electrical safety and installation require reviewed hardware tests. Occupancy does not identify a vehicle, and missing feedback alone cannot identify an exact failed part. EV booking uses a software charger adapter; real OCPP, billing and guaranteed vehicle charge data are not implemented. Native background push, offline site operation and high availability remain future work.
 
